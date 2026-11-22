@@ -1,0 +1,26 @@
+{
+  "date": "900",
+  "source": "historical-basemaps world_900 (automatic draft, needs checking)",
+  "owners": {
+    "-": ["ABW-5150","BHS-5009","BM-DEV","BS-AK","BS-BI","BS-BP","BS-BY","BS-CE","BS-CI","BS-CK","BS-CO","BS-CS","BS-EG","BS-EX","BS-FP","BS-IN","BS-LI","BS-MC","BS-MG","BS-MI","BS-NE","BS-NO","BS-NS","BS-RC","BS-RI","BS-SA","BS-SE","BS-SO","BS-SS","BS-WG","CA-PE","CO-ANT","CO-ARA","CO-ATL","CO-BOL","CO-BOY","CO-CAL","CO-CAS","CO-CES","CO-CHO","CO-COR","CO-CUN","CO-LAG","CO-MAG","CO-NSA","CO-RIS","CO-SAN","CO-SAP","CO-SUC","CO-TOL","CO-VAC","CO-VID","CR-A","CR-C","CR-G","CR-H","CR-L","CR-P","CR-SJ","CU-99","CUW-5151","CYM+00?","DO-01","DO-20","FR-GF","GL-KU","GL-QA","GL-QE","GL-SM","GL-UO","GY-BA","GY-CU","GY-DE","GY-EB","GY-ES","GY-PM","GY-PT","GY-UT","HN-AT","HN-CH","HN-CL","HN-CM","HN-EP","HN-FM","HN-GD","HN-IB","HN-IN","HN-LE","HN-LP","HN-OL","HN-VA","HN-YO","JM-01","MEX+99?","NI-AN","NI-AS","NI-BO","NI-CA","NI-CI","NI-CO","NI-ES","NI-GR","NI-JI","NI-LE","NI-MD","NI-MN","NI-MS","NI-MT","NI-NS","NI-RI","NI-SJ","NL-BQ1","PA-1","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-8","PA-9","PA-EM","PA-KY","PA-NB","SPM-4866","SPM-4867","SR-BR","SR-CM","SR-CR","SR-MA","SR-NI","SR-PM","SR-PR","SR-SA","SR-SI","SR-WA","SV-CA","SV-CH","SV-CU","SV-LI","SV-MO","SV-PA","SV-SM","SV-SO","SV-SS","SV-SV","SV-UN","SV-US","TCA-5003","TCA-5004","TCA-5005","TCA-5006","TT-ARI","TT-CHA","TT-CTT","TT-DMN","TT-ETO","TT-PED","TT-POS","TT-PRT","TT-PTF","TT-RCM","TT-SFO","TT-SGE","TT-SIP","TT-SJL","TT-TUP","TT-WTO","USG+00?","VE-C","VE-E","VE-F","VE-L","VE-O","VE-S","VE-V","VE-W","VE-Z","VGB+00?"],
+    "amazon-hunter-gatherers": ["BR-RR","GY-MA"],
+    "anasazi": ["MX-BCN","MX-BCS","US-AZ","US-CA","US-NM"],
+    "arawaks": ["AG-03","AG-04","AG-05","AG-06","AG-07","AG-08","AG-10","AIA-5114","AIA-5121","AIA-5123","AIA-5124","BLM-5113","DM-02","DM-03","DM-04","DM-05","DM-06","DM-09","DM-10","DM-11","FR-GP","FR-MQ","GD-01","GD-02","GD-03","GD-04","GD-05","GD-06","GD-10","KN-01","KN-02","KN-03","KN-04","KN-05","KN-06","KN-07","KN-08","KN-09","KN-11","KN-12","KN-13","KN-14","LC-01","LC-02","LC-03","LC-04","LC-05","LC-06","LC-07","LC-08","LC-09","LC-10","LC-11","MAF-5145","MS-A","MS-G","MS-P","NL-BQ3","NL-SX","VC-01","VC-02","VC-03","VC-04","VC-05","VC-06","VIR-4868","VIR-4869","VIR-4870"],
+    "arctic-marine-mammal-hunters": ["CA-NT","CA-NU","CA-YT","GRL-2738","RU-CHU","US-AK"],
+    "athabaskan": ["CA-BC"],
+    "caribbean-hunter-gatherers": ["BB-01","BB-02","BB-03","BB-04","BB-05","BB-06","BB-07","BB-08","BB-09","BB-10","BB-11","US-PR","VE-A","VE-B","VE-D","VE-G","VE-H","VE-I","VE-J","VE-K","VE-M","VE-N","VE-P","VE-R","VE-T","VE-U","VE-X","VE-Y"],
+    "ciboney": ["CU-01","CU-03","CU-04","CU-05","CU-06","CU-07","CU-08","CU-09","CU-10","CU-11","CU-12","CU-13","CU-14","CU-15","CU-16","DO-02","DO-03","DO-04","DO-05","DO-06","DO-07","DO-08","DO-09","DO-10","DO-11","DO-12","DO-13","DO-14","DO-15","DO-16","DO-17","DO-18","DO-19","DO-21","DO-22","DO-23","DO-24","DO-25","DO-26","DO-27","DO-28","DO-29","DO-30","DO-31","DO-32","HT-AR","HT-CE","HT-GA","HT-ND","HT-NE","HT-NI","HT-NO","HT-OU","HT-SD","HT-SE","JM-02","JM-03","JM-04","JM-05","JM-06","JM-07","JM-08","JM-09","JM-10","JM-11","JM-12","JM-13","JM-14"],
+    "desert-hunter-gatherers": ["US-NV","US-UT"],
+    "eastern-north-american-hunter-gatherers": ["CA-NB","CA-NS","US-AL","US-AR","US-CT","US-DC","US-DE","US-FL","US-GA","US-IA","US-IL","US-IN","US-KY","US-LA","US-MA","US-MD","US-ME","US-MI","US-MO","US-MS","US-NC","US-NH","US-NJ","US-NY","US-OH","US-PA","US-RI","US-SC","US-TN","US-VA","US-VT","US-WI","US-WV"],
+    "innu": ["CA-NL"],
+    "maya-city-states": ["BZ-BZ","BZ-CY","BZ-CZL","BZ-OW","BZ-SC","BZ-TOL","GT-AV","GT-BV","GT-CM","GT-CQ","GT-ES","GT-GU","GT-HU","GT-IZ","GT-JA","GT-JU","GT-PE","GT-PR","GT-QC","GT-QZ","GT-RE","GT-SA","GT-SM","GT-SO","GT-SR","GT-SU","GT-TO","GT-ZA","HN-CP","HN-CR","HN-OC","HN-SB","MX-CAM","MX-CHP","MX-ROO","MX-TAB","MX-YUC","SV-AH","SV-SA"],
+    "mesoamerican-city-states-and-chiefdoms": ["MX-COL","MX-JAL","MX-MIC","MX-MOR","MX-OAX","MX-PUE","MX-VER"],
+    "mixtecs": ["MX-GRO"],
+    "mogollon": ["MX-AGU","MX-CHH","MX-COA","MX-DUR","MX-GUA","MX-NAY","MX-NLE","MX-SIN","MX-SLP","MX-SON","MX-TAM","MX-ZAC"],
+    "north-american-pacific-foraging-hunting-and-fishing-peoples": ["US-OR"],
+    "plain-bison-hunters": ["US-CO","US-KS","US-MN","US-MT","US-ND","US-NE","US-OK","US-SD","US-TX","US-WY"],
+    "plateau-fichers-and-hunter-gatherers": ["US-ID","US-WA"],
+    "subarctic-forest-hunter-gatherers": ["CA-AB","CA-MB","CA-ON","CA-QC","CA-SK"],
+    "toltec-empire": ["MX-DIF","MX-HID","MX-MEX","MX-QUE","MX-TLA"]
+  }
+}

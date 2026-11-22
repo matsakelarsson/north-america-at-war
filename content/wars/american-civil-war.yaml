@@ -1,0 +1,79 @@
+{
+  "id": "american-civil-war",
+  "name": "American Civil War",
+  "start": "1861",
+  "end": "1865",
+  "tier": "B",
+  "summary": "The United States fought the seceding Confederate states over the survival of the Union and slavery.",
+  "countries": [
+    "us"
+  ],
+  "sources": [
+    {
+      "title": "American Civil War — Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/American-Civil-War"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Fort Sumter",
+      "date": "1861",
+      "when": "1861",
+      "borders": "1861",
+      "body": [
+        "Confederate forces bombarded Fort Sumter in Charleston harbor, beginning the war."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Fort Sumter",
+          "lonlat": [
+            -79.87,
+            32.75
+          ],
+          "text": "Confederate forces bombarded Fort Sumter in Charleston harbor, beginning the war."
+        }
+      ]
+    },
+    {
+      "title": "Gettysburg and Vicksburg",
+      "date": "1863",
+      "when": "1863",
+      "borders": "1863",
+      "body": [
+        "Union victories at Gettysburg and Vicksburg marked a turning point; the latter opened the Mississippi River to Union control."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Gettysburg",
+          "lonlat": [
+            -77.23,
+            39.83
+          ],
+          "text": "Union victories at Gettysburg and Vicksburg marked a turning point; the latter opened the Mississippi River to Union control."
+        }
+      ]
+    },
+    {
+      "title": "War ends",
+      "date": "1865",
+      "when": "1865",
+      "borders": "1865",
+      "body": [
+        "Robert E. Lee surrendered his army at Appomattox in April. Other Confederate armies surrendered in the following weeks."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Appomattox",
+          "lonlat": [
+            -78.8,
+            37.38
+          ],
+          "text": "Robert E. Lee surrendered his army at Appomattox in April. Other Confederate armies surrendered in the following weeks."
+        }
+      ]
+    }
+  ]
+}

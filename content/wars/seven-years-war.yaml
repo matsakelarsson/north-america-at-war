@@ -1,0 +1,82 @@
+{
+  "id": "seven-years-war",
+  "name": "French and Indian War",
+  "start": "1754",
+  "end": "1763",
+  "tier": "B",
+  "summary": "The North American theater of a wider imperial war drew British and French forces and many Indigenous nations into conflict.",
+  "countries": [
+    "us",
+    "ca",
+    "gb",
+    "fr"
+  ],
+  "sources": [
+    {
+      "title": "French and Indian War — Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/French-and-Indian-War"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Opening clashes",
+      "date": "1754",
+      "when": "1754",
+      "borders": "1754",
+      "body": [
+        "Fighting began in the Ohio country as British and French claims collided. Indigenous nations pursued their own alliances and interests."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Fort Necessity",
+          "lonlat": [
+            -79.59,
+            39.81
+          ],
+          "text": "Fighting began in the Ohio country as British and French claims collided. Indigenous nations pursued their own alliances and interests."
+        }
+      ]
+    },
+    {
+      "title": "Quebec falls",
+      "date": "1759",
+      "when": "1759",
+      "borders": "1759",
+      "body": [
+        "British forces defeated the French outside Quebec; Montreal surrendered the following year."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Battle of the Plains of Abraham",
+          "lonlat": [
+            -71.23,
+            46.8
+          ],
+          "text": "British forces defeated the French outside Quebec; Montreal surrendered the following year."
+        }
+      ]
+    },
+    {
+      "title": "Treaty of Paris",
+      "date": "1763",
+      "when": "1763",
+      "borders": "1763",
+      "body": [
+        "France ceded Canada and other territories to Britain and Spain in the peace settlement."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Quebec",
+          "lonlat": [
+            -71.21,
+            46.81
+          ],
+          "text": "France ceded Canada and other territories to Britain and Spain in the peace settlement."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "haitian-revolution",
+  "name": "Haitian Revolution",
+  "start": "1791",
+  "end": "1804",
+  "tier": "B",
+  "summary": "An uprising of enslaved people in Saint-Domingue led to the abolition of slavery and the independence of Haiti.",
+  "countries": [
+    "ht",
+    "fr"
+  ],
+  "sources": [
+    {
+      "title": "Haitian Revolution — Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Haitian-Revolution"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Revolt in Saint-Domingue",
+      "date": "1791",
+      "when": "1791",
+      "borders": "1791",
+      "body": [
+        "Enslaved people rose against the French colonial system in the northern plain."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Cap-Français",
+          "lonlat": [
+            -72.2,
+            19.76
+          ],
+          "text": "Enslaved people rose against the French colonial system in the northern plain."
+        }
+      ]
+    },
+    {
+      "title": "Independence",
+      "date": "1804",
+      "when": "1804",
+      "borders": "1804",
+      "body": [
+        "After years of conflict and a failed French expedition, Haiti declared independence on 1 January 1804."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Gonaïves",
+          "lonlat": [
+            -72.68,
+            19.45
+          ],
+          "text": "After years of conflict and a failed French expedition, Haiti declared independence on 1 January 1804."
+        }
+      ]
+    }
+  ]
+}

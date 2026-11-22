@@ -1,0 +1,42 @@
+name: Correction
+description: A wrong border, date, name or fact on the map
+title: "Correction: "
+labels: [correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. Please check [What the map shows](https://github.com/matsakelarsson/europe-at-war#what-the-map-shows) first: occupations, breakaway regions and front lines are drawn in a war's steps, not on the base map. To argue for changing that rule, start a [discussion](https://github.com/matsakelarsson/europe-at-war/discussions) instead.
+  - type: input
+    id: where
+    attributes:
+      label: Link to the map
+      description: Copy the address bar at the year or war step, for example https://matsakelarsson.github.io/europe-at-war/#/war/scanian-war/3
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: What it should be
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: At least one source a reader can open, such as a book with page numbers, an academic or museum site, or a Wikipedia article with the section.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before you send
+      options:
+        - label: I have read What the map shows, and this correction follows those rules.
+          required: true

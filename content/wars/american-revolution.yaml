@@ -1,0 +1,82 @@
+{
+  "id": "american-revolution",
+  "name": "American Revolutionary War",
+  "start": "1775",
+  "end": "1783",
+  "tier": "B",
+  "summary": "Thirteen British colonies fought for independence, with crucial military and financial assistance from France and other allies.",
+  "countries": [
+    "us",
+    "gb",
+    "fr",
+    "ca"
+  ],
+  "sources": [
+    {
+      "title": "American Revolutionary War — Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/American-Revolution"
+    }
+  ],
+  "steps": [
+    {
+      "title": "War begins",
+      "date": "1775",
+      "when": "1775",
+      "borders": "1775",
+      "body": [
+        "Fighting at Lexington and Concord opened the war between British troops and colonial militias."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Lexington",
+          "lonlat": [
+            -71.23,
+            42.45
+          ],
+          "text": "Fighting at Lexington and Concord opened the war between British troops and colonial militias."
+        }
+      ]
+    },
+    {
+      "title": "Independence and alliance",
+      "date": "1776",
+      "when": "1776",
+      "borders": "1776",
+      "body": [
+        "The Continental Congress declared independence in 1776. France formally allied with the United States in 1778."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Philadelphia",
+          "lonlat": [
+            -75.16,
+            39.95
+          ],
+          "text": "The Continental Congress declared independence in 1776. France formally allied with the United States in 1778."
+        }
+      ]
+    },
+    {
+      "title": "Yorktown and peace",
+      "date": "1781",
+      "when": "1781",
+      "borders": "1781",
+      "body": [
+        "American and French forces besieged a British army at Yorktown. Britain recognized American independence in the 1783 peace treaty."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Yorktown",
+          "lonlat": [
+            -76.51,
+            37.24
+          ],
+          "text": "American and French forces besieged a British army at Yorktown. Britain recognized American independence in the 1783 peace treaty."
+        }
+      ]
+    }
+  ]
+}

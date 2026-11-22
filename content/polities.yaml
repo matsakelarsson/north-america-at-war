@@ -1,0 +1,42 @@
+- id: united-states
+  name: United States
+  color: "#a5bfdd"
+  ink: blue
+  countries: [us]
+  aliases: [USA, United States, United States of America]
+- id: britain
+  name: Britain
+  color: "#e6aca6"
+  ink: red
+  countries: [gb, ca]
+  aliases: [United Kingdom, Great Britain, GBR, England]
+- id: france
+  name: France
+  color: "#c5c9ec"
+  ink: blue
+  countries: [fr, ca]
+  aliases: [France, FRA]
+- id: spain
+  name: Spain
+  color: "#ecd2b8"
+  ink: gold
+  countries: [es, mx]
+  aliases: [Spain, ESP]
+- id: mexico
+  name: Mexico
+  color: "#b5dbd6"
+  ink: green
+  countries: [mx]
+  aliases: [Mexico, MEX]
+- id: canada
+  name: Canada
+  color: "#e6aca6"
+  ink: red
+  countries: [ca]
+  aliases: [Canada, CAN]
+- id: confederacy
+  name: Confederate States
+  color: "#d5c8ba"
+  ink: brown
+  countries: [us]
+  aliases: [Confederate States of America]

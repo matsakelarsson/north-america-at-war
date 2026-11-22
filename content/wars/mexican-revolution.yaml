@@ -1,0 +1,59 @@
+{
+  "id": "mexican-revolution",
+  "name": "Mexican Revolution",
+  "start": "1910",
+  "end": "1920",
+  "tier": "B",
+  "summary": "A complex revolution over dictatorship, land and political power remade Mexico through a decade of armed struggle.",
+  "countries": [
+    "mx"
+  ],
+  "sources": [
+    {
+      "title": "Mexican Revolution — Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Mexican-Revolution"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Revolt against Díaz",
+      "date": "1910",
+      "when": "1910",
+      "borders": "1910",
+      "body": [
+        "Francisco Madero called for an uprising against President Porfirio Díaz after a disputed election."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Ciudad Juárez",
+          "lonlat": [
+            -106.49,
+            31.74
+          ],
+          "text": "Francisco Madero called for an uprising against President Porfirio Díaz after a disputed election."
+        }
+      ]
+    },
+    {
+      "title": "Constitution",
+      "date": "1917",
+      "when": "1917",
+      "borders": "1917",
+      "body": [
+        "A new constitution established major political and social reforms while armed conflict continued."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Querétaro",
+          "lonlat": [
+            -100.39,
+            20.59
+          ],
+          "text": "A new constitution established major political and social reforms while armed conflict continued."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "texas-revolution",
+  "name": "Texas Revolution",
+  "start": "1835",
+  "end": "1836",
+  "tier": "B",
+  "summary": "Settlers and Tejanos rebelled against the Mexican government, resulting in the Republic of Texas.",
+  "countries": [
+    "us",
+    "mx"
+  ],
+  "sources": [
+    {
+      "title": "Texas Revolution — Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Texas-Revolution"
+    }
+  ],
+  "steps": [
+    {
+      "title": "The Alamo",
+      "date": "1836",
+      "when": "1836",
+      "borders": "1836",
+      "body": [
+        "Mexican forces under Antonio López de Santa Anna captured the Alamo after a siege."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "The Alamo",
+          "lonlat": [
+            -98.49,
+            29.43
+          ],
+          "text": "Mexican forces under Antonio López de Santa Anna captured the Alamo after a siege."
+        }
+      ]
+    },
+    {
+      "title": "San Jacinto",
+      "date": "1836",
+      "when": "1836",
+      "borders": "1836",
+      "body": [
+        "Texian forces defeated Santa Anna at San Jacinto, securing the republic’s de facto independence."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "San Jacinto",
+          "lonlat": [
+            -95.09,
+            29.75
+          ],
+          "text": "Texian forces defeated Santa Anna at San Jacinto, securing the republic’s de facto independence."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ideas, questions and discussion
+    url: https://github.com/matsakelarsson/europe-at-war/discussions
+    about: Suggest a war, ask a question, or discuss how the map shows disputed borders.
+  - name: Security problem
+    url: https://github.com/matsakelarsson/europe-at-war/security/advisories/new
+    about: Please report it privately, not as an issue.

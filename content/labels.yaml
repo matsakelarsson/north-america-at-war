@@ -1,0 +1,6 @@
+refWidth: 4000
+labels:
+  - {text: Pacific Ocean, lonlat: [-145, 30], class: lbl-sea}
+  - {text: Atlantic Ocean, lonlat: [-55, 35], class: lbl-sea}
+  - {text: Gulf of Mexico, lonlat: [-90, 25], class: lbl-sea}
+  - {text: Caribbean Sea, lonlat: [-75, 16], class: lbl-sea}

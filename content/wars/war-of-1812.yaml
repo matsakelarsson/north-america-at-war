@@ -1,0 +1,81 @@
+{
+  "id": "war-of-1812",
+  "name": "War of 1812",
+  "start": "1812",
+  "end": "1815",
+  "tier": "B",
+  "summary": "The United States fought Britain and its Indigenous allies across the Canadian border, the Great Lakes and the Atlantic world.",
+  "countries": [
+    "us",
+    "ca",
+    "gb"
+  ],
+  "sources": [
+    {
+      "title": "War of 1812 — Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/War-of-1812"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Invasion and resistance",
+      "date": "1812",
+      "when": "1812",
+      "borders": "1812",
+      "body": [
+        "American invasions of Upper Canada met British, Canadian and Indigenous resistance; Detroit surrendered in August."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Detroit",
+          "lonlat": [
+            -83.05,
+            42.33
+          ],
+          "text": "American invasions of Upper Canada met British, Canadian and Indigenous resistance; Detroit surrendered in August."
+        }
+      ]
+    },
+    {
+      "title": "Washington and Baltimore",
+      "date": "1814",
+      "when": "1814",
+      "borders": "1814",
+      "body": [
+        "British forces burned public buildings in Washington before their attack on Baltimore was repelled."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "Baltimore",
+          "lonlat": [
+            -76.61,
+            39.29
+          ],
+          "text": "British forces burned public buildings in Washington before their attack on Baltimore was repelled."
+        }
+      ]
+    },
+    {
+      "title": "New Orleans and peace",
+      "date": "1815",
+      "when": "1815",
+      "borders": "1815",
+      "body": [
+        "The Treaty of Ghent had been signed before American forces defeated a British attack at New Orleans; news traveled slowly across the Atlantic."
+      ],
+      "markers": [
+        {
+          "kind": "event",
+          "name": "New Orleans",
+          "lonlat": [
+            -90.07,
+            29.95
+          ],
+          "text": "The Treaty of Ghent had been signed before American forces defeated a British attack at New Orleans; news traveled slowly across the Atlantic."
+        }
+      ]
+    }
+  ]
+}
