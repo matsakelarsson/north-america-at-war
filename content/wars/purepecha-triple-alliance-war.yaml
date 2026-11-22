@@ -1,0 +1,32 @@
+id: purepecha-triple-alliance-war
+name: Triple Alliance war with the Purépecha
+start: 1476
+end: 1479
+date_label: Late 1470s
+early_map: true
+tier: B
+countries: [mx]
+summary: Axayácatl’s forces fought the Purépecha state on its eastern frontier. Accounts place major fighting around Taximaroa and differ on the precise sequence and dates.
+sources:
+  - title: Felipe Castro Gutiérrez · Otomíes y mazahuas de Michoacán
+    url: https://www.scielo.org.mx/scielo.php?lng=es&pid=S0188-28722012000100002&script=sci_arttext
+  - title: Ross Hassig · Aztec Warfare, Goals and Battlefield Comportment
+    url: https://www.latinamericanstudies.org/aztecs/aztec-warfare.pdf
+  - title: Jay Silverstein · The Oztuma–Cutzamala Project
+    url: https://etda.libraries.psu.edu/files/final_submissions/2657
+steps:
+  - title: Fighting around Taximaroa
+    date: Late 1470s
+    when: 1478
+    borders: 1480
+    body:
+      - Axayácatl campaigned against the Purépecha state west of the Toluca Valley. Accounts give different dates for fighting around Taximaroa, in the area of present-day Ciudad Hidalgo.
+      - The Purépecha retained their independence. Fortifications, settlements and colonial-era accounts show a contested frontier where local communities had their own allegiances. The base map shows the frontier as reconstructed for the decades after this campaign.
+    facts:
+      - [Evidence, Historical accounts and regional archaeology]
+      - [Chronology, Late 1470s]
+    markers:
+      - kind: battle
+        name: Taximaroa vicinity
+        lonlat: [-100.55, 19.69]
+        text: Historical accounts place fighting around Taximaroa. The pin marks the locality.

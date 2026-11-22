@@ -46,6 +46,7 @@ function dateKey(d) {
 }
 const yearOf = (k) => (k ? parseInt(k.slice(0, 4), 10) : null);
 function fmtYears(w) {
+  if (w.dateLabel) return w.dateLabel;
   const start = number(yearOf(w.sk));
   const end = w.end === 'ongoing' ? t('today') : number(yearOf(w.ek));
   return start === end ? start : t('yearRange', { start, end });
@@ -187,6 +188,18 @@ const REF_W = LBL.refWidth || 2000;
 
 // ---------- Border timeline ----------
 const T = B.timeline;
+const early = B.early;
+const colonial = B.colonial;
+const territories = B.territories;
+function powerName(power, date) {
+  if (power === 'britain' && date < '1707-05-01') return t('powerEngland');
+  if (power === 'britain' && date >= '1801-01-01') return t('powerUnitedKingdom');
+  if (power === 'denmark' && date < '1814-01-14') return t('powerDenmarkNorway');
+  if (power === 'dutch' && date >= '1815-03-16') return t('powerNetherlands');
+  return B.powers[power].name;
+}
+const laterConflicts = B.laterConflicts;
+const geographyAt = key => key < early.until ? early : key < colonial.until ? colonial : null;
 const snaps = new Map();
 function stateIndex(key) {
   let lo = 0, hi = T.length - 1, ans = -1;
@@ -230,6 +243,11 @@ const atomEls = new Array(NA), atomFill = new Array(NA).fill('');
 for (let i = 0; i < NA; i++) {
   atomEls[i] = el('path', { d: pathD(topojson.feature(topo, geoms[i]).geometry), class: 'atom' }, gAtoms);
 }
+const landOutline = pathD(topojson.mesh(topo, topo.objects.atoms, (a, b) => a === b));
+const landClip = el('clipPath', { id: 'land-clip' }, defs);
+el('path', { d: pathD(topojson.merge(topo, geoms)), 'clip-rule': 'evenodd' }, landClip);
+const gSettlement = el('g', { 'clip-path': 'url(#land-clip)', 'aria-hidden': 'true' }, svg);
+const gJurisdictions = el('g', { 'clip-path': 'url(#land-clip)', 'aria-hidden': 'true' }, svg);
 let reliefImage;
 if (B.reliefBounds) {
   const [x, y, width, height] = B.reliefBounds;
@@ -257,12 +275,25 @@ if (topo.objects.rivers) {
   el('path', { d: major, class: 'rivers major', 'aria-hidden': 'true' }, svg);
 }
 if (topo.objects.lakes) el('path', { d: pathD(topojson.merge(topo, topo.objects.lakes.geometries)), class: 'lakes', 'aria-hidden': 'true' }, svg);
+const frontierFade = el('radialGradient', { id: 'frontier-fade' }, defs);
+el('stop', { offset: '0%', 'stop-opacity': 0.44 }, frontierFade);
+el('stop', { offset: '100%', 'stop-opacity': 0 }, frontierFade);
+for (const ink of new Set(['teal', ...territories.areas.filter(a => a.kind === 'influence').map(a => a.ink)])) {
+  const gradient = el('radialGradient', { id: `influence-${ink}`, class: `influence-gradient side-${ink}` }, defs);
+  el('stop', { offset: '0%', 'stop-opacity': 0.39 }, gradient);
+  el('stop', { offset: '48%', 'stop-opacity': 0.22 }, gradient);
+  el('stop', { offset: '100%', 'stop-opacity': 0 }, gradient);
+}
+const gFrontiers = el('g', { class: 'early-frontiers', 'aria-hidden': 'true' }, svg);
 const gOv = el('g', { 'aria-hidden': 'true' }, svg);
 const blineEl = el('path', { class: 'bline', 'aria-hidden': 'true' }, svg);
-el('path', { d: pathD(topojson.mesh(topo, topo.objects.atoms, (a, b) => a === b)), class: 'coast', 'aria-hidden': 'true' }, svg);
+const stateLines = el('path', { class: 'state-boundaries', 'aria-hidden': 'true' }, svg);
+el('path', { d: landOutline, class: 'coast', 'aria-hidden': 'true' }, svg);
+const gTreaty = el('g', { 'aria-hidden': 'true' }, svg);
 const gLbl = el('g', { class: 'lbl', 'aria-hidden': 'true' }, svg);
 const gPLbl = el('g', null, gLbl);
 const gCaps = el('g', { role: 'group', 'aria-label': t('capitals') }, svg);
+const gEarly = el('g', { role: 'group', 'aria-label': t('earlyMap') }, svg);
 const gArrows = el('g', { 'aria-hidden': 'true', 'pointer-events': 'none' }, svg);
 const gMarkers = el('g', null, svg);
 
@@ -367,6 +398,7 @@ function apply(v, viewportOnly = false) {
   svg.setAttribute('viewBox', v.map((n) => n.toFixed(2)).join(' '));
   const cw = svg.clientWidth || 1;
   syncCapitals(v, v[2] / cw);
+  syncEarlyViewport(v, v[2] / cw);
   if (viewportOnly && S === v[2] / cw) return;
   const scaleChanged = S !== v[2] / cw || !gCaps.style.getPropertyValue('--capital-scale');
   S = v[2] / cw;
@@ -416,7 +448,34 @@ function cullLabels() {
   const px = it => frame.left + (it.x-vb[0])/S;
   const py = it => frame.top + (it.y-vb[1])/S;
   for (const it of capitalNodes.values()) visit({left:px(it)-4, right:px(it)+4, top:py(it)-4, bottom:py(it)+4}, false);
-  // Batch geometry reads before hiding rejected text.
+  for (const { g, xy: [x, y] } of earlyNodes.values()) {
+    if (g.style.display === 'none') continue;
+    const left = frame.left + (x - vb[0]) / S, top = frame.top + (y - vb[1]) / S;
+    visit({ left: left - 5, right: left + 5, top: top - 5, bottom: top + 5 }, false);
+  }
+  // Measure the labels together, then try other sides of each map symbol.
+  const earlyText = earlyLabels.map(f => [f, f.label.getBoundingClientRect()]);
+  for (const [f, { width, height }] of earlyText) {
+    const [x, y] = f.xy;
+    const cx = frame.left + (x - vb[0]) / S, cy = frame.top + (y - vb[1]) / S;
+    let placed = false;
+    for (const dir of ['r', 'l', 't', 'b']) {
+      const a = labelAttrs(dir);
+      if (dir === 'b') a.y += 4;
+      if (dir === 't') a.y -= 3;
+      const left = cx + a.x - (a.a === 'middle' ? width / 2 : a.a === 'end' ? width : 0);
+      const bottom = cy + a.y + 2;
+      const r = { left: left - 2, right: left + width + 2, top: bottom - height, bottom };
+      if (r.left < frame.left || r.top < frame.top || r.right > frame.right || r.bottom > frame.bottom || visit(r, true)) continue;
+      f.label.setAttribute('text-anchor', a.a);
+      f.label.setAttribute('x', a.x);
+      f.label.setAttribute('y', a.y);
+      visit(r, false);
+      placed = true;
+      break;
+    }
+    if (!placed) f.label.style.display = 'none';
+  }
   const candidates = [...polScalables, ...staticLabels].filter(l => l.g.style.display !== 'none')
     .map(l => [l, l.g.getBoundingClientRect()]);
   for (const [l,r] of candidates) {
@@ -660,7 +719,8 @@ function placeLabels() {
 }
 /** Show the border state at `key`; polity names follow `nameKey` (a step's own date). */
 function setBorders(key, focus, nameKey = key, deferLabels = false) {
-  const si = stateIndex(key);
+  updateStateBoundaries(key);
+  const si = geographyAt(key) ? -1 : stateIndex(key);
   const own = ownersAt(si);
   const fk = focus ? [...focus].sort((a, b) => a - b).join(',') : '';
   capitalFocus = focus;
@@ -685,15 +745,83 @@ function setBorders(key, focus, nameKey = key, deferLabels = false) {
   const changed = si !== curSi;
   curSi = si; curFocusKey = fk; curOwners = own;
   if (changed) {
-    if (!borderPaths.has(si)) {
-      if (borderPaths.size >= 40) borderPaths.delete(borderPaths.keys().next().value);
-      borderPaths.set(si, pathD(topojson.mesh(topo, topo.objects.atoms, (a, b) => a !== b && own[a.i] !== own[b.i])));
+    if (si === -1) {
+      blineEl.removeAttribute('d');
+    } else {
+      if (!borderPaths.has(si)) {
+        if (borderPaths.size >= 40) borderPaths.delete(borderPaths.keys().next().value);
+        borderPaths.set(si, pathD(topojson.mesh(topo, topo.objects.atoms, (a, b) => a !== b && own[a.i] !== own[b.i])));
+      }
+      blineEl.setAttribute('d', borderPaths.get(si));
     }
-    blineEl.setAttribute('d', borderPaths.get(si));
   }
   if (!deferLabels) placeLabels();
   return own;
 }
+const showStates = $('showStates');
+const showStateLayer = { colonial: true, states: true };
+const boundaryFiles = { colonial: 'colonial-jurisdictions.topo.json', states: 'us-states.topo.json' };
+const boundaryData = new Map(), loadingBoundaries = new Set();
+let stateKey, stateDate, stateMode, activeStateShapes, activeNewYorkPower;
+function drawStateBoundaries() {
+  const stateData = boundaryData.get(stateMode);
+  if (!stateData || !showStates.checked) {
+    stateLines.removeAttribute('d');
+    gJurisdictions.replaceChildren();
+    activeStateShapes = null;
+    return;
+  }
+  const active = stateData.objects[stateMode].geometries.filter(g => g.properties.start <= stateDate && g.properties.end >= stateDate);
+  const newYorkPower = stateDate >= 16730809 && stateDate < 16741110 ? 'dutch' : 'britain';
+  if (activeNewYorkPower === newYorkPower && activeStateShapes?.length === active.length && active.every((g, i) => g === activeStateShapes[i])) return;
+  activeStateShapes = active;
+  activeNewYorkPower = newYorkPower;
+  gJurisdictions.replaceChildren();
+  if (stateMode === 'colonial') {
+    stateLines.removeAttribute('d');
+    for (const g of active) {
+      const name = g.properties.name;
+      const power = name === 'Vermont Republic' ? null : name === 'New York Colony' ? newYorkPower
+        : name.endsWith(' Colony') || name === 'Province of Carolina' ? 'britain' : 'usa';
+      el('path', {
+        class: `colonial-jurisdiction side-${power ? B.powers[power].ink : 'slate'}`,
+        d: pathD(topojson.feature(stateData, g).geometry), 'data-jurisdiction': name, 'data-power': power || '',
+      }, gJurisdictions);
+    }
+  } else {
+    stateLines.setAttribute('d', pathD(topojson.mesh(stateData, { type: 'GeometryCollection', geometries: active })));
+  }
+}
+function updateStateBoundaries(key) {
+  stateKey = key;
+  stateDate = Number(key.replaceAll('-', ''));
+  const next = stateDate < 16290000 || stateDate > 20001231 ? null : stateDate < 17830903 ? 'colonial' : 'states';
+  if (next !== stateMode) {
+    stateMode = next;
+    $('stateKey').hidden = !next;
+    if (next) {
+      showStates.checked = showStateLayer[next];
+      $('stateName').textContent = t(next === 'colonial' ? 'colonialJurisdictions' : 'stateBorders');
+      $('stateSource').textContent = t(next === 'colonial' ? 'colonialJurisdictionSource' : 'stateSource');
+      $('statesError').hidden = true;
+    }
+  }
+  if (next && showStates.checked && !boundaryData.has(next) && !loadingBoundaries.has(next)) {
+    $('statesError').hidden = true;
+    loadingBoundaries.add(next);
+    fetchJSON(`data/${boundaryFiles[next]}`).then(data => {
+      boundaryData.set(next, data);
+      drawStateBoundaries();
+    }).catch(() => { if (stateMode === next && showStates.checked) $('statesError').hidden = false; })
+      .finally(() => loadingBoundaries.delete(next));
+  }
+  drawStateBoundaries();
+}
+showStates.addEventListener('change', () => {
+  if (!stateMode) return;
+  showStateLayer[stateMode] = showStates.checked;
+  updateStateBoundaries(stateKey);
+});
 function swatch(fill, stroke) {
   return `<svg width="18" height="12" aria-hidden="true"><rect x="0.5" y="0.5" width="17" height="11" rx="2" style="fill:${fill};stroke:${stroke || 'var(--line)'}"/></svg>`;
 }
@@ -711,8 +839,13 @@ function otherListHTML(box, exclude) {
 }
 
 // ---------- Popover ----------
-let selected = null, popItems = [];
-function closePop() { pop.hidden = true; if (selected) { selected.classList.remove('sel'); selected = null; } }
+let selected = null, popItems = [], popTrigger = null;
+function closePop(restoreFocus = false) {
+  pop.hidden = true;
+  if (selected) { selected.classList.remove('sel'); selected = null; }
+  if (restoreFocus) popTrigger?.focus({ preventScroll: true });
+  popTrigger = null;
+}
 function openPop(mi) {
   const it = popItems[mi];
   if (!it) return;
@@ -730,12 +863,14 @@ function openCapital(it, point = null) {
   const nearby = point ? nearbyCapitals(...point, 12 * S).filter(other => other !== it) : [];
   showPopover(it.g, `<p class="pk">${esc(t('capital'))}</p>` + seatDetails([it, ...nearby]));
 }
-function showPopover(g, html) {
+function showPopover(g, html, trigger = null) {
   if (selected) selected.classList.remove('sel');
   selected = g; g.classList.add('sel');
+  popTrigger = trigger;
   pop.innerHTML = `<button type="button" class="x" aria-label="${esc(t('close'))}">×</button>` + html;
   pop.hidden = false;
-  pop.querySelector('.x').addEventListener('click', (e) => { e.stopPropagation(); closePop(); });
+  const close = pop.querySelector('.x');
+  close.addEventListener('click', e => { e.stopPropagation(); closePop(true); });
   const r = g.querySelector('.hit').getBoundingClientRect(), wr = wrap.getBoundingClientRect();
   const cx = r.left + r.width / 2 - wr.left, cy = r.top + r.height / 2 - wr.top;
   const pw = pop.offsetWidth, ph = pop.offsetHeight;
@@ -743,9 +878,187 @@ function showPopover(g, html) {
   let top = cy - ph - 18;
   if (top < 8) top = Math.min(cy + 18, svg.clientHeight - ph - 8);
   pop.style.left = left + 'px'; pop.style.top = Math.max(8, top) + 'px';
+  if (trigger) close.focus({ preventScroll: true });
 }
 pop.addEventListener('click', (e) => e.stopPropagation());
 svg.addEventListener('click', () => { if (!dragMoved) closePop(); });
+
+// ---------- Early geography ----------
+let earlyPeriod = null, earlyLabels = [];
+const earlyNodes = new Map();
+const earlyKinds = ['region', 'site', 'tribute', 'frontier', 'territory', 'settlement', 'fort', 'voyage', 'conflict'];
+const earlySymbol = {
+  region: '<circle r="4" class="early-region-symbol"/>',
+  site: '<circle r="3.4" class="early-site-symbol"/>',
+  tribute: '<path d="M0,-5L5,0L0,5L-5,0Z" class="early-tribute-symbol"/>',
+  frontier: '<circle r="5" class="early-frontier-symbol"/>',
+  settlement: '<circle r="3.5" class="colonial-settlement-symbol"/>',
+  fort: '<path d="M-4,-4H4V4H-4Z" class="colonial-fort-symbol"/>',
+  territory: '<path d="M-4,-4H4V4H-4Z" class="territory-symbol"/>',
+  voyage: '<path d="M0,-5L5,4H-5Z" class="voyage-symbol"/>',
+  conflict: '<circle r="6.8" class="early-conflict-symbol"/><path d="M-2.4,-2.4L2.4,2.4M-2.4,2.4L2.4,-2.4" class="early-cross"/>',
+};
+function earlyIcon(kind) {
+  return `<svg width="18" height="18" viewBox="-9 -9 18 18" aria-hidden="true">${earlySymbol[kind]}</svg>`;
+}
+function earlyKey(features, areas) {
+  const kinds = new Set(features.map(f => f.kind));
+  const symbols = earlyKinds.filter(kind => kinds.has(kind)).map(kind => `<span>${earlyIcon(kind)}${esc(t(`early.${kind}`))}</span>`);
+  if (areas.some(a => a.kind === 'settled')) symbols.push(`<span>${swatch('var(--colonial-settlement-key)')}${esc(t('colonialSettled'))}</span>`);
+  if (areas.some(a => a.kind === 'treaty')) symbols.push(`<span><svg width="18" height="12" aria-hidden="true"><path class="colonial-treaty side-purple" d="M0,6H18"/></svg>${esc(t('colonialTreaty'))}</span>`);
+  if (areas.some(a => a.kind === 'influence')) symbols.push(`<span><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="url(#influence-teal)"/></svg>${esc(t('influenceReach'))}</span>`);
+  return symbols.join('');
+}
+function powerKey(features, key) {
+  const displayed = new Map(features.filter(f => f.kind === 'territory').map(f => [f.powerLabel, f.ink]));
+  if (key >= '1776-07-04' && key < '1783-09-03') displayed.set(B.powers.usa.name, B.powers.usa.ink);
+  return [...displayed].map(([name, ink]) => `<span class="side-${ink}">${earlyIcon('territory')}${esc(name)}</span>`).join('');
+}
+function earlySources(data, refs) {
+  return `<ul class="early-sources">${refs.map(id => {
+    const source = data.sources[id];
+    return `<li><a href="${esc(source.url)}">${esc(source.title)}</a></li>`;
+  }).join('')}</ul>`;
+}
+function earlyDetails(f) {
+  return `<p class="pd">${f.place ? esc(f.place) + ' · ' : ''}${f.powerLabel ? esc(f.powerLabel) + ' · ' : ''}${esc(f.period)}</p>` +
+    (f.text ? `<p>${esc(f.text)}</p>` : '') +
+    (f.war ? `<p><a href="#/war/${esc(f.war)}${f.step ? '/' + f.step : ''}">${esc(t(f.data === early ? 'earlyReadStory' : 'colonialOpenMap'))}</a></p>` : '') +
+    earlySources(f.data, f.refs);
+}
+function openEarly(f, trigger = null) {
+  showPopover(f.g, `<p class="pk">${esc(t(`early.${f.kind}`))}</p><h3>${esc(f.name)}</h3>${earlyDetails(f)}`, trigger);
+}
+function showEarlyGeography(key, storyId) {
+  const data = geographyAt(key);
+  const mapData = data || laterConflicts;
+  const year = yearOf(key);
+  const layers = [mapData, territories];
+  const areas = layers.flatMap(layer => (layer.areas || []).filter(a => a.start <= key && a.end > key).map(a => ({ ...a, data: layer })));
+  const features = layers.flatMap(layer => layer.features.filter(f =>
+    (f.start ? f.start <= key && f.end > key : year >= f.from && year <= f.to) && (!storyId || f.war !== storyId)
+  ).map(f => ({
+    ...f, data: layer, ...(f.power ? { powerLabel: powerName(f.power, key), ink: B.powers[f.power].ink } : {}),
+  }))).flatMap(f => {
+    const matched = (f.events || []).map((event, index) => ({ event, step: index + 1 }))
+      .filter(({ event }) => event.xy && yearOf(event.key) === year && event.key <= key).reverse();
+    if (!matched.length) return [f];
+    const seenSites = new Set();
+    return (storyId ? matched.slice(0, 1) : matched).filter(({ event }) => {
+      const point = event.xy.join(',');
+      if (seenSites.has(point)) return false;
+      seenSites.add(point);
+      return true;
+    }).map(({ event, step }, i) => ({
+      ...f, id: `${f.id}-${step}`, xy: event.xy, period: formatDate(event.date || event.key.slice(0, 4)),
+      step, place: event.place, detail: i > 0,
+    }));
+  });
+  const signature = JSON.stringify([data?.until, storyId, features.map(f => [f.id, f.powerLabel]), areas.map(a => [a.name, a.start])]);
+  if (signature === earlyPeriod) return { features, areas };
+  earlyPeriod = signature;
+  const nextIds = new Set(features.map(f => f.id));
+  for (const [id, f] of earlyNodes) if (!nextIds.has(id)) {
+    if (selected === f.g) closePop();
+    f.g.remove();
+    earlyNodes.delete(id);
+  }
+  gSettlement.replaceChildren();
+  gTreaty.replaceChildren();
+  for (const a of areas) {
+    if (a.kind === 'influence') {
+      for (const [cx, cy] of a.anchors) el('circle', { cx, cy, r: a.radius, fill: `url(#influence-${a.ink})`, 'data-area': a.name }, gSettlement);
+    } else {
+      el('path', {
+        class: `colonial-${a.kind} side-${a.ink}`, d: a.d, 'data-area': a.name, ...(a.power ? { 'data-power': a.power } : {}),
+      }, a.kind === 'treaty' ? gTreaty : gSettlement);
+    }
+  }
+  gFrontiers.replaceChildren();
+  for (const f of features) {
+    for (const [cx, cy] of f.points || []) el('circle', { cx, cy, r: 82, fill: 'url(#frontier-fade)' }, gFrontiers);
+    const prior = earlyNodes.get(f.id);
+    const labelText = [f.name, f.powerLabel || t(`early.${f.kind}`), f.period].join(' · ');
+    if (prior) {
+      if (prior.powerLabel !== f.powerLabel) prior.g.setAttribute('aria-label', labelText);
+      prior.powerLabel = f.powerLabel;
+      continue;
+    }
+    const g = el('g', { class: `early-marker early-${f.kind}${f.ink ? ` side-${f.ink}` : ''}`, role: 'button', tabindex: 0,
+      'aria-label': labelText }, gEarly);
+    g.innerHTML = '<circle r="11" class="hit"/><circle r="8.5" class="ring"/>' + earlySymbol[f.kind];
+    const label = el('text', { class: 'early-label', x: 9, y: 3.5 }, g);
+    label.textContent = f.place || f.name;
+    const node = { ...f, g, label };
+    earlyNodes.set(f.id, node);
+    g.style.transform = `translate(${f.xy[0]}px, ${f.xy[1]}px) scale(var(--early-scale, 1))`;
+    g.addEventListener('click', e => { e.stopPropagation(); if (!dragMoved) openEarly(node); });
+    g.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEarly(node, g); }
+    });
+  }
+  const panel = $('earlyMap');
+  const hasTerritories = features.some(f => f.data === territories);
+  panel.hidden = Boolean(storyId) || !(data || hasTerritories);
+  wrap.querySelector('.capital-key').hidden = Boolean(data);
+  if (!panel.hidden) {
+    const isColonial = data === colonial;
+    $('earlyTitle').textContent = t(isColonial ? 'colonialMap' : data ? 'earlyMap' : 'territoriesMap');
+    $('earlyMapNote').textContent = t(isColonial || data === null ? 'colonialNote' : 'earlyNote');
+    $('geographyMethod').textContent = t(isColonial || data === null ? 'colonialMethodText' : 'earlyMethodText');
+    $('geographySources').innerHTML = (data ? earlySources(data, data.methods) : '') + (hasTerritories ? earlySources(territories, territories.methods) : '');
+    $('geographyLines').innerHTML = areas.filter(a => a.kind === 'treaty' || a.kind === 'influence').map(a =>
+      `<details><summary>${esc(a.name)}</summary>${earlySources(a.data, a.refs)}</details>`).join('');
+    $('earlyLegend').innerHTML = earlyKey(features, areas);
+    const powers = powerKey(features, key);
+    $('powerLegend').innerHTML = powers;
+    $('powerLegend').hidden = !powers;
+    $('regionViews').hidden = !features.some(f => f.kind === 'territory');
+    const places = $('earlyPlaces');
+    const opened = new Set([...places.querySelectorAll('details[open]')].map(d => d.dataset.place));
+    places.innerHTML = features.map(f => `<details data-place="${esc(f.id)}"${opened.has(f.id) ? ' open' : ''}>
+      <summary${f.ink ? ` class="side-${f.ink}"` : ''}>${earlyIcon(f.kind)}${esc(f.detail && f.place ? f.place : f.name)}${f.powerLabel ? ' · ' + esc(f.powerLabel) : ''}</summary>${earlyDetails(f)}
+      <button type="button" class="chip" data-place="${esc(f.id)}">${esc(t('earlyLocate'))}</button></details>`).join('');
+  }
+  return { features, areas };
+}
+function syncEarlyViewport([x, y, w, h], scale) {
+  if (!earlyNodes.size) return;
+  const width = w / scale;
+  gEarly.style.setProperty('--early-scale', scale.toFixed(4));
+  const visible = [];
+  for (const f of earlyNodes.values()) {
+    const [px, py] = f.xy;
+    const onMap = px > x && px < x + w && py > y && py < y + h;
+    const crowded = popItems.some(({ m }) => Math.hypot(px - m.xy[0], py - m.xy[1]) < 15 * scale);
+    const shown = onMap && !crowded && (!f.detail || scale <= 3);
+    const display = shown ? '' : 'none';
+    if (f.g.style.display !== display) f.g.style.display = display;
+    const named = shown && (scale <= 6 || width >= 450 || f.kind === 'region' || f.kind === 'conflict' || f.kind === 'territory' && scale <= 9);
+    f.label.style.display = named ? '' : 'none';
+    if (named) visible.push(f);
+  }
+  const priority = f => f.kind === 'conflict' ? 2 : f.kind === 'territory' ? 1 : 0;
+  earlyLabels = visible.sort((a, b) => priority(b) - priority(a));
+}
+$('earlyPlaces').addEventListener('click', e => {
+  const button = e.target.closest('button[data-place]');
+  const f = earlyNodes.get(button?.dataset.place);
+  if (!f) return;
+  const [x, y] = f.xy;
+  const size = Math.min(690, (svg.clientWidth || 1) * 2.5);
+  animateTo(fit([x - size / 2, y - size / 2, size, size]), 0);
+  if (wrap.getBoundingClientRect().top < 0) wrap.scrollIntoView({ block: 'start' });
+  openEarly(f, e.detail ? null : button);
+});
+$('regionViews').addEventListener('click', e => {
+  const view = B.regionViews[e.target.closest('button')?.dataset.region];
+  if (!view) return;
+  const [x, y, w, h] = view;
+  closePop();
+  animateTo(fit([x - w / 2, y - h / 2, w, h]), 400);
+  if (wrap.getBoundingClientRect().top < 0) wrap.scrollIntoView({ block: 'start' });
+});
 
 // ---------- Step layers (arrows, markers, areas) ----------
 let arrowItems = [];
@@ -833,7 +1146,16 @@ const timelineEl = yearEl.parentElement;
 const timelineStart = +yearEl.min, timelineEnd = +yearEl.max, timelineSpan = timelineEnd - timelineStart;
 const yearPrev = $('yprev'), yearNext = $('ynext');
 // The timeline can extend beyond the first and last recorded border states.
-const borderYears = [...new Set(T.map((entry) => yearOf(entry.k)))];
+const borderYears = [...new Set([
+  ...early.stops, ...colonial.stops, 1707,
+  ...early.features.filter(f => f.start && yearOf(f.end) === yearOf(f.start) + 1).map(f => yearOf(f.start)),
+  ...[...early.areas, ...colonial.areas, ...territories.areas].flatMap(a => [yearOf(a.start), yearOf(a.end)]),
+  ...territories.features.filter(f => f.kind === 'territory' || f.kind === 'voyage').flatMap(f => [yearOf(f.start), yearOf(f.end)]),
+  ...[...early.features, ...colonial.features].flatMap(f => f.events?.map(e => yearOf(e.key)) || []),
+  ...laterConflicts.stops, ...laterConflicts.features.flatMap(f => f.events.map(e => yearOf(e.key))),
+  ...B.stateYears,
+  ...T.map(entry => yearOf(entry.k)),
+])].filter(y => y >= timelineStart && y <= timelineEnd).sort((a, b) => a - b);
 const timelinePosition = (year) => ((year - timelineStart) / timelineSpan) * 100 + '%';
 for (const tick of timelineEl.querySelectorAll('.tl-ticks span')) {
   tick.style.insetInlineStart = timelinePosition(+tick.dataset.year);
@@ -917,14 +1239,20 @@ function setYear(y, opts = {}) {
   timelineEl.style.setProperty('--year-position', timelinePosition(year));
   const key = `${String(year).padStart(4, '0')}-12-31`;
   closePop();
-  setBorders(key, null, key, opts.scrub);
+  const previousEarlyPeriod = earlyPeriod;
+  showEarlyGeography(key);
+  const earlyChanged = previousEarlyPeriod !== earlyPeriod;
+  setBorders(key, null, key, opts.scrub || earlyChanged);
   if (opts.scrub) {
     svg.classList.add('scrubbing');
     syncCapitals(vb, S);
+    syncEarlyViewport(vb, S);
     scheduleLabels();
-  }
-  const si = stateIndex(key);
+  } else if (earlyChanged) placeLabels();
+  const si = geographyAt(key) ? -1 : stateIndex(key);
   $('bsrc').textContent = si >= 0 ? t('borderSource', { source: T[si].s }) : '';
+  $('bsrc').hidden = si < 0;
+  $('earlyJump').hidden = key < early.until;
   renderWarList(); markTimeline();
   const box = boxOf(fit(FRAME));
   const listKey = JSON.stringify([si, box, datedPolities.map(p => polName(p))]);
@@ -1016,7 +1344,7 @@ function renderNav(i) {
   prevBtn.disabled = i === 0;
   nextBtn.disabled = i === story.items.length - 1;
 }
-function renderLegend(war, step, own) {
+function renderLegend(war, step, { features, areas }) {
   const h = [];
   const vbox = boxOf(fit(stepBox(step)));
   const minA = ((vbox[2] - vbox[0]) * (vbox[3] - vbox[1])) / 2500;
@@ -1041,16 +1369,22 @@ function renderLegend(war, step, own) {
   for (const sid of arrowSides) { const s = sideOf(sid); h.push(`<span>${lineSw(s?.ink || 'none')}${esc(step.moveNames?.[sid] || s?.moves || (s ? t('sideMoves', { side: s.name }) : t('moves')))}</span>`); }
   const mSides = [...new Set(step.markers.filter((m) => m.kind !== 'toll' && m.kind !== 'treaty').map((m) => m.side))];
   for (const sid of mSides) { const s = sideOf(sid); h.push(`<span>${markSw('taken', s?.ink || 'none')}${esc(step.sideNames?.[sid] || s?.success || (s ? t('sideSuccess', { side: s.name }) : t('neutral')))}</span>`); }
-  legendEl.innerHTML = h.join('');
+  legendEl.innerHTML = h.join('') + earlyKey(features, areas) + powerKey(features, step.borders);
+  const data = geographyAt(step.borders);
+  $('earlyStoryNote').hidden = !data;
+  if (data) $('earlyStoryNote').textContent = t(data === colonial ? 'colonialNote' : 'earlyNote');
 }
 function renderStory(i, war, step) {
   const displayed = story;
   const N = story.items.length;
   let h = `<p class="eyebrow"><b>${esc(war.name)}</b> · ${esc(t('stepPosition', { number: count(i + 1), total: count(N) }))} · ${esc(formatDate(step.date))}</p>`;
-  h += `<h2 class="st">${esc(step.title)}</h2><div class="story">`;
-  for (const p of step.body) h += `<p>${esc(p)}</p>`;
-  if (step.link) h += `<p class="more"><a href="${esc(step.link.href)}">${esc(step.link.text)}</a></p>`;
-  h += '</div>';
+  h += `<h2 class="st">${esc(step.title)}</h2>`;
+  if (step.body.length || step.link) {
+    h += '<div class="story">';
+    for (const p of step.body) h += `<p>${esc(p)}</p>`;
+    if (step.link) h += `<p class="more"><a href="${esc(step.link.href)}">${esc(step.link.text)}</a></p>`;
+    h += '</div>';
+  }
   if (step.facts?.length) { h += '<dl class="facts">'; for (const f of step.facts) h += `<dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd>`; h += '</dl>'; }
   if (step.markers.length) {
     h += `<div class="onmap"><h3>${esc(t('onTheMap'))}</h3><div class="chips">`;
@@ -1125,10 +1459,11 @@ async function go(i, instant = false, destination = story, push = false) {
   closePop();
   cur = i;
   const focus = new Set(war.sides.flatMap((s) => s.polities));
-  const own = setBorders(step.borders, focus, step.when || step.borders, true);
+  const earlyFeatures = showEarlyGeography(step.borders, war.id);
+  setBorders(step.borders, focus, step.when || step.borders, true);
   buildStepLayers(war, step);
   renderStory(i, war, step);
-  renderLegend(war, step, own);
+  renderLegend(war, step, earlyFeatures);
   renderNav(i);
   renderFooter(war);
   targetBox = stepBox(step);
@@ -1159,7 +1494,7 @@ function openStory(kind, id, i, push = false) {
 
 // ---------- Keyboard, resize, routing ----------
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { closePop(); return; }
+  if (e.key === 'Escape') { closePop(true); return; }
   const tag = (e.target && e.target.tagName) || '';
   if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
   if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;

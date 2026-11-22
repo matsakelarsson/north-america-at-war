@@ -68,6 +68,32 @@
         <div class="tl-ticks" aria-hidden="true"><span data-year="800">800</span><span data-year="1000">1000</span><span data-year="1200">1200</span><span data-year="1400">1400</span><span data-year="1600">1600</span><span data-year="1800">1800</span><span data-year="2000">2000</span></div>
       </div>
       <p class="bsrc" id="bsrc"></p>
+      <div class="state-key" id="stateKey" hidden>
+        <label><input type="checkbox" id="showStates" checked> <span id="stateName" data-i18n="stateBorders">U.S. states and territories</span></label>
+        <a href="data/us-states.LICENSE.md" id="stateSource" data-i18n="stateSource">Newberry Library · 1783–2000</a>
+        <span id="statesError" data-i18n="stateError" hidden>State boundaries could not be loaded. Toggle to retry.</span>
+      </div>
+      <p class="early-jump" id="earlyJump" hidden><a href="#/year/1491" data-i18n="earlyJump">Explore North America in 1491</a></p>
+      <section class="early-map" id="earlyMap" aria-labelledby="earlyTitle" hidden>
+        <h2 id="earlyTitle" data-i18n="earlyMap">Early North America</h2>
+        <div class="region-views" id="regionViews" hidden>
+          <button type="button" class="chip" data-region="atlantic" data-i18n="atlanticView">Atlantic colonies</button>
+          <button type="button" class="chip" data-region="caribbean" data-i18n="caribbeanView">Caribbean</button>
+        </div>
+        <div class="legend" id="earlyLegend" role="group" aria-label="Map key" data-i18n-label="mapKey"></div>
+        <div class="legend power-legend" id="powerLegend" role="group" aria-label="Colonial powers" data-i18n-label="colonialPowers" hidden></div>
+        <p id="earlyMapNote" data-i18n="earlyNote">The map shows selected places and relationships. Unmarked areas include inhabited homelands beyond this coverage.</p>
+        <details id="earlyMethods">
+          <summary data-i18n="earlyMethods">How this map was made</summary>
+          <p id="geographyMethod" data-i18n="earlyMethodText">Names and sites locate homelands, communities and political centres. Tribute symbols mark documented relationships. Soft shading marks the vicinity of documented frontier sites.</p>
+          <div id="geographySources"></div>
+        </details>
+        <details>
+          <summary data-i18n="earlyPlaces">Places and sources</summary>
+          <div class="early-places" id="geographyLines"></div>
+          <div class="early-places" id="earlyPlaces"></div>
+        </details>
+      </section>
       <div class="filters">
         <label class="search"><span class="vh" data-i18n="searchLabel">Search wars, battles and treaties</span><input type="search" id="q" placeholder="Search wars, battles, treaties" data-i18n-placeholder="searchPlaceholder" autocomplete="off"></label>
         <label class="jump"><span class="vh" data-i18n="country">Country</span><select id="country"><option value="" data-i18n="allCountries">All countries</option></select></label>
@@ -87,6 +113,7 @@
       </nav>
       <div class="progress" id="progress" aria-hidden="true"></div>
       <div class="legend" id="legend" aria-label="Map key" data-i18n-label="mapKey"></div>
+      <p class="early-story-note" id="earlyStoryNote" data-i18n="earlyNote" hidden>The map shows selected places and relationships. Unmarked areas include inhabited homelands beyond this coverage.</p>
       <details class="others" id="others"><summary data-i18n="otherStates">Other states on the map</summary><div class="list" id="otherList"></div></details>
       <div id="story" aria-live="polite"></div>
     </div>
@@ -96,7 +123,7 @@
 <footer id="footer">
   <p id="contentFallback" data-i18n="contentFallback" hidden></p>
   <div id="footStory"></div>
-  <p id="footerBorders">Borders are approximate. They are drafted from the open <a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> dataset (GPL-3.0) and corrected by hand where the stories need it, using modern regions as building blocks, so lines that cut across today’s regions are simplified. Map data: <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p>
+  <p id="footerBorders">After 1783, approximate international borders use <a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> drafts. Geographic base from <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p>
   <p id="footerProject">Adapted from <a href="https://github.com/matsakelarsson/europe-at-war">Europe at War</a> (GPL-3.0).</p>
 </footer>
 

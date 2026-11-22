@@ -1,0 +1,32 @@
+id: castle-rock-pueblo
+name: Attack on Castle Rock Pueblo
+start: 1275
+end: 1285
+date_label: After 1274, probably early to mid-1280s
+early_map: true
+tier: B
+countries: [us]
+summary: Excavations at Castle Rock Pueblo in the Mesa Verde region document a fatal attack near the end of the village’s occupation. Tree rings constrain the date and the attackers’ identity remains uncertain.
+sources:
+  - title: Kristin Kuckelman · The Final Days of Castle Rock Pueblo
+    url: https://crowcanyon.org/ResearchReports/CastleRock/Text/crpw_finaldays
+  - title: Kuckelman, Lightfoot and Rice · Violence at Castle Rock and Sand Canyon Pueblos
+    url: https://www.cambridge.org/core/journals/american-antiquity/article/abs/bioarchaeology-and-taphonomy-of-violence-at-castle-rock-and-sand-canyon-pueblos-southwestern-colorado/7E59304135991529FB5413D5BC6173CA
+  - title: Palonka and colleagues · Castle Rock community archaeology and collaboration with Hopi specialists
+    url: https://www.cambridge.org/core/journals/antiquity/article/ancestral-pueblo-settlement-structure-and-sacred-landscape-at-castle-rock-community-colorado/CB381FA6CBA7D91AF6C673D2A313A5D9
+steps:
+  - title: The attack on Castle Rock Pueblo
+    date: After 1274, probably early to mid-1280s
+    when: 1280
+    borders: 1280
+    body:
+      - Castle Rock Pueblo was part of a cluster of Ancestral Pueblo settlements. Excavations recovered burned structures and the remains of at least 41 people who died during an attack.
+      - The latest dated timbers at the site are from 1274. Crow Canyon’s excavation report places the attack probably in the early to mid-1280s. The evidence establishes violence at the site, while who attacked and why remain unresolved.
+    facts:
+      - [Evidence, Excavation and tree-ring dating]
+      - [Location, Lower Sand Canyon vicinity]
+    markers:
+      - kind: battle
+        name: Castle Rock Pueblo vicinity
+        lonlat: [-108.72, 37.34]
+        text: The marker locates the lower Sand Canyon area in the Mesa Verde region.

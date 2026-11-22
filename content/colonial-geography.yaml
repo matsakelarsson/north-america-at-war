@@ -1,0 +1,146 @@
+# Display-date windows are inclusive for places; from/until dates on map paths are half-open.
+until: 1784
+methods: [colonial-towns, mitchell, inhabited-virginia, native-maps, proclamation, paris1783]
+sources:
+  colonial-towns: {title: University of Richmond Digital Scholarship Lab · Colonial towns and contemporary boundaries, url: "https://dsl.richmond.edu/historicalatlas/61/d/"}
+  mason-dixon: {title: Library of Congress · Mason and Dixon’s survey map, url: "https://www.loc.gov/resource/g3841f.ct002075/"}
+  quebec-act: {title: University of Richmond Digital Scholarship Lab · British possessions in eastern North America in 1774, url: "https://dsl.richmond.edu/historicalatlas/46/a/"}
+  florida-boundary: {title: Digital Library of Georgia · Colony of East Florida, 1763, url: "https://dlg.usg.edu/record/nge_ngen_m-11308"}
+  gulf-boundary: {title: University of South Florida · West Florida under British rule, 1763–1780, url: "https://fcit.usf.edu/florida/maps/pages/2400/f2439/f2439p1.htm"}
+  mitchell: {title: Library of Congress · John Mitchell’s 1755 map, url: "https://www.loc.gov/item/74693173/"}
+  inhabited-virginia: {title: Library of Congress · Fry and Jefferson’s map of inhabited Virginia, url: "https://www.loc.gov/resource/g3880.ct000370/"}
+  loc-maps: {title: Library of Congress · Mapping the American Revolution, url: "https://www.loc.gov/collections/american-revolutionary-war-maps/articles-and-essays/mapping-the-american-revolution-and-its-era/"}
+  native-maps: {title: Library of Congress · Native American Spaces, url: "https://guides.loc.gov/native-american-spaces"}
+  new-france: {title: Parks Canada · Saint-Louis Forts and Châteaux, url: "https://parks.canada.ca/lhn-nhs/qc/saintlouisforts/culture/histoire-history/natcul1"}
+  canada-sites: {title: Government of Canada · Historic sites of New France, url: "https://www.canada.ca/en/services/defence/caf/militaryhistory/wars-operations/new-france/national-historic-sites.html"}
+  acadia: {title: Parks Canada · Fort Anne history, url: "https://parks.canada.ca/lhn-nhs/ns/fortanne/culture/histoire-history"}
+  fur: {title: Parks Canada · York Factory National Historic Site, url: "https://parks.canada.ca/lhn-nhs/mb/yorkfactory"}
+  dutch: {title: National Park Service · New Netherland, url: "https://home.nps.gov/mava/learn/historyculture/new-netherland.htm"}
+  chesapeake: {title: National Park Service · Indigenous Chesapeake and colonial settlement, url: "https://www.nps.gov/articles/000/contact-to-present.htm"}
+  new-england: {title: Massachusetts Historical Society · Winthrop Papers, url: "https://www.masshist.org/publications/winthrop"}
+  plymouth: {title: Plimoth Patuxet Museums · Plymouth Colony, url: "https://plimoth.org/for-students/homework-help/plymouth-colony"}
+  louisiana: {title: Library of Congress · European explorations and the Louisiana Purchase, url: "https://www.loc.gov/collections/louisiana-european-explorations-and-the-louisiana-purchase/"}
+  florida: {title: National Park Service · Fort Caroline and St. Augustine, url: "https://home.nps.gov/articles/ftcaroline.htm"}
+  missions: {title: Mission San Luis · Florida mission chronology, url: "https://missionsanluis.org/learn/timeline/"}
+  camino: {title: National Park Service · El Camino Real de Tierra Adentro timeline, url: "https://www.nps.gov/articles/000/el-camino-real-de-tierra-adentro-timeline.htm"}
+  tejas: {title: National Park Service · El Camino Real de los Tejas, url: "https://home.nps.gov/articles/000/military-movements-and-uses-on-el-camino-real-de-los-tejas.htm"}
+  california: {title: National Park Service · Anza Trail sites in California, url: "https://home.nps.gov/juba/learn/historyculture/california-anza-trail-sites.htm"}
+  mexico: {title: Library of Congress · Cortés and the Aztecs, url: "https://www.loc.gov/exhibits/exploring-the-early-americas/cortes-and-the-aztecs.html"}
+  panama: {title: UNESCO · Archaeological Site of Panamá Viejo and Historic District of Panamá, url: "https://whc.unesco.org/en/list/790/"}
+  jamaica: {title: Jamaica Information Service · The history of Jamaica, url: "https://jis.gov.jm/information/jamaican-history"}
+  caribbean: {title: Library of Congress · Maps of North America and the West Indies, url: "https://www.loc.gov/collections/american-revolutionary-war-maps/"}
+  antilles: {title: University of Arizona Press · Indigenous persistence on Hispaniola, url: "https://open.uapress.arizona.edu/read/e86c411b-cde5-4e11-8514-28f79205f642/section/2aee5324-2ead-47ec-b65e-58a8c036ce72"}
+  paris1763: {title: Office of the Historian · Treaty of Paris, 1763, url: "https://history.state.gov/milestones/1750-1775/treaty-of-paris"}
+  proclamation: {title: Office of the Historian · Proclamation Line of 1763, url: "https://history.state.gov/milestones/1750-1775/proclamation-line-1763"}
+  stanwix: {title: National Park Service · Fort Stanwix boundary treaty of 1768, url: "https://home.nps.gov/articles/000/1768-boundary-line-treaty-of-fort-stanwix.htm"}
+  paris1783: {title: National Archives · Treaty of Paris, 1783, article 2, url: "https://www.archives.gov/milestone-documents/treaty-of-paris"}
+  haida: {title: Council of the Haida Nation · Haida Constitution, url: "https://www.haidanation.ca/about/haida-constitution"}
+  inuit: {title: Indigenous Peoples Atlas of Canada · Inuit Nunangat, url: "https://indigenouspeoplesatlasofcanada.ca/article/inuit-nunangat/"}
+  wendat: {title: Huron-Wendat Nation · Nionwentsïo and the St. Lawrence, url: "https://www.ourcommons.ca/Content/Committee/421/TRAN/Brief/BR8708093/br-external/HuronWendatFirstNationCouncil-9505010-e.pdf"}
+  league: {title: Haudenosaunee Confederacy · Who We Are, url: "https://www.haudenosauneeconfederacy.com/who-we-are/"}
+  caddo: {title: Texas Archeological Research Laboratory · Caddo communities, url: "https://www.texasbeyondhistory.net/tejas/ancestors/historic.html"}
+  cherokee: {title: Cherokee Nation · History, url: "https://www.cherokee.org/about-the-nation/history/"}
+  pawnee: {title: Nebraska State Historical Society · Pawnee villages, url: "https://history.nebraska.gov/marker-monday-pawnee-villages/"}
+  calusa: {title: Florida Museum · Calusa research, url: "https://www.floridamuseum.ufl.edu/science/investigating-the-calusa/"}
+  unangax: {title: National Park Service · Unangax̂ history, url: "https://www.nps.gov/aleu/learn/historyculture/unangax-history-and-culture.htm"}
+  coast-peoples: {title: Makah Cultural and Research Center · Ozette, url: "https://makah.com/attractions/museum/"}
+  southeast: {title: National Park Service · Colonial Southeast, url: "https://home.nps.gov/ocmu/learn/historyculture/upload/Accessible-Colonial-Southeast-Indians.pdf"}
+  mib: {title: Parks Canada · Mi’kmaq and the history of Fort Anne, url: "https://parks.canada.ca/lhn-nhs/ns/fortanne/culture/histoire-history"}
+features:
+  - {id: colonial-haida, kind: region, name: Haida Gwaii, from: 1530, to: 1783, period: Haida homeland, lonlat: [-132.25, 53.55], refs: [haida]}
+  - {id: colonial-inuit, kind: region, name: Inuit Nunangat, from: 1530, to: 1783, period: Inuit homeland, lonlat: [-89, 70], refs: [inuit]}
+  - {id: colonial-unangax, kind: region, name: Unangax̂, from: 1530, to: 1783, period: Aleutian homelands, lonlat: [-162.7, 54.6], refs: [unangax]}
+  - {id: colonial-makah, kind: site, name: Ozette, from: 1530, to: 1783, period: Makah village, lonlat: [-124.73, 48.17], refs: [coast-peoples]}
+  - {id: colonial-wendat, kind: region, name: Wendat, from: 1530, to: 1649, period: Wendake near Georgian Bay, lonlat: [-79.97, 44.76], refs: [wendat, canada-sites]}
+  - {id: colonial-wendake, kind: region, name: Huron-Wendat, from: 1650, to: 1783, period: St. Lawrence settlements, lonlat: [-71.8, 47.15], refs: [wendat]}
+  - {id: colonial-haudenosaunee, kind: region, name: Haudenosaunee, from: 1530, to: 1783, period: Five Nations and later Six Nations, lonlat: [-76.6, 42.91], refs: [league]}
+  - {id: colonial-mikmaki, kind: region, name: Mi’kma’ki, from: 1530, to: 1783, period: Mi’kmaq homeland, lonlat: [-63.8, 46.1], refs: [mib]}
+  - {id: colonial-caddo, kind: region, name: Caddo communities, from: 1530, to: 1783, period: Red River region, lonlat: [-93.96, 32.7], refs: [caddo]}
+  - {id: colonial-cherokee, kind: region, name: Cherokee towns, from: 1530, to: 1783, period: Southern Appalachians, lonlat: [-83.67, 35.65], refs: [cherokee, southeast]}
+  - {id: colonial-choctaw, kind: region, name: Choctaw towns, from: 1530, to: 1783, period: Southeastern homelands, lonlat: [-88.95, 32.87], refs: [southeast, native-maps]}
+  - {id: colonial-chickasaw, kind: region, name: Chickasaw towns, from: 1530, to: 1783, period: Southeastern homelands, lonlat: [-88.72, 34.27], refs: [southeast, mitchell]}
+  - {id: colonial-muscogee, kind: region, name: Muscogee towns, from: 1530, to: 1783, period: Coosa and Chattahoochee watersheds, lonlat: [-85.67, 32.94], refs: [southeast, mitchell]}
+  - {id: colonial-pawnee, kind: region, name: Pawnee villages, from: 1700, to: 1783, period: Central Plains, lonlat: [-98.27, 41.36], refs: [pawnee]}
+  - {id: colonial-powhatan, kind: region, name: Tsenacomoco, from: 1607, to: 1646, period: Powhatan paramount chiefdom, lonlat: [-76.72, 37.4], refs: [chesapeake]}
+  - {id: colonial-calusa, kind: region, name: Calusa, from: 1530, to: 1700, period: Southwest Florida, lonlat: [-81.86, 26.43], refs: [calusa]}
+  - {id: colonial-en-bas, kind: site, name: En Bas Saline, from: 1530, to: 1550, period: Taíno settlement, lonlat: [-72.11, 19.69], refs: [antilles]}
+  - {id: colonial-mexico, kind: settlement, name: Mexico City, from: 1530, to: 1783, period: Capital of New Spain from 1535, lonlat: [-99.13, 19.435], refs: [mexico, native-maps]}
+  - {id: colonial-panama, kind: settlement, name: Panamá Viejo, from: 1530, to: 1671, period: Spanish port founded in 1519, lonlat: [-79.49, 9.006], refs: [panama]}
+  - {id: colonial-panama-new, kind: settlement, name: Panamá, from: 1673, to: 1783, period: Port relocated after the 1671 attack, lonlat: [-79.535, 8.953], refs: [panama]}
+  - {id: colonial-quebec, kind: settlement, name: Québec, from: 1608, to: 1783, period: French settlement founded in 1608, lonlat: [-71.205, 46.813], refs: [new-france]}
+  - {id: colonial-montreal, kind: settlement, name: Montréal, from: 1642, to: 1783, period: Ville-Marie founded in 1642, lonlat: [-73.554, 45.502], refs: [canada-sites]}
+  - {id: colonial-trois-rivieres, kind: settlement, name: Trois-Rivières, from: 1634, to: 1783, period: French post founded in 1634, lonlat: [-72.546, 46.347], refs: [canada-sites], detail: true}
+  - {id: colonial-port-royal, kind: fort, name: Port-Royal, from: 1605, to: 1613, period: French habitation, lonlat: [-65.611, 44.712], refs: [acadia]}
+  - {id: colonial-annapolis, kind: fort, name: Port-Royal / Annapolis Royal, from: 1636, to: 1783, period: Taken by Britain in 1710, lonlat: [-65.52, 44.74], refs: [acadia]}
+  - {id: colonial-frontenac, kind: fort, name: Fort Frontenac, from: 1673, to: 1758, period: French post at Lake Ontario, lonlat: [-76.482, 44.233], refs: [canada-sites], detail: true}
+  - {id: colonial-detroit, kind: fort, name: Detroit, from: 1701, to: 1783, period: French post taken by Britain in 1760, lonlat: [-83.049, 42.33], refs: [mitchell]}
+  - {id: colonial-mackinac, kind: fort, name: Michilimackinac, from: 1715, to: 1781, period: Post on the Straits of Mackinac, lonlat: [-84.731, 45.786], refs: [mitchell], detail: true}
+  - {id: colonial-york-factory, kind: fort, name: York Factory, from: 1684, to: 1783, period: Hudson’s Bay trading post, lonlat: [-92.306, 57.003], refs: [fur]}
+  - {id: colonial-fort-caroline, kind: fort, name: Fort Caroline vicinity, from: 1564, to: 1565, period: French settlement on the St. Johns River, lonlat: [-81.497, 30.386], refs: [florida]}
+  - {id: colonial-st-augustine, kind: settlement, name: St. Augustine, from: 1565, to: 1783, period: Spanish town founded in 1565, lonlat: [-81.313, 29.894], refs: [florida, paris1763]}
+  - {id: colonial-san-luis, kind: fort, name: Mission San Luis, from: 1656, to: 1704, period: Apalachee and Spanish mission, lonlat: [-84.326, 30.451], refs: [missions], detail: true}
+  - {id: colonial-jamestown, kind: settlement, name: Jamestown, from: 1607, to: 1698, period: English settlement on the James River, lonlat: [-76.777, 37.209], refs: [chesapeake]}
+  - {id: colonial-williamsburg, kind: settlement, name: Williamsburg, from: 1699, to: 1783, period: Virginia colonial capital from 1699 to 1780, lonlat: [-76.706, 37.271], refs: [inhabited-virginia, loc-maps]}
+  - {id: colonial-plymouth, kind: settlement, name: Plymouth, from: 1620, to: 1783, period: English colony from 1620, lonlat: [-70.665, 41.959], refs: [plymouth]}
+  - {id: colonial-boston, kind: settlement, name: Boston, from: 1630, to: 1783, period: Massachusetts Bay settlement, lonlat: [-71.058, 42.358], refs: [new-england, mitchell]}
+  - {id: colonial-new-amsterdam, kind: settlement, name: New Amsterdam, from: 1626, to: 1663, period: Dutch settlement, lonlat: [-74.014, 40.705], refs: [dutch]}
+  - {id: colonial-new-york, kind: settlement, name: New York, from: 1664, to: 1783, period: New Amsterdam taken by England in 1664, lonlat: [-74.014, 40.705], refs: [dutch, mitchell]}
+  - {id: colonial-albany, kind: fort, name: Fort Orange / Albany, from: 1624, to: 1783, period: Hudson River trading post, lonlat: [-73.752, 42.643], refs: [dutch, mitchell], detail: true}
+  - {id: colonial-philadelphia, kind: settlement, name: Philadelphia, from: 1682, to: 1783, period: Delaware Valley settlement, lonlat: [-75.15, 39.95], refs: [inhabited-virginia, mitchell]}
+  - {id: colonial-charles-town, kind: settlement, name: Charles Town, from: 1670, to: 1783, period: Ashley River settlement moved to the peninsula in 1680, lonlat: [-79.93, 32.79], refs: [mitchell, southeast]}
+  - {id: colonial-savannah, kind: settlement, name: Savannah, from: 1733, to: 1783, period: Georgia settlement founded in 1733, lonlat: [-81.09, 32.079], refs: [southeast, mitchell]}
+  - {id: colonial-new-orleans, kind: settlement, name: New Orleans, from: 1718, to: 1783, period: French city, Spanish administration from 1769, lonlat: [-90.065, 29.958], refs: [louisiana, paris1763]}
+  - {id: colonial-natchitoches, kind: fort, name: Natchitoches, from: 1714, to: 1783, period: French post on the Red River, lonlat: [-93.09, 31.76], refs: [louisiana], detail: true}
+  - {id: colonial-de-chartres, kind: fort, name: Fort de Chartres, from: 1720, to: 1772, period: Illinois Country post, lonlat: [-90.16, 38.08], refs: [louisiana, mitchell]}
+  - {id: colonial-san-gabriel, kind: settlement, name: San Gabriel, from: 1598, to: 1609, period: Early Spanish seat in New Mexico, lonlat: [-106.09, 36.055], refs: [camino]}
+  - {id: colonial-santa-fe, kind: settlement, name: Santa Fe, from: 1610, to: 1679, period: Spanish colonial seat until the Pueblo Revolt, lonlat: [-105.938, 35.686], refs: [camino]}
+  - {id: colonial-santa-fe-pueblo, kind: site, name: Santa Fe, from: 1680, to: 1691, period: Pueblo control after the 1680 uprising, lonlat: [-105.938, 35.686], refs: [camino]}
+  - {id: colonial-santa-fe-spanish, kind: settlement, name: Santa Fe, from: 1692, to: 1783, period: Spanish return from 1692, lonlat: [-105.938, 35.686], refs: [camino]}
+  - {id: colonial-san-antonio, kind: fort, name: San Antonio de Béxar, from: 1718, to: 1783, period: Spanish presidio and mission settlement, lonlat: [-98.49, 29.424], refs: [tejas]}
+  - {id: colonial-san-diego, kind: fort, name: San Diego, from: 1769, to: 1783, period: Spanish presidio and mission, lonlat: [-117.194, 32.755], refs: [california]}
+  - {id: colonial-monterey, kind: fort, name: Monterey, from: 1770, to: 1783, period: Spanish presidio and mission, lonlat: [-121.9, 36.6], refs: [california]}
+  - {id: colonial-san-francisco, kind: fort, name: San Francisco, from: 1776, to: 1783, period: Spanish presidio at the Golden Gate, lonlat: [-122.459, 37.799], refs: [california]}
+  - {id: colonial-havana, kind: settlement, name: Havana, from: 1530, to: 1783, period: Spanish port held by Britain in 1762–1763, lonlat: [-82.35, 23.14], refs: [caribbean, paris1763]}
+  - {id: colonial-santo-domingo, kind: settlement, name: Santo Domingo, from: 1530, to: 1783, period: Spanish colonial seat, lonlat: [-69.885, 18.477], refs: [antilles, caribbean]}
+  - {id: colonial-cap-francais, kind: settlement, name: Cap-Français, from: 1670, to: 1783, period: French town on northern Hispaniola, lonlat: [-72.2, 19.759], refs: [caribbean]}
+  - {id: colonial-port-royal-jm, kind: settlement, name: Port Royal, from: 1655, to: 1692, period: English harbour after the invasion of Jamaica, lonlat: [-76.844, 17.936], refs: [jamaica]}
+  - {id: colonial-kingston, kind: settlement, name: Kingston, from: 1692, to: 1783, period: English settlement after the 1692 earthquake, lonlat: [-76.795, 17.97], refs: [jamaica]}
+  - {id: colonial-san-juan, kind: fort, name: San Juan, from: 1530, to: 1783, period: Spanish port and fortifications, lonlat: [-66.118, 18.465], refs: [caribbean]}
+areas:
+  # Generalized inland edges are selected settlement footprints anchored to source maps.
+  - {name: Valley of Mexico and Gulf corridor, kind: settled, ink: gold, from: 1530, until: 1784, refs: [mexico, native-maps], points: [[-102,19],[-101,20.9],[-99.8,20.5],[-97.6,20.8],[-95.1,19.7],[-95,18.8],[-97.1,18.3],[-99.5,18.35]]}
+  - {name: Bajío to Zacatecas, kind: settled, ink: gold, from: 1550, until: 1784, refs: [camino, native-maps], points: [[-102.9,23.2],[-102.1,23],[-101.6,22],[-100,21],[-100,20.2],[-102.05,20.35],[-102.75,21.55]]}
+  - {name: Northern New Spain posts, kind: settled, ink: gold, from: 1598, until: 1680, refs: [camino, native-maps], points: [[-106.35,36.2],[-105.8,36.15],[-106,34.9],[-106.4,33.3],[-106.35,31.75],[-106.7,31.6],[-107.15,33.3],[-106.7,34.8]]}
+  - {name: New Mexico Spanish resettlement, kind: settled, ink: gold, from: 1692, until: 1784, refs: [camino, native-maps], points: [[-106.35,36.2],[-105.65,36.15],[-105.8,35.52],[-106.05,34.8],[-106.3,33.3],[-106.3,31.7],[-106.72,31.6],[-107.2,33.26],[-107,34.7],[-106.45,35.55]]}
+  - {name: Spanish Florida presidio, kind: settled, ink: gold, from: 1565, until: "1763-02-10", refs: [florida], points: [[-81.75,30.02],[-81.23,30.18],[-81,29.6],[-81.42,29.52]]}
+  - {name: British East Florida settlement vicinity, kind: settled, ink: blue, from: "1763-02-10", until: "1783-09-03", refs: [florida, paris1763], points: [[-81.75,30.02],[-81.23,30.18],[-81,29.6],[-81.42,29.52]]}
+  - {name: Spanish Florida restored, kind: settled, ink: gold, from: "1783-09-03", until: 1784, refs: [florida, paris1783], points: [[-81.75,30.02],[-81.23,30.18],[-81,29.6],[-81.42,29.52]]}
+  - {name: James River and Tidewater, kind: settled, ink: blue, from: 1607, until: 1650, refs: [chesapeake, inhabited-virginia], points: [[-77.55,37.63],[-76.54,37.65],[-76.1,37.3],[-76.2,36.86],[-77,37.14]]}
+  - {name: Chesapeake tidewater settlements, kind: settled, ink: blue, from: 1650, until: "1776-07-04", refs: [chesapeake, inhabited-virginia], points: [[-77.7,38.58],[-77.2,39.45],[-75.85,39.36],[-75.25,38],[-75.35,37.2],[-76.23,36.82],[-77.48,36.95],[-77.78,37.54]]}
+  - {name: Massachusetts Bay and Plymouth, kind: settled, ink: blue, from: 1630, until: 1660, refs: [plymouth, new-england], points: [[-71.44,42.85],[-70.44,42.85],[-69.9,41.72],[-70.66,41.58],[-71.12,42.05]]}
+  - {name: New England settlements, kind: settled, ink: blue, from: 1660, until: "1776-07-04", refs: [new-england, colonial-towns, mitchell], points: [[-72.68,41.26],[-73.03,41.84],[-72.8,42.55],[-71.55,42.82],[-71.11,43.06],[-70.44,43.54],[-69.97,43.71],[-69.58,43.46],[-70,42.26],[-69.77,41.5],[-71.25,41.37]]}
+  - {name: Dutch Hudson and lower Delaware settlements, kind: settled, ink: orange, from: 1626, until: 1664, refs: [dutch], points: [[-74.03,42.89],[-73.55,42.77],[-73.67,42.1],[-73.72,41.49],[-73.18,40.96],[-73.9,40.48],[-74.4,40.62],[-74.13,41.39]]}
+  - {name: Lower Hudson and upper river corridor, kind: settled, ink: blue, from: 1664, until: "1776-07-04", refs: [dutch, mitchell], points: [[-74.25,42.92],[-73.49,42.81],[-73.59,42.16],[-73.57,41.47],[-72.91,40.93],[-73.78,40.31],[-74.6,40.62],[-74.38,41.51]]}
+  - {name: Delaware Valley settlements, kind: settled, ink: blue, from: 1682, until: "1776-07-04", refs: [inhabited-virginia, mitchell], points: [[-76.1,40.64],[-75.23,40.87],[-74.59,40.08],[-74.65,39.18],[-75.55,39.16],[-75.72,39.61],[-76.26,39.79]]}
+  - {name: Carolina and Georgia lowcountry, kind: settled, ink: blue, from: 1733, until: "1776-07-04", refs: [mitchell, southeast], points: [[-81.46,31.25],[-81.69,32.34],[-80.64,33.32],[-79.13,33.63],[-78.16,34.53],[-77.87,34.2],[-78.85,33],[-80,32.36],[-80.67,31.74]]}
+  - {name: Early St. Lawrence settlements, kind: settled, ink: purple, from: 1608, until: 1642, refs: [new-france], points: [[-71.6,46.92],[-71.16,47.1],[-70.8,46.99],[-71.17,46.55]]}
+  - {name: St. Lawrence seigneurial corridor, kind: settled, ink: purple, from: 1642, until: "1763-02-10", refs: [new-france, canada-sites, mitchell], points: [[-74.27,45.53],[-73.7,45.76],[-72.62,46.55],[-71.13,47.28],[-70.48,47.21],[-70.88,46.58],[-71.9,46.45],[-72.75,46.02],[-73.63,45.13]]}
+  - {name: St. Lawrence settlements under Britain, kind: settled, ink: blue, from: "1763-02-10", until: 1784, refs: [paris1763, mitchell], points: [[-74.27,45.53],[-73.7,45.76],[-72.62,46.55],[-71.13,47.28],[-70.48,47.21],[-70.88,46.58],[-71.9,46.45],[-72.75,46.02],[-73.63,45.13]]}
+  - {name: French lower Mississippi settlements, kind: settled, ink: purple, from: 1718, until: 1769, refs: [louisiana], points: [[-91.64,30.8],[-91.2,30.82],[-90.86,30.42],[-90.22,30.31],[-89.75,30.17],[-89.82,29.72],[-90.74,29.73],[-91.17,29.93]]}
+  - {name: Spanish lower Mississippi settlements, kind: settled, ink: gold, from: 1769, until: 1784, refs: [louisiana, paris1763], points: [[-91.64,30.8],[-91.2,30.82],[-90.86,30.42],[-90.22,30.31],[-89.75,30.17],[-89.82,29.72],[-90.74,29.73],[-91.17,29.93]]}
+  - {name: Settlement corridors in the rebelling colonies, kind: settled, ink: green, from: "1776-07-04", until: 1784, refs: [loc-maps, colonial-towns, inhabited-virginia], points: [[-82.44,31.14],[-82.19,32.4],[-81.24,34],[-79.71,35.4],[-79.61,36.71],[-78.7,38.36],[-77.18,39.36],[-76.73,41],[-74.81,41.46],[-74.31,43.02],[-72.68,43.05],[-70.2,43.6],[-69.6,43.43],[-69.62,42.06],[-71,41.03],[-73.72,40.42],[-74.42,39.17],[-75.07,38.22],[-75.65,36.5],[-75.17,35.59],[-77.1,34.37],[-78.98,33.5],[-80.31,32.31],[-81,31.01]]}
+  - {name: Royal Proclamation Appalachian divide, kind: treaty, ink: purple, from: "1763-10-07", until: "1768-11-05", refs: [proclamation, stanwix], points: [[-75.12,42.27],[-76.12,41.76],[-77.31,41.14],[-78.64,40.28],[-79.21,39.56],[-79.92,38.6],[-80.68,37.78],[-81.23,36.72],[-81.84,36.1],[-82.37,35.67],[-83.18,35.44],[-83.65,35.05],[-84.27,34.75]]}
+  - {name: Fort Stanwix boundary from Oneida Carry to the Ohio, kind: treaty, ink: purple, from: "1768-11-05", until: 1773, refs: [stanwix], points: [[-75.455,43.212],[-75.27,43.03],[-75.3,42.86],[-75.41,42.58],[-75.39,42.38],[-75.64,42.32],[-76.27,42.1],[-76.53,41.97],[-77.6,41.03],[-78.75,40.66],[-79.52,40.81],[-80.02,40.44]]}
+  - {name: Pennsylvania Purchase Line sector, kind: treaty, ink: purple, from: 1773, until: "1783-09-03", refs: [stanwix], points: [[-75.455,43.212],[-75.27,43.03],[-75.3,42.86],[-75.41,42.58],[-75.39,42.38],[-75.64,42.32],[-76.27,42.1],[-76.53,41.97],[-77.46,41.11],[-77.75,41.07],[-78.63,40.9],[-79.52,40.81],[-80.02,40.44]]}
+  - {name: Fort Stanwix cession along the Ohio, kind: treaty, ink: purple, from: "1768-11-05", until: "1774-06-22", refs: [stanwix], points: [[-80.02,40.44],[-80.62,40.63],[-80.74,39.61],[-81.16,39.4],[-81.96,38.91],[-82.61,38.42],[-83.27,38.66],[-84.3,38.96],[-84.69,39.14],[-85.75,38.27],[-86.69,37.91],[-87.7,37.91],[-88.2,37.5],[-88.54,37.08]]}
+  - {name: Treaty of Hard Labour Kanawha sector, kind: treaty, ink: purple, from: "1768-10-17", until: 1770, refs: [stanwix], points: [[-82.14,38.84],[-81.77,38.49],[-81.63,38.35],[-81.19,38.15],[-80.98,37.97]]}
+  - {name: Mississippi imperial boundary, kind: treaty, ink: purple, from: "1763-02-10", until: "1783-09-03", refs: [paris1763], points: [[-95.2,47.23],[-94.13,46.72],[-94.17,45.57],[-93.25,44.98],[-92.79,44.74],[-91.92,44.41],[-91.28,43.81],[-91.18,42.68],[-90.67,42.51],[-90.32,41.83],[-90.61,41.52],[-91.13,40.88],[-91.38,40.39],[-91.4,39.72],[-90.44,39.31],[-90.17,38.8],[-90.23,38.36],[-89.52,37.69],[-89.14,37],[-89.71,36.22],[-90.14,35.63],[-90.06,35.15],[-90.6,34.58],[-91.06,33.91],[-91.14,33.4],[-91.11,32.25],[-91.3,31.74],[-91.53,31.03],[-91.18,30.45]]}
+  - {name: Treaty of Paris United States western boundary, kind: treaty, ink: green, from: "1783-09-03", until: 1784, refs: [paris1783], points: [[-95.2,47.23],[-94.13,46.72],[-94.17,45.57],[-93.25,44.98],[-92.79,44.74],[-91.92,44.41],[-91.28,43.81],[-91.18,42.68],[-90.67,42.51],[-90.32,41.83],[-90.61,41.52],[-91.13,40.88],[-91.38,40.39],[-91.4,39.72],[-90.44,39.31],[-90.17,38.8],[-90.23,38.36],[-89.52,37.69],[-89.14,37],[-89.71,36.22],[-90.14,35.63],[-90.06,35.15],[-90.6,34.58],[-91.06,33.91],[-91.14,33.4],[-91.11,32.25],[-91.3,31.74],[-91.53,31]]}
+  - {name: Treaty of Paris United States southern boundary, kind: treaty, ink: green, from: "1783-09-03", until: 1784, refs: [paris1783], points: [[-91.53,31],[-89,31],[-86,31],[-85,31],[-84.865,31],[-84.86,30.7],[-82.22,30.36],[-81.93,30.66],[-81.45,30.71]]}
+  - {name: Treaty of Paris northern boundary through the Great Lakes, kind: treaty, ink: green, from: "1783-09-03", until: 1784, refs: [paris1783], points: [[-95.15,49.38],[-94.63,48.71],[-93.77,48.52],[-92.63,48.48],[-90.86,48.23],[-89.56,48.01],[-87.99,47.8],[-86.1,47.15],[-84.41,46.64],[-84.14,46.48],[-83.5,45.28],[-82.5,44.1],[-82.41,42.96],[-83.11,42.05],[-81.5,42.25],[-79.05,42.86],[-79.05,43.27],[-77.56,43.64],[-76.83,43.8],[-76.27,44.2],[-75.28,44.94],[-74.69,45],[-72.8,45],[-71.5,45]]}
+
+  - {name: "Mason–Dixon survey, Maryland and Pennsylvania", kind: treaty, ink: slate, from: 1767, until: 1784, refs: [mason-dixon], points: [[-75.79,39.721],[-76.25,39.722],[-76.65,39.722],[-77.06,39.721],[-77.5,39.723],[-77.98,39.722],[-78.46,39.721],[-79,39.72],[-79.58,39.722],[-80.25,39.72]]}
+  - {name: British East and West Florida division, kind: treaty, ink: slate, from: "1763-10-07", until: "1783-09-03", refs: [florida-boundary, gulf-boundary], points: [[-84.99,29.73],[-85.13,29.96],[-85.16,30.23],[-85.08,30.45],[-84.98,30.62],[-84.87,30.72],[-84.95,31.01]]}
+  - {name: West Florida northern extension, kind: treaty, ink: slate, from: 1764, until: "1783-09-03", refs: [gulf-boundary], points: [[-90.89,32.47],[-89.97,32.47],[-89,32.47],[-88,32.47],[-87.18,32.47]]}
+  - {name: Québec Act boundary along the Ohio, kind: treaty, ink: purple, from: "1774-06-22", until: "1783-09-03", refs: [quebec-act], points: [[-80.52,40.63],[-80.62,40.63],[-80.74,39.61],[-81.16,39.4],[-81.96,38.91],[-82.61,38.42],[-83.27,38.66],[-84.3,38.96],[-84.69,39.14],[-85.75,38.27],[-86.69,37.91],[-87.7,37.91],[-88.2,37.5],[-88.51,37.09],[-89.14,37]]}
+  - {name: Treaty of Paris eastern boundary along the St. Croix, kind: treaty, ink: green, from: "1783-09-03", until: 1784, refs: [paris1783], points: [[-67.14,45.07],[-67.3,45.12],[-67.42,45.16],[-67.48,45.22],[-67.47,45.34],[-67.42,45.45],[-67.47,45.58],[-67.64,45.69],[-67.8,45.81]]}

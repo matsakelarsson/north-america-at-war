@@ -1,0 +1,324 @@
+# Graphic steps. Event names, dates and locations are the visible map labels.
+sources:
+  us-frontier: {title: "National Park Service · The United States military and American Indian history", url: "https://www.nps.gov/parkhistory/resedu/military_indian.pdf"}
+  fallen: {title: "National Park Service · Fallen Timbers and Fort Miamis", url: "https://home.nps.gov/articles/000/historical-overview-of-fallen-timbers-battlefield-and-fort-miamis.htm"}
+  greenville: {title: "National Park Service · Treaty of Greenville", url: "https://home.nps.gov/articles/a-long-legacy.htm"}
+  tecumseh: {title: "National Park Service · Battle of Tippecanoe", url: "https://home.nps.gov/articles/tippecanoe.htm"}
+  creek: {title: "National Park Service · Creek War in the Southeast", url: "https://www.nps.gov/articles/creek-war-in-the-southeast-1.htm"}
+  horseshoe: {title: "National Park Service · Battle of Horseshoe Bend", url: "https://www.nps.gov/articles/the-battle-of-horseshoe-bend-collision-of-cultures-teaching-with-historic-places.htm"}
+  florida-territorial: {title: "National Park Service · Territorial Florida", url: "https://home.nps.gov/foma/learn/historyculture/territorial-florida.htm"}
+  florida-ethno: {title: "National Park Service · Ethnohistory of Biscayne National Park", url: "https://www.nps.gov/parkhistory/online_books/bisc/bisc_ethno.pdf"}
+  black-hawk: {title: "Wisconsin Historical Society · The Black Hawk War", url: "https://legacy.wisconsinhistory.org/turningpoints/tp-012/?action=more_essay"}
+  windmill: {title: "Parks Canada · Battle of the Windmill", url: "https://parks.canada.ca/lhn-nhs/on/windmill/decouvrir-discover"}
+  yac: {title: "INAH · Chronology of the Maya war", url: "https://www.inah.gob.mx/boletines/con-presentacion-editorial-conmemoran-178-aniversario-del-inicio-de-la-guerra-de-castas-en-quintana-roo"}
+  chan: {title: "INAH · Museo Histórico Felipe Carrillo Puerto", url: "https://lugares.inah.gob.mx/es/node/6825"}
+  utah: {title: "National Park Service · Historic Trails of Utah, Crossroads of the West", url: "https://home.nps.gov/orgs/1453/upload/National-Historic-Trails-Auto-Tour-Route-Interpretive-Guide-Utah.pdf"}
+  pyramid: {title: "National Park Service · The Pyramid Lake War", url: "https://www.nps.gov/articles/000/the-pyramid-lake-war.htm"}
+  fort-ridgely: {title: "National Park Service · Fort Ridgely battlefield", url: "https://www.nps.gov/civilwar/search-battles-detail.htm?battleCode=mn002"}
+  sand-creek: {title: "National Park Service · Sand Creek Massacre", url: "https://www.nps.gov/sand/learn/historyculture/massacre.htm"}
+  bozeman: {title: "National Park Service · Bozeman Trail", url: "https://home.nps.gov/bica/learn/historyculture/bozeman-trail.htm"}
+  laramie: {title: "National Park Service · 1868 Treaty Field Area", url: "https://home.nps.gov/places/1868-treaty-field-area.htm"}
+  red-river: {title: "Parks Canada · Red River Resistance", url: "https://www.parks.canada.ca/lhn-nhs/mb/riel/culture/resistance"}
+  modoc: {title: "National Park Service · Modoc War", url: "https://home.nps.gov/labe/learn/historyculture/modoc-war.htm"}
+  rrw: {title: "Texas Historical Commission · Red River War Battle Sites Project", url: "https://thc.texas.gov/learn/archeological-spotlight/red-river-war-battle-sites-project"}
+  little-bighorn: {title: "National Park Service · Battle of the Little Bighorn chronology", url: "https://www.nps.gov/libi/learn/a-chronology-of-the-battle-of-the-little-bighorn.htm"}
+  sitting-bull: {title: "National Park Service · Sitting Bull", url: "https://www.nps.gov/libi/learn/historyculture/sitting-bull.htm"}
+  nez-perce: {title: "National Park Service · Nez Perce National Historical Park map and route", url: "https://www.nps.gov/nepe/upload/NEPE-unigrid_Side-2_compressed-for-web.pdf"}
+  big-hole: {title: "National Park Service · Big Hole National Battlefield", url: "https://www.nps.gov/articles/bighole.htm"}
+  bannock: {title: "National Park Service · Mile’s Fight of the Bannock War", url: "https://www.nps.gov/articles/000/preserving-mile-s-fight-of-the-1878-bannock-war.htm"}
+  batoche: {title: "Parks Canada · History of Batoche", url: "https://parks.canada.ca/lhn-nhs/sk/batoche/culture/histoire-history"}
+  battleford: {title: "Parks Canada · History of Fort Battleford", url: "https://parks.canada.ca/lhn-nhs/sk/battleford/culture/histoire-history"}
+  chiricahua: {title: "National Park Service · Chiricahua Apache history at Fort Bowie", url: "https://home.nps.gov/fobo/learn/historyculture/the-chiricahua-apache.htm"}
+  chatoyer: {title: "Saint Vincent and the Grenadines Department of Culture · Joseph Chatoyer", url: "https://tourism.gov.vc/tourism/index.php/44-culture-department/culture-administration/181-svg-national-hero"}
+  garifuna: {title: "Saint Vincent and the Grenadines Department of Culture · Garifuna exile", url: "https://tourism.gov.vc/tourism/index.php?Itemid=26&catid=51&id=324&option=com_content&view=article"}
+conflicts:
+  - id: second-carib-war
+    name: "Second Carib War and Garifuna exile"
+    start: 1795
+    end: 1797
+    countries: [vc, hn, gb, fr]
+    sources: [chatoyer, garifuna]
+    sides:
+      - {id: g, name: "Garifuna and French allies", ink: teal}
+      - {id: b, name: "British colonial forces", ink: blue}
+    events:
+      - {date: "1795-03-14", kind: battle, name: "Dorsetshire Hill, death of Joseph Chatoyer", lonlat: [-61.2233, 13.1564], side: b}
+      - {date: "1796-07", kind: event, name: "Garifuna deported to Balliceaux", lonlat: [-61.142, 12.95], side: b}
+      - {date: "1797", kind: event, name: "Garifuna exiles land on Roatán", lonlat: [-86.55, 16.37], side: g}
+  - id: northwest-indian-war
+    name: "Northwest Indian War"
+    start: 1785
+    end: 1795
+    countries: [us]
+    sources: [fallen, greenville, us-frontier]
+    sides:
+      - {id: i, name: "Western Confederacy", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1790", kind: battle, name: "Kekionga, Harmar campaign vicinity", lonlat: [-85.14, 41.08], side: i}
+      - {date: "1791-11-04", kind: battle, name: "St. Clair’s defeat, Fort Recovery vicinity", lonlat: [-84.78, 40.41], side: i}
+      - {date: "1794-08-20", kind: battle, name: "Fallen Timbers", lonlat: [-83.684, 41.544], side: u}
+      - {date: "1795-08", kind: treaty, name: "Treaty of Greenville", lonlat: [-84.634, 40.102], side: u}
+  - id: tippecanoe
+    name: "Battle of Tippecanoe"
+    start: 1811
+    end: 1811
+    countries: [us]
+    sources: [tecumseh]
+    sides:
+      - {id: t, name: "Tecumseh’s confederacy", ink: teal}
+      - {id: u, name: "Indiana Territory militia and U.S. Army", ink: blue}
+    events:
+      - {date: "1811-11-07", kind: battle, name: "Prophetstown and Tippecanoe battlefield", lonlat: [-86.84, 40.506], side: u}
+  - id: creek-war
+    name: "Creek War"
+    start: 1813
+    end: 1814
+    countries: [us]
+    sources: [creek, horseshoe]
+    sides:
+      - {id: r, name: "Red Stick Muscogee", ink: teal}
+      - {id: u, name: "United States and Indigenous allies", ink: blue}
+    events:
+      - {date: "1813-08-30", kind: battle, name: "Fort Mims", lonlat: [-87.55, 31.167], side: r}
+      - {date: "1814-03-27", kind: battle, name: "Horseshoe Bend", lonlat: [-85.739, 32.976], side: u}
+      - {date: "1814-08", kind: treaty, name: "Treaty of Fort Jackson", lonlat: [-86.255, 32.507], side: u}
+  - id: first-seminole-war
+    name: "First Seminole War"
+    start: 1817
+    end: 1818
+    countries: [us, es]
+    sources: [florida-territorial, us-frontier]
+    sides:
+      - {id: s, name: "Seminole and allies", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1817", kind: battle, name: "Fowltown, Flint River vicinity", lonlat: [-84.57, 30.92], side: u}
+      - {date: "1818", kind: taken, name: "St. Marks", lonlat: [-84.206, 30.155], side: u}
+      - {date: "1818", kind: taken, name: "Pensacola", lonlat: [-87.215, 30.415], side: u}
+  - id: black-hawk-war
+    name: "Black Hawk War"
+    start: 1832
+    end: 1832
+    countries: [us]
+    sources: [black-hawk]
+    sides:
+      - {id: s, name: "Sauk and their allies", ink: teal}
+      - {id: u, name: "United States and militia", ink: blue}
+    events:
+      - {date: "1832-05-14", kind: battle, name: "Stillman’s Run", lonlat: [-89.18, 42.107], side: s}
+      - {date: "1832-07-21", kind: battle, name: "Wisconsin Heights", lonlat: [-89.767, 43.204], side: u}
+      - {date: "1832-08", kind: battle, name: "Battle of Bad Axe", lonlat: [-91.221, 43.487], side: u}
+  - id: second-seminole-war
+    name: "Second Seminole War"
+    start: 1835
+    end: 1842
+    countries: [us]
+    sources: [florida-territorial, florida-ethno, us-frontier]
+    sides:
+      - {id: s, name: "Seminole and Black Seminole forces", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1835-12-28", kind: battle, name: "Dade battlefield", lonlat: [-82.128, 28.655], side: s}
+      - {date: "1837-12-25", kind: battle, name: "Battle of Lake Okeechobee", lonlat: [-80.807, 27.24], side: u}
+      - {date: "1842", kind: event, name: "End of the U.S. campaign, Florida peninsula", lonlat: [-81.56, 27.43], side: u}
+  - id: battle-of-the-windmill
+    name: "Battle of the Windmill"
+    start: 1838
+    end: 1838
+    countries: [ca, us, gb]
+    sources: [windmill]
+    sides:
+      - {id: p, name: "Hunters’ Lodges", ink: teal}
+      - {id: b, name: "British forces and Upper Canadian militia", ink: blue}
+    events:
+      - {date: "1838-11", kind: siege, name: "Windmill Point, near Prescott", lonlat: [-75.492, 44.713], side: b}
+  - id: caste-war-yucatan
+    name: "Maya war in Yucatán (Caste War)"
+    start: 1847
+    end: 1901
+    countries: [mx, bz]
+    sources: [yac, chan]
+    sides:
+      - {id: m, name: "Maya insurgents", ink: teal}
+      - {id: y, name: "Yucatán and Mexican forces", ink: blue}
+    events:
+      - {date: "1847-07", kind: battle, name: "Tepich", lonlat: [-88.21, 20.244], side: m}
+      - {date: "1850", kind: held, name: "Chan Santa Cruz (Felipe Carrillo Puerto)", lonlat: [-88.045, 19.578], side: m}
+      - {date: "1901", kind: taken, name: "Mexican forces enter Chan Santa Cruz", lonlat: [-88.045, 19.578], side: y}
+  - id: third-seminole-war
+    name: "Third Seminole War"
+    start: 1855
+    end: 1858
+    countries: [us]
+    sources: [florida-territorial, florida-ethno, us-frontier]
+    sides:
+      - {id: s, name: "Seminole", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1855-12", kind: battle, name: "Big Cypress and Billy Bowlegs’ towns", lonlat: [-81.15, 26.19], side: s}
+      - {date: "1858", kind: event, name: "Removal from the Tampa area", lonlat: [-82.46, 27.946], side: u}
+  - id: utah-war
+    name: "Utah War"
+    start: 1857
+    end: 1858
+    countries: [us]
+    sources: [utah]
+    sides:
+      - {id: u, name: "United States Army", ink: blue}
+      - {id: m, name: "Utah territorial militia", ink: brown}
+    events:
+      - {date: "1857", kind: held, name: "Winter encampment at Fort Bridger", lonlat: [-110.393, 41.318], side: u}
+      - {date: "1858", kind: taken, name: "Federal troops enter Salt Lake City", lonlat: [-111.89, 40.76], side: u}
+  - id: pyramid-lake-war
+    name: "Pyramid Lake War"
+    start: 1860
+    end: 1860
+    countries: [us]
+    sources: [pyramid]
+    sides:
+      - {id: p, name: "Northern Paiute", ink: teal}
+      - {id: u, name: "U.S. troops and militia", ink: blue}
+    events:
+      - {date: "1860-05-12", kind: battle, name: "First battle near Pyramid Lake", lonlat: [-119.392, 39.848], side: p}
+      - {date: "1860-06", kind: battle, name: "Second battle near Pyramid Lake", lonlat: [-119.392, 39.848], side: u}
+  - id: dakota-war
+    name: "U.S.–Dakota War"
+    start: 1862
+    end: 1862
+    countries: [us]
+    sources: [fort-ridgely, us-frontier]
+    sides:
+      - {id: d, name: "Dakota", ink: teal}
+      - {id: u, name: "United States and Minnesota forces", ink: blue}
+    events:
+      - {date: "1862-08", kind: siege, name: "Fort Ridgely", lonlat: [-94.739, 44.452], side: d}
+      - {date: "1862-08", kind: battle, name: "New Ulm", lonlat: [-94.46, 44.314], side: d}
+      - {date: "1862-09", kind: battle, name: "Wood Lake battlefield", lonlat: [-95.423, 44.7], side: u}
+  - id: sand-creek-massacre
+    name: "Sand Creek massacre"
+    start: 1864
+    end: 1864
+    countries: [us]
+    sources: [sand-creek]
+    sides:
+      - {id: c, name: "Cheyenne and Arapaho", ink: teal}
+      - {id: u, name: "Colorado U.S. Volunteers", ink: blue}
+    events:
+      - {date: "1864-11-29", kind: battle, name: "Sand Creek village vicinity", lonlat: [-102.513, 38.55], side: u}
+  - id: red-cloud-war
+    name: "Red Cloud’s War"
+    start: 1866
+    end: 1868
+    countries: [us]
+    sources: [bozeman, laramie]
+    sides:
+      - {id: l, name: "Lakota and allies", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1866-12-21", kind: battle, name: "Fetterman battlefield", lonlat: [-106.825, 44.565], side: l}
+      - {date: "1867-08", kind: battle, name: "Wagon Box Fight", lonlat: [-106.854, 44.504], side: u}
+      - {date: "1868", kind: treaty, name: "Treaty of Fort Laramie", lonlat: [-104.544, 42.209], side: l}
+  - id: red-river-resistance
+    name: "Red River Resistance"
+    start: 1869
+    end: 1870
+    countries: [ca]
+    sources: [red-river]
+    sides:
+      - {id: m, name: "Métis provisional government", ink: teal}
+      - {id: c, name: "Canada", ink: blue}
+    events:
+      - {date: "1869", kind: taken, name: "Upper Fort Garry", lonlat: [-97.137, 49.886], side: m}
+      - {date: "1870", kind: taken, name: "Red River expedition enters Upper Fort Garry", lonlat: [-97.137, 49.886], side: c}
+  - id: modoc-war
+    name: "Modoc War"
+    start: 1872
+    end: 1873
+    countries: [us]
+    sources: [modoc]
+    sides:
+      - {id: m, name: "Modoc", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1872-11", kind: battle, name: "Lost River fighting", lonlat: [-121.51, 42.006], side: m}
+      - {date: "1873-01", kind: held, name: "Captain Jack’s Stronghold", lonlat: [-121.574, 41.822], side: m}
+      - {date: "1873-04", kind: battle, name: "Second attack on the stronghold", lonlat: [-121.574, 41.822], side: u}
+  - id: red-river-war
+    name: "Red River War"
+    start: 1874
+    end: 1875
+    countries: [us]
+    sources: [rrw]
+    sides:
+      - {id: p, name: "Southern Plains nations", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1874-06", kind: battle, name: "Second battle of Adobe Walls", lonlat: [-101.181, 35.892], side: p}
+      - {date: "1874-09-28", kind: battle, name: "Palo Duro Canyon", lonlat: [-101.65, 34.93], side: u}
+      - {date: "1875", kind: event, name: "Surrender at Fort Sill", lonlat: [-98.43, 34.654], side: u}
+  - id: great-sioux-war
+    name: "Great Sioux War"
+    start: 1876
+    end: 1877
+    countries: [us]
+    sources: [little-bighorn, sitting-bull, us-frontier]
+    sides:
+      - {id: l, name: "Lakota, Northern Cheyenne and allies", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1876-06-17", kind: battle, name: "Rosebud battlefield", lonlat: [-106.991, 45.224], side: l}
+      - {date: "1876-06-25", kind: battle, name: "Little Bighorn", lonlat: [-107.428, 45.565], side: l}
+      - {date: "1876-09", kind: battle, name: "Slim Buttes", lonlat: [-103.129, 45.536], side: u}
+  - id: nez-perce-war
+    name: "Nez Perce War"
+    start: 1877
+    end: 1877
+    countries: [us]
+    sources: [nez-perce, big-hole]
+    sides:
+      - {id: n, name: "Nimiipuu (Nez Perce)", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1877-06-17", kind: battle, name: "White Bird Canyon", lonlat: [-116.287, 45.77], side: n}
+      - {date: "1877-08-09", kind: battle, name: "Big Hole battlefield", lonlat: [-113.66, 45.64], side: u}
+      - {date: "1877-10", kind: siege, name: "Bear Paw battlefield", lonlat: [-109.208, 48.377], side: u}
+  - id: bannock-war
+    name: "Bannock War"
+    start: 1878
+    end: 1878
+    countries: [us]
+    sources: [bannock, us-frontier]
+    sides:
+      - {id: b, name: "Bannock and allied groups", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1878", kind: event, name: "Camas Prairie conflict, southern Idaho", lonlat: [-114.78, 43.29], side: b}
+      - {date: "1878-07", kind: battle, name: "Mile’s Fight, Umatilla Country", lonlat: [-118.04, 45.5], side: u}
+  - id: north-west-resistance
+    name: "North-West Resistance"
+    start: 1885
+    end: 1885
+    countries: [ca]
+    sources: [batoche, battleford]
+    sides:
+      - {id: m, name: "Métis and First Nations resistance", ink: teal}
+      - {id: c, name: "Canada", ink: blue}
+    events:
+      - {date: "1885-03-26", kind: battle, name: "Duck Lake", lonlat: [-106.231, 52.813], side: m}
+      - {date: "1885-04-24", kind: battle, name: "Fish Creek", lonlat: [-106.148, 52.56], side: m}
+      - {date: "1885-05", kind: battle, name: "Batoche", lonlat: [-106.108, 52.755], side: c}
+      - {date: "1885-05-02", kind: battle, name: "Cut Knife Hill", lonlat: [-109.015, 52.769], side: m}
+  - id: chiricahua-apache-war
+    name: "Chiricahua Apache wars"
+    start: 1861
+    end: 1886
+    countries: [us, mx]
+    sources: [chiricahua, us-frontier]
+    sides:
+      - {id: a, name: "Chiricahua Apache bands", ink: teal}
+      - {id: u, name: "United States", ink: blue}
+    events:
+      - {date: "1861-02", kind: event, name: "Bascom affair, Apache Pass", lonlat: [-109.44, 32.152], side: a}
+      - {date: "1862-07", kind: battle, name: "Battle of Apache Pass", lonlat: [-109.43, 32.151], side: u}
+      - {date: "1886-09", kind: event, name: "Geronimo’s surrender, Skeleton Canyon", lonlat: [-109.09, 31.54], side: u}

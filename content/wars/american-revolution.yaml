@@ -15,34 +15,210 @@
     {
       "title": "American Revolutionary War — Encyclopaedia Britannica",
       "url": "https://www.britannica.com/event/American-Revolution"
+    },
+    {
+      "title": "National Park Service · Timeline of the Revolution",
+      "url": "https://home.nps.gov/subjects/americanrevolution/timeline.htm"
+    },
+    {
+      "title": "National Park Service · Southern Campaign",
+      "url": "https://www.nps.gov/cowp/learn/historyculture/southerncampaign.htm"
+    },
+    {
+      "title": "National Park Service · Washington–Rochambeau route timeline",
+      "url": "https://www.nps.gov/waro/learn/historyculture/timeline-of-the-war-for-independence.htm"
+    },
+    {
+      "title": "National Park Service · Events leading to the siege of Yorktown",
+      "url": "https://www.nps.gov/york/learn/historyculture/eventstoyorktown.htm"
+    },
+    {
+      "title": "Naval History and Heritage Command · American Revolution",
+      "url": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/american-revolution.html"
+    },
+    {
+      "title": "National Archives · Treaty of Paris, article 2",
+      "url": "https://www.archives.gov/milestone-documents/treaty-of-paris"
     }
   ],
   "steps": [
     {
       "title": "War begins",
-      "date": "1775",
-      "when": "1775",
-      "borders": "1775",
+      "date": "1775-04-19",
+      "when": "1775-04-19",
+      "borders": "1775-04-19",
       "body": [
         "Fighting at Lexington and Concord opened the war between British troops and colonial militias."
       ],
       "markers": [
         {
-          "kind": "event",
+          "kind": "battle",
           "name": "Lexington",
           "lonlat": [
             -71.23,
             42.45
           ],
-          "text": "Fighting at Lexington and Concord opened the war between British troops and colonial militias."
+          "text": "Fighting at Lexington and Concord opened the war between British troops and colonial militias.",
+          "side": "continental"
+        },
+        {
+          "kind": "battle",
+          "name": "Concord’s North Bridge",
+          "lonlat": [
+            -71.35,
+            42.47
+          ],
+          "side": "continental",
+          "lp": "l"
+        },
+        {
+          "kind": "held",
+          "name": "Boston",
+          "lonlat": [
+            -71.058,
+            42.358
+          ],
+          "side": "british",
+          "lp": "r"
+        }
+      ],
+      "view": {
+        "center": [
+          -71.24,
+          42.42
+        ],
+        "size": [
+          58,
+          43
+        ]
+      },
+      "arrows": [
+        {
+          "side": "british",
+          "label": "March to Concord",
+          "via": [
+            [
+              -71.06,
+              42.357
+            ],
+            [
+              -71.155,
+              42.375
+            ],
+            [
+              -71.22,
+              42.45
+            ],
+            [
+              -71.35,
+              42.46
+            ]
+          ],
+          "phase": 1
+        },
+        {
+          "side": "british",
+          "label": "Return toward Boston",
+          "via": [
+            [
+              -71.35,
+              42.463
+            ],
+            [
+              -71.282,
+              42.451
+            ],
+            [
+              -71.175,
+              42.412
+            ],
+            [
+              -71.063,
+              42.375
+            ]
+          ],
+          "phase": 2
         }
       ]
     },
     {
+      "title": "Battle of Bunker Hill",
+      "date": "1775-06-17",
+      "when": "1775-06-17",
+      "borders": "1775-06-17",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Breed’s Hill",
+          "lonlat": [
+            -71.061,
+            42.376
+          ],
+          "side": "british"
+        },
+        {
+          "kind": "held",
+          "name": "Charlestown Neck",
+          "lonlat": [
+            -71.073,
+            42.381
+          ],
+          "side": "continental"
+        }
+      ]
+    },
+    {
+      "title": "Invasion of Québec",
+      "date": "1775-12-31",
+      "when": "1775-12-31",
+      "borders": "1775-12-31",
+      "markers": [
+        {
+          "kind": "siege",
+          "name": "Québec",
+          "lonlat": [
+            -71.205,
+            46.813
+          ],
+          "side": "british"
+        },
+        {
+          "kind": "event",
+          "name": "Montgomery’s approach at Près-de-Ville",
+          "lonlat": [
+            -71.206,
+            46.801
+          ],
+          "side": "continental",
+          "lp": "b"
+        },
+        {
+          "kind": "event",
+          "name": "Arnold’s approach from the north",
+          "lonlat": [
+            -71.214,
+            46.816
+          ],
+          "side": "continental",
+          "lp": "l"
+        }
+      ],
+      "view": {
+        "center": [
+          -71.206,
+          46.81
+        ],
+        "size": [
+          25,
+          19
+        ]
+      }
+    },
+    {
       "title": "Independence and alliance",
-      "date": "1776",
-      "when": "1776",
-      "borders": "1776",
+      "date": "1776-07-04",
+      "when": "1776-07-04",
+      "borders": "1776-07-04",
       "body": [
         "The Continental Congress declared independence in 1776. France formally allied with the United States in 1778."
       ],
@@ -54,29 +230,529 @@
             -75.16,
             39.95
           ],
-          "text": "The Continental Congress declared independence in 1776. France formally allied with the United States in 1778."
+          "text": "The Continental Congress declared independence in 1776. France formally allied with the United States in 1778.",
+          "side": "continental"
+        }
+      ]
+    },
+    {
+      "title": "Battle of Long Island",
+      "date": "1776-08-27",
+      "when": "1776-08-27",
+      "borders": "1776-08-27",
+      "markers": [
+        {
+          "kind": "held",
+          "name": "Brooklyn Heights",
+          "lonlat": [
+            -73.995,
+            40.695
+          ],
+          "side": "continental",
+          "lp": "l"
+        },
+        {
+          "kind": "battle",
+          "name": "Battle Pass",
+          "lonlat": [
+            -73.968,
+            40.666
+          ],
+          "side": "british"
+        }
+      ],
+      "view": {
+        "center": [
+          -73.935,
+          40.67
+        ],
+        "size": [
+          85,
+          64
+        ]
+      },
+      "arrows": [
+        {
+          "side": "british",
+          "label": "Flank march through Jamaica Pass",
+          "via": [
+            [
+              -74.009,
+              40.606
+            ],
+            [
+              -73.943,
+              40.642
+            ],
+            [
+              -73.882,
+              40.674
+            ],
+            [
+              -73.941,
+              40.683
+            ],
+            [
+              -73.976,
+              40.675
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Crossing the Delaware and Trenton",
+      "date": "1776-12-26",
+      "when": "1776-12-26",
+      "borders": "1776-12-26",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Trenton",
+          "lonlat": [
+            -74.756,
+            40.219
+          ],
+          "side": "continental"
+        },
+        {
+          "kind": "event",
+          "name": "McConkey’s Ferry",
+          "lonlat": [
+            -74.868,
+            40.294
+          ],
+          "side": "continental",
+          "lp": "l"
+        }
+      ],
+      "view": {
+        "center": [
+          -74.81,
+          40.26
+        ],
+        "size": [
+          78,
+          59
+        ]
+      },
+      "arrows": [
+        {
+          "side": "continental",
+          "label": "Delaware crossing",
+          "via": [
+            [
+              -74.875,
+              40.296
+            ],
+            [
+              -74.867,
+              40.293
+            ],
+            [
+              -74.858,
+              40.291
+            ]
+          ],
+          "phase": 1
+        },
+        {
+          "side": "continental",
+          "label": "March to Trenton",
+          "via": [
+            [
+              -74.858,
+              40.291
+            ],
+            [
+              -74.826,
+              40.281
+            ],
+            [
+              -74.781,
+              40.25
+            ],
+            [
+              -74.757,
+              40.221
+            ]
+          ],
+          "phase": 2
+        }
+      ]
+    },
+    {
+      "title": "Battle of Brandywine",
+      "date": "1777-09-11",
+      "when": "1777-09-11",
+      "borders": "1777-09-11",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Chadds Ford",
+          "lonlat": [
+            -75.588,
+            39.871
+          ],
+          "side": "british"
+        },
+        {
+          "kind": "held",
+          "name": "Birmingham Hill",
+          "lonlat": [
+            -75.6,
+            39.905
+          ],
+          "side": "continental"
+        }
+      ]
+    },
+    {
+      "title": "Saratoga campaign",
+      "date": "1777-10-17",
+      "when": "1777-10-17",
+      "borders": "1777-10-17",
+      "markers": [
+        {
+          "kind": "taken",
+          "name": "Burgoyne’s surrender at Saratoga",
+          "lonlat": [
+            -73.585,
+            43.099
+          ],
+          "side": "continental"
+        },
+        {
+          "kind": "battle",
+          "name": "Bemis Heights",
+          "lonlat": [
+            -73.637,
+            43.0
+          ],
+          "side": "continental"
+        },
+        {
+          "kind": "held",
+          "name": "Fort Ticonderoga",
+          "lonlat": [
+            -73.39,
+            43.841
+          ],
+          "side": "british"
+        }
+      ],
+      "arrows": [
+        {
+          "side": "british",
+          "label": "Burgoyne’s Hudson advance",
+          "via": [
+            [
+              -73.39,
+              43.84
+            ],
+            [
+              -73.586,
+              43.385
+            ],
+            [
+              -73.584,
+              43.27
+            ],
+            [
+              -73.626,
+              43.03
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Battle of Monmouth",
+      "date": "1778-06-28",
+      "when": "1778-06-28",
+      "borders": "1778-06-28",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Monmouth battlefield",
+          "lonlat": [
+            -74.327,
+            40.259
+          ],
+          "side": "continental"
+        }
+      ]
+    },
+    {
+      "title": "Siege of Charleston",
+      "date": "1780-05-12",
+      "when": "1780-05-12",
+      "borders": "1780-05-12",
+      "markers": [
+        {
+          "kind": "siege",
+          "name": "Charleston",
+          "lonlat": [
+            -79.932,
+            32.78
+          ],
+          "side": "british"
+        }
+      ]
+    },
+    {
+      "title": "Battle of Kings Mountain",
+      "date": "1780-10-07",
+      "when": "1780-10-07",
+      "borders": "1780-10-07",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Kings Mountain",
+          "lonlat": [
+            -81.384,
+            35.14
+          ],
+          "side": "continental"
+        }
+      ]
+    },
+    {
+      "title": "Battle of Cowpens",
+      "date": "1781-01-17",
+      "when": "1781-01-17",
+      "borders": "1781-01-17",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Cowpens",
+          "lonlat": [
+            -81.817,
+            35.136
+          ],
+          "side": "continental"
+        }
+      ]
+    },
+    {
+      "title": "Battle of Guilford Courthouse",
+      "date": "1781-03-15",
+      "when": "1781-03-15",
+      "borders": "1781-03-15",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Guilford Courthouse",
+          "lonlat": [
+            -79.844,
+            36.133
+          ],
+          "side": "british"
+        }
+      ]
+    },
+    {
+      "title": "Battle of the Chesapeake",
+      "date": "1781-09-05",
+      "when": "1781-09-05",
+      "borders": "1781-09-05",
+      "markers": [
+        {
+          "kind": "naval",
+          "name": "Chesapeake approaches",
+          "lonlat": [
+            -75.843,
+            36.935
+          ],
+          "side": "french"
+        },
+        {
+          "kind": "held",
+          "name": "Cape Henry",
+          "lonlat": [
+            -76.007,
+            36.925
+          ],
+          "side": "french"
+        }
+      ],
+      "arrows": [
+        {
+          "side": "french",
+          "label": "French fleet sails out of the bay",
+          "via": [
+            [
+              -76.13,
+              37.01
+            ],
+            [
+              -75.99,
+              37.02
+            ],
+            [
+              -75.83,
+              36.94
+            ]
+          ]
+        },
+        {
+          "side": "british",
+          "label": "British fleet approaches",
+          "via": [
+            [
+              -75.62,
+              36.98
+            ],
+            [
+              -75.74,
+              36.963
+            ],
+            [
+              -75.85,
+              36.939
+            ]
+          ]
         }
       ]
     },
     {
       "title": "Yorktown and peace",
-      "date": "1781",
-      "when": "1781",
-      "borders": "1781",
+      "date": "1781-10-19",
+      "when": "1781-10-19",
+      "borders": "1781-10-19",
       "body": [
         "American and French forces besieged a British army at Yorktown. Britain recognized American independence in the 1783 peace treaty."
       ],
       "markers": [
         {
-          "kind": "event",
+          "kind": "siege",
           "name": "Yorktown",
           "lonlat": [
             -76.51,
             37.24
           ],
-          "text": "American and French forces besieged a British army at Yorktown. Britain recognized American independence in the 1783 peace treaty."
+          "text": "American and French forces besieged a British army at Yorktown. Britain recognized American independence in the 1783 peace treaty.",
+          "side": "continental"
+        },
+        {
+          "kind": "held",
+          "name": "Gloucester Point",
+          "lonlat": [
+            -76.501,
+            37.246
+          ],
+          "side": "british",
+          "lp": "r"
+        },
+        {
+          "kind": "held",
+          "name": "Williamsburg",
+          "lonlat": [
+            -76.707,
+            37.271
+          ],
+          "side": "french",
+          "lp": "l"
+        }
+      ],
+      "view": {
+        "center": [
+          -76.52,
+          37.255
+        ],
+        "size": [
+          82,
+          62
+        ]
+      },
+      "arrows": [
+        {
+          "side": "continental",
+          "label": "Washington’s approach",
+          "via": [
+            [
+              -76.705,
+              37.271
+            ],
+            [
+              -76.623,
+              37.251
+            ],
+            [
+              -76.53,
+              37.228
+            ]
+          ],
+          "phase": 1
+        },
+        {
+          "side": "french",
+          "label": "Rochambeau’s approach",
+          "via": [
+            [
+              -76.702,
+              37.28
+            ],
+            [
+              -76.61,
+              37.268
+            ],
+            [
+              -76.55,
+              37.237
+            ]
+          ],
+          "phase": 1
         }
       ]
+    },
+    {
+      "title": "Treaty of Paris boundaries",
+      "date": "1783-09-03",
+      "when": "1783-09-03",
+      "borders": "1783-09-03",
+      "markers": [
+        {
+          "kind": "treaty",
+          "name": "Great Lakes boundary sector",
+          "lonlat": [
+            -82.56,
+            45.08
+          ],
+          "side": "continental"
+        }
+      ],
+      "view": {
+        "center": [
+          -83,
+          40
+        ],
+        "size": [
+          2600,
+          2300
+        ]
+      }
     }
-  ]
+  ],
+  "sides": [
+    {
+      "id": "continental",
+      "name": "Continental Army and militia",
+      "ink": "green",
+      "success": "Continental Army and militia"
+    },
+    {
+      "id": "british",
+      "name": "British and Loyalist forces",
+      "ink": "blue",
+      "success": "British and Loyalist forces"
+    },
+    {
+      "id": "french",
+      "name": "French expedition and fleet",
+      "ink": "purple",
+      "success": "French expedition and fleet"
+    }
+  ],
+  "map_only": true
 }

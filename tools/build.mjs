@@ -15,8 +15,8 @@ import { gzipSync } from 'node:zlib';
 import { ROOT, CONTENT, readJSON, readYAML, listFiles, exists, loadPolities, darkFill, hexToOklch, oklchToHex } from './lib.mjs';
 import { loadLocales, prepareLocaleOutput, compileWarTranslations, emitLocales } from './locales.mjs';
 import { compileCapitals } from './capitals.mjs';
-import { feature } from 'topojson-client';
-import { project, DATA_CLIP, FRAME, overviewGrid } from './projection.mjs';
+import { feature, merge } from 'topojson-client';
+import { project, unproject, DATA_CLIP, FRAME, overviewGrid } from './projection.mjs';
 // A YAML string containing ": " without quotes parses as a mapping and would show as "[object Object]".
 const NOT_TEXT = 'is not plain text (it contains ": "; put it in quotes)';
 const isObj = (v) => v !== null && typeof v === 'object';
@@ -28,6 +28,20 @@ const err = (m) => errors.push(m), warn = (m) => warnings.push(m);
 const INKS = ['blue', 'red', 'purple', 'orange', 'green', 'teal', 'brown', 'magenta', 'gold', 'slate', 'navy', 'olive', 'none'];
 const KINDS = ['battle', 'naval', 'siege', 'held', 'taken', 'event', 'treaty', 'toll', 'air', 'capital'];
 const AREA_STYLES = ['occupied', 'gained', 'pledged', 'lost', 'outline', 'contested', 'front'];
+const POWERS = {
+  britain: { name: 'Great Britain', ink: 'blue' },
+  france: { name: 'France', ink: 'purple' },
+  spain: { name: 'Spain', ink: 'gold' },
+  dutch: { name: 'Dutch Republic', ink: 'orange' },
+  denmark: { name: 'Denmark', ink: 'red' },
+  sweden: { name: 'Sweden', ink: 'navy' },
+  courland: { name: 'Duchy of Courland', ink: 'brown' },
+  portugal: { name: 'Portugal', ink: 'olive' },
+  scotland: { name: 'Scotland', ink: 'slate' },
+  malta: { name: 'Order of Malta', ink: 'magenta' },
+  russia: { name: 'Russia', ink: 'teal' },
+  usa: { name: 'United States', ink: 'green' },
+};
 
 /** Sortable date key: "1658" -> "1658-00-00", "1658-02" -> "1658-02-00". */
 export function dateKey(d) {
@@ -56,7 +70,7 @@ async function buildPolities() {
 }
 
 // ---------------------------------------------------------------- borders
-async function buildBorders(pol, topo) {
+async function buildBorders(pol, topo, early, colonial) {
   const atomsMeta = await readJSON(join(CONTENT, 'borders/atoms.json'));
   const meta = new Map(atomsMeta.map((a) => [a.id, a]));
   const order = topo.objects.atoms.geometries.map((g) => g.properties.id);
@@ -92,6 +106,12 @@ async function buildBorders(pol, topo) {
   const entries = [];
   for (const f of await listFiles(join(CONTENT, 'borders/keyframes'), '.json')) {
     const kf = await readJSON(join(CONTENT, 'borders/keyframes', f));
+    const key = dateKey(kf.date);
+    // The 1783 snapshot seeds the later series once the historical layer ends.
+    if (key < dateKey(+colonial.until.slice(0, 4) - 1)) {
+      (key < early.until ? early : colonial).stops.push(+kf.date);
+      continue;
+    }
     const set = new Map();
     for (const [p, ids] of Object.entries(kf.owners)) {
       const pi = polIdx(p, `keyframe ${f}`);
@@ -101,7 +121,6 @@ async function buildBorders(pol, topo) {
         for (const i of expand(id, `keyframe ${f}`)) if (!set.has(i) || order[i] === id) set.set(i, pi);
       }
     }
-    const key = dateKey(kf.date);
     const raw = new Map(set);
     for (const i of [...set.keys()]) if (isCurated(i, key)) set.delete(i);
     entries.push({ key, date: String(kf.date), src: kf.source || f, kind: 'keyframe', set, raw });
@@ -224,6 +243,96 @@ function validLink(u, where, internal = false) {
   if (!ok) err(`${where}: link must be a web link (https://…)${internal ? ' or a link inside the site (#/…)' : ''}, got ${JSON.stringify(u)}`);
 }
 
+function islandPaths(topo) {
+  const atoms = topo.objects.atoms.geometries;
+  const coastline = merge(topo, atoms).coordinates;
+  const islands = coastline.map(polygon => {
+    const bounds = [Infinity, Infinity, -Infinity, -Infinity];
+    for (const point of polygon[0]) {
+      const [lon, lat] = unproject(point);
+      bounds[0] = Math.min(bounds[0], lon);
+      bounds[1] = Math.min(bounds[1], lat);
+      bounds[2] = Math.max(bounds[2], lon);
+      bounds[3] = Math.max(bounds[3], lat);
+    }
+    return { polygon, bounds };
+  });
+  const paths = new Map();
+  return selector => {
+    const key = selector.join(',');
+    if (paths.has(key)) return paths.get(key);
+    let polygons;
+    if (selector.every(id => typeof id === 'string')) {
+      polygons = merge(topo, atoms.filter(a => selector.some(prefix => a.properties.id.startsWith(prefix)))).coordinates;
+    } else {
+      const [w, s, e, n] = selector;
+      polygons = islands.filter(({ bounds: [a, b, c, d] }) => a >= w && b >= s && c <= e && d <= n)
+        .map(({ polygon }) => polygon);
+    }
+    const path = polygons.flatMap(polygon => polygon.map(ring => `M${ring.map(p => p.map(r1)).join('L')}Z`)).join('');
+    paths.set(key, path);
+    return path;
+  };
+}
+
+async function buildGeography(file, islandPath) {
+  const { until, methods, sources, features, areas = [] } = await readYAML(join(CONTENT, file));
+  const cutoff = dateKey(until);
+  if (!Number.isInteger(until) || !cutoff) err(`${file}: invalid end year`);
+  for (const [id, source] of Object.entries(sources)) {
+    if (!source.title) err(`${file}: missing title for ${id}`);
+    validLink(source.url, `${file}: source ${id}`);
+  }
+  for (const id of methods) if (!Object.hasOwn(sources, id)) err(`${file}: unknown method source ${id}`);
+  const ids = new Set();
+  const territoryAreas = [];
+  const rows = features.map(({ id, kind, name, from, to, until: stop, period, lonlat, text, refs, detail, anchors, power, land }) => {
+    const where = `${file}: ${id}`;
+    if (!/^[a-z0-9-]+$/.test(id ?? '') || ids.has(id)) err(`${where}: missing or duplicate id`);
+    ids.add(id);
+    if (!['site', 'region', 'tribute', 'frontier', 'settlement', 'fort', 'territory', 'voyage'].includes(kind)) err(`${where}: unknown kind ${kind}`);
+    if (![name, period].every(value => typeof value === 'string' && value.trim()) || (text !== undefined && typeof text !== 'string')) err(`${where}: name and period must be plain text`);
+    const start = dateKey(from), end = dateKey(stop ?? (Number.isInteger(to) ? to + 1 : null));
+    if (!start || !end || start >= end || end > cutoff) err(`${where}: invalid year range`);
+    if (!Array.isArray(refs) || !refs.length || refs.some(ref => !Object.hasOwn(sources, ref))) err(`${where}: missing or unknown sources`);
+    const xy = validLonLat(lonlat, where) ? project(lonlat) : null;
+    if ((power && !Object.hasOwn(POWERS, power)) || (kind === 'territory' && !power)) err(`${where}: unknown or missing power`);
+    if (land) {
+      const box = Array.isArray(land) && land.length === 4 && land.every(Number.isFinite) && land[0] < land[2] && land[1] < land[3];
+      const shores = Array.isArray(land) && land.length && land.every(id => typeof id === 'string' && id.length >= 3);
+      if (kind !== 'territory' || !islandPath || (!box && !shores)) {
+        err(`${where}: land requires a territory and island bounds or shoreline IDs`);
+      } else {
+        const d = islandPath(land);
+        if (!d) err(`${where}: land selects no island geometry`);
+        else territoryAreas.push({ name, kind: 'possession', power, ink: POWERS[power]?.ink, start, end, refs, d });
+      }
+    }
+    let points;
+    if (kind === 'frontier') {
+      const locations = Array.isArray(anchors) ? anchors : [];
+      if (locations.length < 2) err(`${where}: frontier requires at least two evidence anchors`);
+      points = locations.filter(point => validLonLat(point, where)).map(project);
+    } else if (anchors) err(`${where}: only a frontier can have evidence anchors`);
+    return { id, kind, name, start, end, period, xy, text, refs, ...(power ? { power } : {}), ...(detail ? { detail } : {}), ...(points ? { points } : {}) };
+  });
+  const shapes = areas.map(({ name, kind, ink, from, until, points, refs, radius }) => {
+    const where = `${file}: ${name}`;
+    const start = dateKey(from), end = dateKey(until);
+    if (!start || !end || start >= end || end > cutoff) err(`${where}: invalid date range`);
+    if (!['settled', 'treaty', 'influence'].includes(kind) || !INKS.includes(ink)) err(`${where}: invalid map symbol`);
+    if (!Array.isArray(refs) || !refs.length || refs.some(ref => !Object.hasOwn(sources, ref))) err(`${where}: missing or unknown sources`);
+    if (!Array.isArray(points) || points.length < (kind === 'settled' ? 3 : 2)) { err(`${where}: too few points`); return null; }
+    const line = points.filter(point => validLonLat(point, where)).map(project);
+    if (kind === 'influence') {
+      if (!Number.isFinite(radius) || radius <= 0) err(`${where}: influence requires a positive radius in kilometres`);
+      return { name, kind, ink, start, end, refs, anchors: line, radius };
+    }
+    return { name, kind, ink, start, end, refs, d: `M${line.join('L')}${kind === 'settled' ? 'Z' : ''}` };
+  }).filter(Boolean);
+  return { until: cutoff, methods, sources, features: rows, areas: [...territoryAreas, ...shapes], stops: [] };
+}
+
 function buildWar(w, file, ctx) {
   const where = `war ${file}`;
   for (const k of ['id', 'name', 'start', 'tier']) if (w[k] === undefined) err(`${where}: missing ${k}`);
@@ -250,10 +359,11 @@ function buildWar(w, file, ctx) {
   for (const s of w.sides || []) for (const p of s.polities || []) for (const c of ctx.pol.list[ctx.pol.index.get(p)]?.countries || []) if (!w.countries) countries.add(c);
 
   for (const [k, v] of [['name', w.name], ['summary', w.summary], ...(w.notes || []).map((n, i) => [`note ${i + 1}`, n])]) if (isObj(v)) err(`${where}: ${k} ${NOT_TEXT}`);
+  if (w.date_label !== undefined && typeof w.date_label !== 'string') err(`${where}: date_label must be plain text`);
   const steps = (w.steps || []).map((s, si) => {
     const sw = `${where} step ${si + 1}`;
     if (!s.title) err(`${sw}: missing title`);
-    if (!s.body?.length && w.tier !== 'C') err(`${sw}: missing body`);
+    if (!s.body?.length && w.tier !== 'C' && !w.map_only) err(`${sw}: missing body`);
     (s.body || []).forEach((b, k) => { if (typeof b !== 'string') err(`${sw}: body paragraph ${k + 1} ${NOT_TEXT}`); });
     for (const v of [s.title, s.date, ...(s.facts || []).flat(), ...(s.markers || []).flatMap((m) => [m.name, m.text, m.date])]) if (isObj(v)) err(`${sw}: "${Object.keys(v)[0]}…" ${NOT_TEXT}`);
     if (s.link) validLink(s.link.href, `${sw} link`, true);
@@ -346,7 +456,7 @@ function buildWar(w, file, ctx) {
   for (const st of steps) for (const c of st.countries || []) countries.add(c);
   return {
     war: { id: w.id, name: w.name, start: String(w.start), end: w.end !== undefined ? String(w.end) : null, tier: w.tier, summary: w.summary || '', sides, notes: w.notes || [], sources: w.sources || [], steps },
-    index: { id: w.id, name: w.name, start: String(w.start), end: w.end !== undefined ? String(w.end) : null, sk: dateKey(w.start), ek: dateKey(w.end === 'ongoing' ? '9999' : w.end ?? w.start), tier: w.tier, summary: w.summary || '', countries: [...countries].sort(), steps: steps.map((s) => ({ t: s.title, d: s.date, c: s.countries, w: s.when })), polities: [...new Set(sides.flatMap((s) => s.polities))], ...(steps.length ? {} : { sources: w.sources || [] }) },
+    index: { id: w.id, name: w.name, start: String(w.start), end: w.end !== undefined ? String(w.end) : null, sk: dateKey(w.start), ek: dateKey(w.end === 'ongoing' ? '9999' : w.end ?? w.start), tier: w.tier, summary: w.summary || '', countries: [...countries].sort(), steps: steps.map((s) => ({ t: s.title, d: s.date, c: s.countries, w: s.when })), polities: [...new Set(sides.flatMap((s) => s.polities))], ...(w.date_label ? { dateLabel: w.date_label } : {}), ...(steps.length ? {} : { sources: w.sources || [] }) },
   };
 }
 
@@ -373,30 +483,85 @@ async function main() {
 
   const topoText = await readFile(join(ROOT, 'site-data/atoms.topo.json'), 'utf8');
   const topo = JSON.parse(topoText);
+  const stateText = await readFile(join(ROOT, 'site-data/us-states.topo.json'), 'utf8');
+  const jurisdictionText = await readFile(join(ROOT, 'site-data/colonial-jurisdictions.topo.json'), 'utf8');
+  const stateGeometries = [...JSON.parse(stateText).objects.states.geometries, ...JSON.parse(jurisdictionText).objects.colonial.geometries];
+  const stateYears = new Set();
+  for (const { properties: p } of stateGeometries) {
+    stateYears.add(Math.floor(p.start / 10000));
+    if (p.end < 20001231) {
+      const stamp = String(p.end);
+      const day = new Date(Date.UTC(+stamp.slice(0, 4), +stamp.slice(4, 6) - 1, +stamp.slice(6) + 1));
+      stateYears.add(day.getUTCFullYear());
+    }
+  }
   const pol = await buildPolities();
-  const borders = await buildBorders(pol, topo);
+  const early = await buildGeography('early-geography.yaml');
+  const colonial = await buildGeography('colonial-geography.yaml');
+  const territories = await buildGeography('historical-territories.yaml', islandPaths(topo));
+  const borders = await buildBorders(pol, topo, early, colonial);
   const labels = await buildLabels(pol, borders, topo);
 
   const locales = await loadLocales(err);
   if (!CHECK) await prepareLocaleOutput(locales, OUT);
   const wars = [];
   const seen = new Set();
+  const laterConflicts = { features: [], sources: {}, stops: [] };
+  async function addWar(data, file) {
+    if (seen.has(data.id)) err(`war ${file}: duplicate id ${data.id}`);
+    seen.add(data.id);
+    const { war, index } = buildWar(data, file, { pol, borders });
+    const layers = [];
+    if (data.early_map || data.map_only && index.sk < early.until) layers.push(early);
+    if (index.sk < colonial.until && index.ek >= early.until) layers.push(colonial);
+    if (index.ek >= colonial.until && war.steps.some(s => s.markers.length)) layers.push(laterConflicts);
+    for (const layer of layers) {
+      const marker = war.steps.find(s => s.markers.length)?.markers[0];
+      if (!marker || !index.sk || !index.ek || (data.early_map && (index.ek >= early.until || !index.dateLabel))) {
+        err(`war ${file}: missing dated overview marker`);
+      } else {
+        const refs = war.sources.map((source, i) => {
+          const id = `war-${war.id}-${i + 1}`;
+          if (!source.url) err(`war ${file}: map sources require links`);
+          layer.sources[id] = source;
+          return id;
+        });
+        const start = +index.sk.slice(0, 4), end = +index.ek.slice(0, 4);
+        layer.features.push({
+          id: `war-${war.id}`, kind: 'conflict', name: war.name, from: start, to: end,
+          period: index.dateLabel || (start === end ? String(start) : `${start}–${end}`),
+          xy: marker.xy, text: war.summary, refs, war: war.id,
+          ...(!data.early_map ? { events: war.steps.map(s => ({ key: s.when, place: s.markers[0]?.name, xy: s.markers[0]?.xy, date: s.markers[0]?.date })) } : {}),
+        });
+        layer.stops.push(start);
+      }
+    }
+    wars.push(index);
+    await compileWarTranslations(locales, war, index, emit, err);
+    await emit(`data/wars/${war.id}.json`, JSON.stringify(war));
+  }
+  for (const file of ['colonial-conflicts.yaml', 'settler-conflicts.yaml']) {
+    const { sources: conflictSources, conflicts } = await readYAML(join(CONTENT, file));
+    for (const { events, sources, ...war } of conflicts) {
+      await addWar({
+        ...war, tier: 'B', map_only: true,
+        sides: war.sides.map(s => ({ ...s, success: s.name })),
+        sources: sources.map(id => {
+          if (!Object.hasOwn(conflictSources, id)) err(`war ${war.id}: unknown source ${id}`);
+          return conflictSources[id] || {};
+        }),
+        steps: events.map(({ date, name, lonlat, kind, side, view, arrows, areas, markers }) => ({
+          title: name, date, when: date, view, arrows, areas,
+          markers: [{ kind, side, name, lonlat, date: String(date) }, ...(markers || [])],
+        })),
+      }, `${war.id}.yaml`);
+    }
+  }
   const files = await listFiles(join(CONTENT, 'wars'), '.yaml');
   for (let start = 0; start < files.length; start += 16) {
     const batch = files.slice(start, start + 16);
     const entries = await Promise.all(batch.map(f => readYAML(join(CONTENT, 'wars', f))));
-    const outputs = entries.map((w, i) => {
-      const f = batch[i];
-      if (seen.has(w.id)) err(`war ${f}: duplicate id ${w.id}`);
-      seen.add(w.id);
-      const { war, index } = buildWar(w, f, { pol, borders });
-      wars.push(index);
-      return { war, index };
-    });
-    await Promise.all(outputs.map(async ({ war, index }) => {
-      await compileWarTranslations(locales, war, index, emit, err);
-      await emit(`data/wars/${war.id}.json`, JSON.stringify(war));
-    }));
+    await Promise.all(entries.map((w, i) => addWar(w, batch[i])));
   }
   wars.sort((a, b) => (a.sk < b.sk ? -1 : a.sk > b.sk ? 1 : a.name.localeCompare(b.name)));
 
@@ -404,6 +569,16 @@ async function main() {
     frame: [FRAME.x0, FRAME.y0, FRAME.x1 - FRAME.x0, FRAME.y1 - FRAME.y0],
     reliefBounds: [DATA_CLIP.x0, DATA_CLIP.y0, DATA_CLIP.x1 - DATA_CLIP.x0, DATA_CLIP.y1 - DATA_CLIP.y0],
     overviewGrid: overviewGrid(),
+    early,
+    colonial,
+    territories,
+    powers: POWERS,
+    regionViews: {
+      atlantic: [...project([-75.25, 38]), 1750, 1900],
+      caribbean: [...project([-71.9, 17.8]), 3100, 1750],
+    },
+    laterConflicts,
+    stateYears: [...stateYears].sort((a, b) => a - b),
     
     atoms: borders.order,
     names: borders.order.map((id) => borders.meta.get(id)?.name || id),
@@ -417,6 +592,9 @@ async function main() {
   };
   await emitLocales(locales, bordersOut, labels, emit, err);
   await emit('data/atoms.topo.json', topoText);
+  await emit('data/us-states.topo.json', stateText);
+  await emit('data/colonial-jurisdictions.topo.json', jurisdictionText);
+  if (!CHECK) await cp(join(ROOT, 'site-data/us-states.LICENSE.md'), join(OUT, 'data/us-states.LICENSE.md'));
   await emit('data/borders.json', JSON.stringify(bordersOut));
   await emit('data/polities.css', pol.css);
   await emit('data/wars.json', JSON.stringify(wars));

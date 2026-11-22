@@ -163,7 +163,106 @@ A polity is anything that owns land on the map.
   polities, add the aliases to the one you keep, then run
   `node tools/rename-polity.mjs <old> <kept>`.
 
+## Early North America
+
+The atlas uses an evidence map from 800 through 1529, followed by a colonial map
+through 1783. Local contact chronologies
+differ. The map includes the Norse presence dated to 1021 in Newfoundland and
+the early colonial context in Hispaniola. [Kuitems et al.](https://doi.org/10.1038/s41586-021-03972-8)
+[Indigenous persistence in Hispaniola](https://open.uapress.arizona.edu/read/e86c411b-cde5-4e11-8514-28f79205f642/section/2aee5324-2ead-47ec-b65e-58a8c036ce72)
+
+Use `content/early-geography.yaml` for a settlement, political centre, homeland,
+tribute centre or contested frontier. Give the public locality as `lonlat`
+in longitude–latitude order, an inclusive range of display years as `from`
+and `to`, a human-readable `period`, a description, and source IDs in `refs`.
+Explain when a date window is an editorial choice or an archaeological estimate.
+Regional labels locate the people or landscape named in the source. A frontier
+uses a soft tint around geographically documented `anchors`. The tint's extent
+is schematic. A tribute symbol locates a political relationship through the
+centre named in the record. Compare the relationship and its date with the
+source text and map. [Cole and Hart](https://doi.org/10.3390/ijgi10060397)
+[Indigenous Peoples Atlas of Canada](https://indigenouspeoplesatlasofcanada.ca/forewords/)
+[Native Land Digital](https://native-land.ca/about/faq)
+[Hicks](https://doi.org/10.1017/S095653610000225X)
+
+For an early conflict with a documented locality, `early_map: true` adds the
+first step's first marker to the timeline map. Set `date_label` to the
+precision available from the sources. For an uncertain single event, the
+timeline may mark a conventional approximate year or a dated window. Explain
+the evidence for violence, the nature of the date, and any uncertainty about
+location or participants in the story. [Lambert](https://doi.org/10.1017/9781108788090.018)
+
+### Evidence checks
+
+| Atlas claim | External check |
+| --- | --- |
+| The city pins for Cahokia, Paquimé, Chichén Itzá, Xochicalco, Taos Pueblo and Copán | Compare the atlas coordinates with the public site coordinates. [Cahokia](https://whc.unesco.org/en/list/198/maps/), [Paquimé](https://whc.unesco.org/en/list/560/maps/), [Chichén Itzá](https://whc.unesco.org/en/list/483/maps/), [Xochicalco](https://whc.unesco.org/en/list/939/maps/), [Taos Pueblo](https://whc.unesco.org/en/list/492/maps/), [Copán](https://whc.unesco.org/en/list/129/maps/) |
+| The Arctic shows late Dorset and ancestral Inuit evidence in overlapping centuries | Compare the dated site samples with Inuit accounts of earlier Arctic inhabitants and the timing of Thule expansion. [Inuit history](https://indigenouspeoplesatlasofcanada.ca/article/early-history/), [late Dorset dates](https://doi.org/10.1017/aaq.2019.88), [Thule migration dates](https://www.cambridge.org/core/journals/american-antiquity/article/abs/timing-of-the-thule-migration-new-dates-from-the-western-canadian-arctic/AD69885C6BA4CC797B5B25ED9F81FE12) |
+| The 1491 map shows independent Tlaxcallan, Triple Alliance tribute centres and a Purépecha frontier | Check Figure 1 in the late imperial reconstruction, the archaeology of independent Tlaxcallan, the glyph and communities on folio 14r of the tribute roll, and the site-level frontier evidence in Silverstein's map 2.1 and chapters 3–4. [Imperial provinces](https://doi.org/10.1017/S0956536109990101), [Tlaxcallan archaeology](https://www.cambridge.org/core/journals/latin-american-antiquity/article/aztec-and-tlaxcalan-economic-interaction-blockade-or-interregional-exchange/CBE14EE68216FC6CA5BC5C8F2A1BD3C3), [Matrícula de Tributos](https://tlachia.iib.unam.mx/matricula-de-tributo/MT_14r), [frontier survey](https://etda.libraries.psu.edu/files/final_submissions/2657) |
+| Castle Rock and Mayapán appear in date windows | Compare the latest tree-ring dates, excavated contexts and the dating of the violence at Castle Rock. At Mayapán compare the radiocarbon dates and Yucatec accounts. [Castle Rock excavation report](https://crowcanyon.org/ResearchReports/CastleRock/Text/crpw_finaldays), [Mayapán study](https://doi.org/10.1038/s41467-022-31522-x) |
+
+For independent review, a historian or archaeologist who works in the region
+can check the chronology, location, and interpretation of the evidence. The
+relevant Indigenous nation or descendant community's cultural or heritage
+office can review the names, territorial interpretation, and appropriate
+public detail. For the US, the Tribal Historic Preservation Officers directory
+can help identify offices. This atlas has source checks and awaits that external
+review. [NATHPO directory](https://members.nathpo.org/thpo-directory)
+
 ## Borders
+
+### Colonial map and U.S. boundary dates
+
+`content/colonial-geography.yaml` holds the dated map features from 1530
+through 1783. Its settlement corridors and treaty lines are drawn from
+geographical landmarks and sourced maps. Each path's `from` and `until` uses
+the regular date format, with an exclusive end date. Both transition years
+appear in the timeline controls.
+
+`content/colonial-conflicts.yaml` and `content/settler-conflicts.yaml` hold
+conflict maps with sources, sides, and dated markers. Each `events` row
+is a visible step and may use
+`view`, `markers`, `arrows`, and `areas` in the regular step format.
+
+The Newberry layer displays colonial outlines by default wherever the county
+series records a jurisdiction. The import dissolves counties by jurisdiction
+and shows Carolina as a single province through 1711. The state and territory
+series starts with the September 1783 Treaty of Paris. Every year of a dated
+outline transition is a timeline stop. [Layer licence and citation](site-data/us-states.LICENSE.md)
+
+`content/historical-territories.yaml` holds the names and controlling powers
+for the thirteen colonies and other colonial settlements and possessions.
+Use `from` and an exclusive `until`, with the precision available from the
+source. Where sources establish colonial possession of an island, `land`
+selects whole coast polygons inside a longitude–latitude box or by shoreline
+IDs for archipelagos. The box itself is absent from the map. For documented
+occupation of a port or contested inland reach, map the locality or a soft
+footprint. [Colonial charters](https://avalon.law.yale.edu/subject_menus/statech.asp)
+[Thomas Jefferys’s map of West Indian settlements](https://www.loc.gov/item/74690949/)
+
+On Hispaniola, trace the 1776 demarcation and the line ratified in 1777 from
+the survey between the Dajabón and Pedernales. The map generalizes the line
+to atlas scale. Compare its turn west of Hinche with de Moya’s drawing of
+the colonial line. On St. Vincent, the treaty marker locates the Byera River
+sector and the map labels the Garifuna and Kalinago lands separately from the
+colonial settlement. [1776 frontier survey](https://gallica.bnf.fr/ark:/12148/btv1b5972686s)
+[De Moya’s map](https://www.loc.gov/item/2021668484/)
+[St. Vincent treaty survey](https://www.loc.gov/item/74691610/)
+
+An `influence` area in that file uses dated evidence anchors in `points`
+and a schematic fade in kilometres in `radius`. The fade expresses the
+broader reach around attested tribute centres, settlements or routes. Its
+extent is an editorial choice. Check Aztec tribute against the imperial
+province map, Maya connections against the relevant phase and regional
+centres, and movement across the Plains against the Comanche Nation’s
+historical research. [Aztec imperial provinces](https://doi.org/10.1017/S0956536109990101)
+[Classic Maya networks](https://www.cambridge.org/core/books/abs/ancient-maya-politics/classic-maya-networks/1F985F454D8B4FC7D623143612126E78)
+[Comanche Nation historical research](https://ftp.dot.state.tx.us/pub/txdot-info/env/toolkit/415-03-rpt.pdf)
+
+### International border series
+
+The atlas uses the keyframe and event series below for dates after 1783. The
+1783 draft seeds the later international border series.
 
 The owner of an atom on a date is the most recent assignment on or before that
 date, from two sources merged by date:

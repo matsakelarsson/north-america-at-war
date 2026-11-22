@@ -1,0 +1,30 @@
+id: crow-creek-massacre
+name: Crow Creek massacre
+start: 1325
+end: 1325
+date_label: About 1325
+early_map: true
+tier: B
+countries: [us]
+summary: Archaeological evidence at a fortified village on the Missouri River records a large attack around 1325. The attackers are unidentified.
+sources:
+  - title: Willey and Emerson · The Osteology and Archaeology of the Crow Creek Massacre
+    url: https://doi.org/10.1080/2052546.1993.11931655
+  - title: Zimmerman and Stewart · An Application of the Massacre Model to a 700-Year-Old Mystery
+    url: https://openprairie.sdstate.edu/greatplainssociologist/vol4/iss1/3/
+steps:
+  - title: Violence at a Missouri River village
+    date: About 1325
+    when: 1325
+    borders: 1325
+    body:
+      - Excavations at Crow Creek identified a fortified village and an attack that killed at least 486 people. Willey and Emerson placed the event around 1325.
+      - Material links place the village among communities of the Missouri River region. Competition over land has been proposed as a factor, while the identities and motives of the attackers remain uncertain.
+    facts:
+      - [Evidence, Excavation and analysis of human remains]
+      - [Location, General Missouri River vicinity]
+    markers:
+      - kind: battle
+        name: Crow Creek village vicinity
+        lonlat: [-99.33, 43.84]
+        text: The pin gives the general area of the documented village along the Missouri River.

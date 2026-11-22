@@ -1,0 +1,27 @@
+id: tlatelolco-1473
+name: Conquest of Tlatelolco
+start: 1473
+end: 1473
+date_label: "1473"
+early_map: true
+tier: B
+countries: [mx]
+summary: Tenochtitlan defeated neighbouring Tlatelolco, bringing its period of independent rule to an end. Accounts of the war give different explanations for its outbreak.
+sources:
+  - title: Instituto Nacional de Antropología e Historia · Zona Arqueológica Tlatelolco
+    url: https://www.inah.gob.mx/zonas/zona-arqueologica-tlatelolco
+  - title: Susan D. Gillespie · The Metaphorical Underpinnings of Aztec History
+    url: https://www.cambridge.org/core/journals/ancient-mesoamerica/article/abs/metaphorical-underpinnings-of-aztec-history/8B272418D9B612A627474A2B17DD345C
+steps:
+  - title: Tenochtitlan defeats Tlatelolco
+    date: "1473"
+    when: 1473
+    borders: 1473
+    body:
+      - The neighbouring Mexica cities had grown next to one another on Lake Texcoco. Tenochtitlan’s ruler Axayácatl defeated Tlatelolco under Moquíhuix in 1473.
+      - Sources differ on what sparked the fighting. The conquest changed political authority within the twin city and Tlatelolco continued as an important market.
+    markers:
+      - kind: battle
+        name: Tlatelolco
+        lonlat: [-99.137, 19.451]
+        text: The site of the independent city of Tlatelolco, which was conquered in 1473.

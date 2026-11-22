@@ -151,6 +151,30 @@ h1 a.home { color: inherit; text-decoration: none; }
 .marker:focus { outline: none; }
 .mlabel { font: 600 11.5px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--halo); stroke-width: 3.5px; stroke-linejoin: round; }
 .caplabel { font: 500 11px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--halo); stroke-width: 2.5px; stroke-linejoin: round; }
+.early-frontiers { pointer-events: none; }
+#frontier-fade stop { stop-color: var(--ink-brown); }
+.early-marker { cursor: pointer; outline: none; }
+.early-marker .hit { fill: transparent; }
+.early-marker:is(:hover, :focus-visible, .sel) .ring { opacity: 1; }
+.early-label { font: 600 11.5px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--halo); stroke-width: 3px; stroke-linejoin: round; }
+.early-region .early-label, .early-frontier .early-label { font: italic 600 12.5px var(--display); }
+.early-region-symbol { fill: var(--land); stroke: var(--ink-teal); stroke-width: 1.5; stroke-dasharray: 2 1.5; }
+.early-site-symbol { fill: var(--ink-teal); stroke: var(--surface); stroke-width: 1; }
+.early-tribute-symbol { fill: var(--gold-fill); stroke: var(--ink-brown); stroke-width: 1.4; }
+.early-frontier-symbol { fill: var(--ink-brown); fill-opacity: 0.18; stroke: var(--ink-brown); stroke-width: 1.4; stroke-dasharray: 2 1.5; }
+.early-conflict-symbol { fill: var(--ink-red); stroke: var(--surface); stroke-width: 1.2; }
+.early-cross { fill: none; stroke: var(--marker-glyph); stroke-width: 1.5; stroke-linecap: round; }
+.colonial-settlement-symbol { fill: var(--surface); stroke: var(--ink-blue); stroke-width: 1.6; }
+.colonial-fort-symbol { fill: var(--surface); stroke: var(--ink-brown); stroke-width: 1.4; }
+.territory-symbol { fill: var(--mc, var(--ink-slate)); stroke: var(--surface); stroke-width: 1; }
+.voyage-symbol { fill: var(--surface); stroke: var(--mc, var(--ink-olive)); stroke-width: 1.5; }
+.colonial-settled { fill: var(--mc); fill-opacity: 0.16; pointer-events: none; }
+.colonial-jurisdiction, .colonial-possession { fill: var(--mc); fill-opacity: 0.16; stroke: var(--mc); stroke-opacity: 0.74; stroke-width: 0.85; vector-effect: non-scaling-stroke; pointer-events: none; }
+.colonial-possession { fill-opacity: 0.29; }
+.influence-gradient stop { stop-color: var(--mc); }
+.colonial-treaty { fill: none; stroke: var(--mc); stroke-width: 1.5; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; pointer-events: none; }
+.state-boundaries { fill: none; stroke: var(--ink-slate); stroke-opacity: 0.62; stroke-width: 0.9; stroke-dasharray: 2 2; vector-effect: non-scaling-stroke; pointer-events: none; }
+:root { --colonial-settlement-key: color-mix(in srgb, var(--ink-blue) 22%, var(--land)); }
 
 .pop { max-height: calc(100% - 16px - var(--map-footer-height, 0px)); overflow-y: auto; position: absolute; z-index: 5; width: min(280px, calc(100% - 16px)); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 9px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2); padding: 10px 12px 12px; font-size: 0.875rem; line-height: 1.45; }
 .pop .pk { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 26px 2px 0; }
@@ -209,6 +233,23 @@ h1 a.home { color: inherit; text-decoration: none; }
   .timeline input { forced-color-adjust: none; }
 }
 .bsrc { margin: 6px 0 0; font-size: 0.75rem; color: var(--muted); }
+.state-key { display: flex; gap: 2px 10px; flex-wrap: wrap; align-items: baseline; margin-block-start: 6px; font-size: 0.82rem; }
+.state-key label { display: inline-flex; align-items: center; gap: 3px; }
+.early-jump { margin: 6px 0 0; font-size: 0.875rem; }
+.early-map { margin-block-start: 10px; }
+.early-map h2 { margin: 0 0 6px; font: 600 1.2rem/1.2 var(--display); }
+.early-map .legend { margin: 0; font-size: 0.875rem; }
+.early-map .power-legend { margin-block-start: 4px; }
+.region-views { display: flex; flex-wrap: wrap; gap: 6px; margin-block-end: 8px; }
+.early-map p, .early-story-note { color: var(--muted); font-size: 0.875rem; margin: 6px 0; }
+.early-map summary { width: fit-content; cursor: pointer; padding: 3px 0; font-size: 0.875rem; font-weight: 500; }
+.early-places { margin-inline-start: 10px; padding-inline-start: 10px; border-inline-start: 1px solid var(--line); }
+.early-places:empty { display: none; }
+.early-places details { margin-block: 3px; }
+.early-places summary svg { vertical-align: middle; margin-inline-end: 4px; }
+.early-places .chip { margin-block: 0 8px; padding-inline: 10px; }
+.early-sources { font-size: 0.8rem; padding-inline-start: 18px; margin: 6px 0; }
+.early-sources li + li { margin-block-start: 3px; }
 .filters { display: flex; gap: 8px; margin: 14px 0 0; flex-wrap: wrap; }
 .search { flex: 2 1 228px; }
 .search input { width: 100%; height: 42px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-size: 0.9rem; }
@@ -287,6 +328,6 @@ footer li { margin: 0 0 2px; }
   .capital-key { inset-block-end: 14px; border-color: transparent; box-shadow: none; }
 }
 
-#map.scrubbing .lbl, #map.scrubbing .caplabel { visibility: hidden; }
+#map.scrubbing .lbl, #map.scrubbing .caplabel, #map.scrubbing .early-label { visibility: hidden; }
 
 [dir="rtl"] .navbtn span[aria-hidden="true"] { transform: scaleX(-1); }

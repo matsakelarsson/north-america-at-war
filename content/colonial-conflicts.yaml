@@ -1,0 +1,971 @@
+# Graphic steps. Event names, dates and locations are the visible map labels.
+sources:
+  mexico: {title: "American Historical Association · Conquest of Mexico timeline", url: "https://www.historians.org/resource/the-conquest-of-mexico-timeline/"}
+  maya: {title: "INAH · Maya resistance", url: "https://www.inah.gob.mx/boletines/la-resistencia-instrumento-de-los-mayas-para-mantener-su-presencia"}
+  hispaniola: {title: "University of Arizona Press · Indigenous persistence in Hispaniola", url: "https://open.uapress.arizona.edu/read/e86c411b-cde5-4e11-8514-28f79205f642/section/2aee5324-2ead-47ec-b65e-58a8c036ce72"}
+  guatemala: {title: "Guatemalan Ministry of Culture · Archaeological sites", url: "https://culturaguate.gob.gt/2022/01/20/sitios-arqueologicos-para-visitar-en-guatemala/"}
+  tiguex: {title: "National Park Service · The Tiguex War", url: "https://www.nps.gov/coro/learn/historyculture/the-tiguex-war.htm"}
+  mixton: {title: "INAH · Nueva Galicia and the Mixtón War", url: "https://mexicograndezaydiversidad.inah.gob.mx/images/fasciculos/MexicoGrandezaDiversidad_F-08.pdf"}
+  chichimeca: {title: "INAH · Studies of the Chichimeca War", url: "https://estudioshistoricos.inah.gob.mx/wp-content/uploads/Martha-Monzon-Flores-La-guerra-de-exterminio-contra-los-grupos-chichimecas..pdf"}
+  florida: {title: "National Park Service · Fort Caroline", url: "https://home.nps.gov/articles/ftcaroline.htm"}
+  matanzas: {title: "National Park Service · The Massacre of the French", url: "https://www.nps.gov/casa/learn/historyculture/the_massacre.htm"}
+  acoma: {title: "National Park Service · Acoma Pueblo", url: "https://home.nps.gov/articles/000/acoma-pueblo-ancient-city-in-the-sky.htm"}
+  camino: {title: "National Park Service · El Camino Real de Tierra Adentro timeline", url: "https://www.nps.gov/articles/000/el-camino-real-de-tierra-adentro-timeline.htm"}
+  revolt: {title: "National Park Service · The Road to Revolt", url: "https://home.nps.gov/elca/learn/historyculture/the-road-to-revolt.htm"}
+  missions: {title: "National Park Service · Life in the Missions and Indigenous revolts", url: "https://home.nps.gov/subjects/travelspanishmissions/life-in-the-missions-between-reality-romance-and-revolt.htm"}
+  powhatan: {title: "Virginia Department of Historic Resources · Pamunkey survey and Anglo-Powhatan wars", url: "https://www.dhr.virginia.gov/wp-content/uploads/2025/03/KW-064_Pamunkey_Indian_Tribe-Reservation_Intensive_Survey_2024_CPG_Report_compressed.pdf"}
+  jamestown: {title: "National Park Service · Chronology of Powhatan Indian activity", url: "https://www.nps.gov/jame/learn/historyculture/chronology-of-powhatan-indian-activity.htm"}
+  bacon: {title: "Virginia Humanities · Bacon’s Rebellion", url: "https://encyclopediavirginia.org/entries/bacons-rebellion-1676-1677/"}
+  maryland: {title: "Maryland State Archives · Colonial chronology", url: "https://www.msa.maryland.gov/msa/mdmanual/01glance/chron/html/chron16.html"}
+  pequot: {title: "Mashantucket Pequot Museum and Research Center · Battlefield project timeline", url: "https://pequotwar.org/about/timeline/"}
+  dutch: {title: "National Park Service · New Netherland", url: "https://www.nps.gov/mava/learn/historyculture/new-netherland.htm"}
+  nn: {title: "New York State Archives · New Netherland records", url: "https://www.archives.nysed.gov/research/research-guide-dutch"}
+  pavonia: {title: "Nationaal Archief · Mass Murder on Manhattan", url: "https://www.nationaalarchief.nl/en/research/400-years-of-dutch-american-stories/mass-murder-on-manhattan"}
+  newcastle: {title: "National Park Service · Fort Casimir", url: "https://home.nps.gov/articles/000/fort-casimir-the-beginnings-of-new-castle.htm"}
+  transfer: {title: "Library of Congress · Articles about the Transfer of New Netherland", url: "https://www.loc.gov/resource/gdcwdl.wdl_04062/"}
+  newyork: {title: "New York State Senate · Timeline", url: "https://www.nysenate.gov/timeline"}
+  kingphilip: {title: "National Park Service · King Philip’s War", url: "https://home.nps.gov/rowi/learn/historyculture/kingphilip.htm"}
+  greatswamp: {title: "Rhode Island Historical Society · The Great Swamp Massacre", url: "https://www.rihs.org/the-great-swamp-massacre-a-conversation-with-james-a-warren/"}
+  newfrance: {title: "Government of Canada · National historic sites of New France", url: "https://www.canada.ca/en/services/defence/caf/militaryhistory/wars-operations/new-france/national-historic-sites.html"}
+  acadia: {title: "Parks Canada · Fort Anne", url: "https://parks.canada.ca/lhn-nhs/ns/fortanne/culture/histoire-history"}
+  quebec: {title: "Parks Canada · Saint-Louis Forts and Châteaux", url: "https://parks.canada.ca/lhn-nhs/qc/saintlouisforts/culture/histoire-history/natcul1"}
+  newfoundland: {title: "Memorial University · Anglo-French Conflict, 1690–1713", url: "https://www.heritage.nf.ca/articles/exploration/wartime.php"}
+  pemaquid: {title: "Maine Bureau of Parks and Lands · Colonial Pemaquid", url: "https://www.maine.gov/dacf/parks/discover_history_explore_nature/history/colonialpemaquid/fort.shtml"}
+  hudson: {title: "Dictionary of Canadian Biography · Pierre Le Moyne d’Iberville", url: "https://www.biographi.ca/en/bio.php?BioId=35062"}
+  deerfield: {title: "Pocumtuck Valley Memorial Association · 1704 Raid on Deerfield", url: "https://deerfield-ma.org/happenings/events-calendar/commemoration-of-the-1704-raid-on-deerfield/"}
+  wabanaki: {title: "National Park Service · Wabanaki Peoples", url: "https://www.nps.gov/parkhistory/online_books/acad/wabanaki_peoples_vol1.pdf"}
+  tuscarora: {title: "North Carolina Department of Natural and Cultural Resources · Fort Neoheroka", url: "https://www.dncr.nc.gov/blog/2016/03/23/culminating-battle-tuscarora-war-1713"}
+  tuscarora-map: {title: "State Library of North Carolina · The Tuscarora War", url: "https://www.ncpedia.org/waywelived/tuscarora-war"}
+  yamasee: {title: "University of South Carolina · Yamassee War", url: "https://www.scencyclopedia.org/sce/entries/yamassee-war/"}
+  appalachee: {title: "Mission San Luis · The end of the mission system", url: "https://missionsanluis.org/learn/history/end-of-the-mission-system/"}
+  south: {title: "National Park Service · Colonial Southeast", url: "https://www.nps.gov/ocmu/learn/historyculture/upload/Accessible-Colonial-Southeast-Indians.pdf"}
+  culpeper: {title: "State Library of North Carolina · Culpeper’s Rebellion", url: "https://www.ncpedia.org/culpepers-rebellion"}
+  cary: {title: "State Library of North Carolina · Thomas Cary", url: "https://www.ncpedia.org/biography/governors/cary"}
+  villasur: {title: "Nebraska State Historical Society · The Villasur Expedition", url: "https://history.nebraska.gov/marker-monday-the-villasur-expedition-1720/"}
+  natchez: {title: "National Park Service · The Natchez Indians", url: "https://www.nps.gov/natc/learn/historyculture/indians.htm"}
+  natchezmap: {title: "Library of Congress · Map of the two Natchez forts, 1730", url: "https://www.loc.gov/resource/gdcwdl.wdl_15499/"}
+  chickasaw: {title: "National Park Service · Chickasaw History", url: "https://home.nps.gov/natr/learn/historyculture/chickasaw-history-a-summary.htm"}
+  bloodymarsh: {title: "National Park Service · The Spanish attack of 1742", url: "https://www.nps.gov/fofr/learn/historyculture/the-spanish-attack-of-1742.htm"}
+  mose: {title: "National Park Service · The siege of 1740", url: "https://www.nps.gov/casa/learn/historyculture/the-siege-of-1740.htm"}
+  louisbourg: {title: "Parks Canada · Fortress of Louisbourg history", url: "https://parks.canada.ca/lhn-nhs/ns/louisbourg/decouvrir-discover/histoire-history"}
+  acadianforts: {title: "Nova Scotia Archives · The Forts of Chignecto", url: "https://archives.novascotia.ca/pdf/library/FortsOfChignecto-F197C43W3.pdf"}
+  britishwar: {title: "Government of Canada · Seven Years’ War", url: "https://www.canada.ca/en/services/defence/caf/militaryhistory/wars-operations/seven-years.html"}
+  pontiac: {title: "Ohio Supreme Court · Pontiac and his war", url: "https://www.supremecourt.ohio.gov/courts/judicial-system/supreme-court-of-ohio/mjc/interest/native-american-lobby/pontiac/"}
+  bushy: {title: "Pennsylvania Historical and Museum Commission · Bushy Run", url: "https://www.pa.gov/agencies/phmc/historic-sites-and-museums/military-history-trail/bushy-run"}
+  alamance: {title: "North Carolina Historic Sites · Alamance Battleground", url: "https://historicsites.nc.gov/all-sites/alamance-battleground/history"}
+  cherokee: {title: "National Park Service · Cherokee conflicts in the colonial Southeast", url: "https://www.nps.gov/orgs/1539/the-southeast-chronicles-ninety-six-national-historic-site.htm"}
+  pennamite: {title: "Penn State University Libraries · Historical collections on the Wyoming Valley", url: "https://digital.libraries.psu.edu/digital/api/collection/digitalbks2/id/20978/download"}
+  caribbean: {title: "Naval History and Heritage Command · Global naval war", url: "https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-094/h-094-2.html"}
+  panama: {title: "UNESCO · Panamá Viejo and the historic district", url: "https://whc.unesco.org/en/list/790/"}
+  jamaica: {title: "Jamaica Information Service · History of Jamaica", url: "https://jis.gov.jm/information/jamaican-history"}
+  jamaica-resistance: {title: "National Library of Jamaica · Chronology of resistance in the British West Indies", url: "https://nlj.gov.jm/wp-content/uploads/2017/03/Chronology-of-Resistance-in-the-British-West-Indies.pdf"}
+  unangax: {title: "National Park Service · Unangax̂ history and culture", url: "https://www.nps.gov/aleu/learn/historyculture/unangax-history-and-culture.htm"}
+  yuma: {title: "National Park Service · Yuma Crossing National Heritage Area", url: "https://home.nps.gov/articles/yuma.htm"}
+  sandiego: {title: "National Park Service · Mission Trails Regional Park", url: "https://www.nps.gov/places/mission-trails-regional-park.htm"}
+  pensacola: {title: "National Park Service · Bernardo de Gálvez", url: "https://home.nps.gov/foma/learn/historyculture/galvez.htm"}
+  revolution: {title: "National Park Service · Timeline of the Revolution", url: "https://home.nps.gov/subjects/americanrevolution/timeline.htm"}
+  san-juan: {title: "National Park Service · History of San Juan", url: "https://www.nps.gov/saju/learn/historyculture/history.htm"}
+  havana: {title: "Library of Congress · 1762 siege map of Havana", url: "https://www.loc.gov/item/2006636740/"}
+  saintes: {title: "Naval History and Heritage Command · Battle of the Saints, 12 April 1782", url: "https://www.history.navy.mil/our-collections/photography/wars-and-events/the-american-revolution/war-at-sea--british-vs--french-in-american-waters/west-indies-campaign/battle-of-the-saints--12-april-1782.html"}
+  tepehuan: {title: "UNAM · Study of the Tepehuán revolt", url: "https://repositorio.unam.mx/contenidos/101325"}
+  yaqui: {title: "INAH · History of Yaqui resistance", url: "https://www.revistas.inah.gob.mx/index.php/antropologia/article/download/2923/2824/4667"}
+  itza: {title: "University Press of Colorado · Historical and Archaeological Perspectives on the Itzas", url: "https://www.upcolorado.com/university-press-of-colorado/historical-and-archaeological-perspectives-on-the-itzas-of-peten-guatemala"}
+  imperial: {title: "Canadian Department of National Defence · The imperial wars", url: "https://www.canada.ca/en/department-national-defence/services/military-history/history-heritage/popular-books/aboriginal-people-canadian-military/imperial-wars.html"}
+  grandpre: {title: "Parks Canada · History of Grand-Pré", url: "https://parks.canada.ca/lhn-nhs/ns/grandpre/culture/histoire-history"}
+  bloody-point: {title: "St. Kitts National Archives · Bloody Point", url: "https://historicstkitts.kn/places/bloody-point"}
+  st-kitts: {title: "St. Kitts National Archives · Timeline of St. Kitts", url: "https://www.historicstkitts.kn/timeline-history-of-st-kitts"}
+  st-kitts-papers: {title: "Caribbean Memory Register · St. Christopher papers, 1666–1674", url: "https://www.nlj.gov.jm/caribbeanregister/docs/st.kitts_nevis.htm"}
+  fort-royal: {title: "Bibliothèque nationale de France · Sainte-Marthe’s 1674 report on the defence of Fort Royal", url: "https://ccfr.bnf.fr/portailccfr/ark:/16871/004D18013856"}
+  st-vincent: {title: "Library of Congress · 1773 survey of St. Vincent after the treaty", url: "https://www.loc.gov/item/74691610/"}
+  st-vincent-treaty: {title: "Colonial Williamsburg · Virginia Gazette transcription of the 1773 treaty", url: "https://www.fromthepage.com/cwf/virginia-gazettes/scnp1996-3-29/ai_text/35752059"}
+  statia: {title: "Nationaal Archief · St. Eustatius, St. Maarten and Saba archival inventory", url: "https://www.nationaalarchief.nl/onderzoeken/archief/1.05.13.01/download/pdf"}
+  brimstone: {title: "Library of Congress · Map of the 1782 siege of Brimstone Hill", url: "https://www.loc.gov/item/gm71000697/"}
+conflicts:
+  - id: spanish-aztec-war
+    name: "Spanish–Mexica War"
+    start: 1519
+    end: 1521
+    countries: [mx, es]
+    sources: [mexico]
+    sides:
+      - {id: triple, name: "Mexica and allies", ink: red}
+      - {id: es, name: "Spanish–Tlaxcalan alliance", ink: gold}
+    events:
+      - {date: "1519-09", kind: battle, name: "Fighting at Tlaxcallan", lonlat: [-98.23, 19.31], side: es}
+      - {date: "1519-11-08", kind: held, name: "Tenochtitlan", lonlat: [-99.133, 19.435], side: triple}
+      - {date: "1520-05", kind: event, name: "Tóxcatl massacre, Tenochtitlan", lonlat: [-99.132, 19.435], side: es}
+      - {date: "1520-06-30", kind: event, name: "Spanish and allied withdrawal from Tenochtitlan", lonlat: [-99.19, 19.46], side: triple}
+      - {date: "1521-08-13", kind: siege, name: "Fall of Tenochtitlan and Tlatelolco", lonlat: [-99.137, 19.45], side: es}
+  - id: enriquillo-rebellion
+    name: "Enriquillo’s rebellion"
+    start: 1519
+    end: 1533
+    countries: [do, es]
+    sources: [hispaniola]
+    sides:
+      - {id: taino, name: "Taíno resistance", ink: teal}
+      - {id: es, name: "Spain", ink: gold}
+    events:
+      - {date: "1519", kind: event, name: "Bahoruco mountains, general area", lonlat: [-71.52, 18.29], side: taino}
+      - {date: "1533", kind: treaty, name: "Peace with Enriquillo, Bahoruco region", lonlat: [-71.52, 18.29], side: taino}
+  - id: conquest-of-kiche
+    name: "Spanish conquest of the K’iche’ kingdom"
+    start: 1524
+    end: 1524
+    countries: [gt, es]
+    sources: [guatemala, maya]
+    sides:
+      - {id: kiche, name: "K’iche’", ink: teal}
+      - {id: es, name: "Spanish expedition", ink: gold}
+    events:
+      - {date: "1524", kind: battle, name: "Quetzaltenango valley", lonlat: [-91.52, 14.84], side: kiche}
+      - {date: "1524", kind: taken, name: "Q’umarkaj", lonlat: [-91.17, 15.02], side: es}
+  - id: tiguex-war
+    name: "Tiguex War"
+    start: 1540
+    end: 1542
+    countries: [us, mx, es]
+    sources: [tiguex]
+    sides:
+      - {id: tiwa, name: "Tiwa pueblos", ink: teal}
+      - {id: es, name: "Coronado’s expedition", ink: gold}
+    events:
+      - {date: "1540", kind: battle, name: "Tiguex Province, middle Rio Grande", lonlat: [-106.57, 35.32], side: tiwa}
+      - {date: "1541", kind: siege, name: "Piedras Marcadas Pueblo vicinity", lonlat: [-106.66, 35.18], side: es}
+  - id: mixton-war
+    name: "Mixtón War"
+    start: 1540
+    end: 1542
+    countries: [mx, es]
+    sources: [mixton]
+    sides:
+      - {id: es, name: "New Spain", ink: gold}
+      - {id: cax, name: "Caxcan and allied communities", ink: teal}
+    events:
+      - {date: "1540", kind: event, name: "Northern Nueva Galicia uprising", lonlat: [-103, 21.6], side: cax}
+      - {date: "1541", kind: siege, name: "Mixtón stronghold, Juchipila region", lonlat: [-103.12, 21.4], side: es}
+      - {date: "1541", kind: battle, name: "Attack on Guadalajara at Tlacotán", lonlat: [-103.18, 20.87], side: cax}
+  - id: maya-yucatan-uprising
+    name: "Maya uprising in eastern Yucatán"
+    start: 1546
+    end: 1547
+    countries: [mx, es]
+    sources: [maya]
+    sides:
+      - {id: maya, name: "Maya resistance", ink: teal}
+      - {id: es, name: "New Spain", ink: gold}
+    events:
+      - {date: "1546-11", kind: event, name: "Uprising in the Valladolid region", lonlat: [-88.2, 20.69], side: maya}
+  - id: chichimeca-war
+    name: "Chichimeca War"
+    start: 1550
+    end: 1590
+    countries: [mx, es]
+    sources: [chichimeca, camino]
+    sides:
+      - {id: ch, name: "Chichimeca peoples", ink: teal}
+      - {id: es, name: "New Spain", ink: gold}
+    events:
+      - {date: "1550", kind: event, name: "Zacatecas mining road", lonlat: [-102.57, 22.77], side: ch}
+      - {date: "1570", kind: held, name: "Frontier presidios of the Camino Real", lonlat: [-101.4, 21.75], side: es}
+  - id: spanish-french-florida
+    name: "Spanish–French conflict in Florida"
+    start: 1565
+    end: 1565
+    countries: [us, es, fr]
+    sources: [florida, matanzas]
+    sides:
+      - {id: es, name: "Spain", ink: gold}
+      - {id: fr, name: "France", ink: purple}
+    events:
+      - {date: "1565-09", kind: siege, name: "Capture of Fort Caroline", lonlat: [-81.498, 30.386], side: es}
+      - {date: "1565-09", kind: event, name: "Matanzas Inlet", lonlat: [-81.23, 29.7], side: es}
+  - id: acoma-1599
+    name: "Spanish assault on Acoma Pueblo"
+    start: 1599
+    end: 1599
+    countries: [us, mx, es]
+    sources: [acoma, camino]
+    sides:
+      - {id: ac, name: "Acoma Pueblo", ink: teal}
+      - {id: es, name: "New Spain", ink: gold}
+    events:
+      - {date: "1599-01", kind: siege, name: "Acoma Pueblo", lonlat: [-107.58, 34.9], side: es}
+  - id: first-anglo-powhatan-war
+    name: "First Anglo-Powhatan War"
+    start: 1609
+    end: 1614
+    countries: [us, gb]
+    sources: [powhatan, jamestown]
+    sides:
+      - {id: p, name: "Powhatan paramount chiefdom", ink: teal}
+      - {id: e, name: "Virginia colony", ink: blue}
+    events:
+      - {date: "1609", kind: held, name: "Jamestown under siege", lonlat: [-76.78, 37.21], side: p}
+      - {date: "1610", kind: battle, name: "Attack on Paspahegh", lonlat: [-76.87, 37.23], side: e}
+      - {date: "1614", kind: treaty, name: "Peace at Jamestown", lonlat: [-76.78, 37.21], side: e}
+  - id: raid-on-port-royal-1613
+    name: "English attack on Port-Royal"
+    start: 1613
+    end: 1613
+    countries: [ca, gb, fr]
+    sources: [acadia]
+    sides:
+      - {id: e, name: "English expedition", ink: blue}
+      - {id: fr, name: "French Acadia", ink: purple}
+    events:
+      - {date: "1613", kind: taken, name: "Port-Royal habitation", lonlat: [-65.61, 44.71], side: e}
+  - id: second-anglo-powhatan-war
+    name: "Second Anglo-Powhatan War"
+    start: 1622
+    end: 1632
+    countries: [us, gb]
+    sources: [powhatan, jamestown]
+    sides:
+      - {id: p, name: "Powhatan paramount chiefdom", ink: teal}
+      - {id: e, name: "Virginia colony", ink: blue}
+    events:
+      - {date: "1622-03-22", kind: battle, name: "Coordinated attacks on James River settlements", lonlat: [-77.36, 37.32], side: p}
+      - {date: "1632", kind: treaty, name: "End of the second war, Jamestown region", lonlat: [-76.78, 37.21], side: e}
+  - id: capture-of-quebec-1629
+    name: "English capture of Québec"
+    start: 1629
+    end: 1632
+    countries: [ca, gb, fr]
+    sources: [quebec, newfrance]
+    sides:
+      - {id: e, name: "English expedition", ink: blue}
+      - {id: fr, name: "New France", ink: purple}
+    events:
+      - {date: "1629", kind: siege, name: "Kirke expedition takes Québec", lonlat: [-71.205, 46.813], side: e}
+      - {date: "1632", kind: event, name: "Québec returned to France", lonlat: [-71.205, 46.813], side: fr}
+  - id: chesapeake-kent-island
+    name: "Kent Island conflict"
+    start: 1635
+    end: 1638
+    countries: [us, gb]
+    sources: [maryland]
+    sides:
+      - {id: md, name: "Maryland proprietors", ink: purple}
+      - {id: va, name: "Claiborne’s Virginia faction", ink: blue}
+    events:
+      - {date: "1635", kind: naval, name: "Lower Pocomoke River, general area", lonlat: [-75.65, 38.08], side: md}
+      - {date: "1638", kind: taken, name: "Maryland takes possession of Kent Island", lonlat: [-76.3, 38.94], side: md}
+  - id: pequot-war
+    name: "Pequot War"
+    start: 1636
+    end: 1638
+    countries: [us, gb]
+    sources: [pequot]
+    sides:
+      - {id: p, name: "Pequot", ink: teal}
+      - {id: e, name: "English and Indigenous allies", ink: blue}
+    events:
+      - {date: "1636", kind: held, name: "Siege of Saybrook Fort", lonlat: [-72.35, 41.285], side: p}
+      - {date: "1637-05-26", kind: siege, name: "Mystic Fort massacre", lonlat: [-71.976, 41.361], side: e}
+      - {date: "1637-07", kind: battle, name: "Fairfield Swamp", lonlat: [-73.27, 41.15], side: e}
+      - {date: "1638", kind: treaty, name: "Treaty of Hartford", lonlat: [-72.67, 41.766], side: e}
+  - id: kiefts-war
+    name: "Kieft’s War"
+    start: 1643
+    end: 1645
+    countries: [us, nl]
+    sources: [pavonia, dutch, nn]
+    sides:
+      - {id: d, name: "New Netherland", ink: orange}
+      - {id: l, name: "Lenape and neighbouring communities", ink: teal}
+    events:
+      - {date: "1643-02", kind: battle, name: "Pavonia massacre", lonlat: [-74.04, 40.724], side: d}
+      - {date: "1643-02", kind: battle, name: "Corlears Hook massacre", lonlat: [-73.975, 40.711], side: d}
+      - {date: "1645", kind: treaty, name: "Peace at Fort Amsterdam", lonlat: [-74.014, 40.705], side: d}
+  - id: third-anglo-powhatan-war
+    name: "Third Anglo-Powhatan War"
+    start: 1644
+    end: 1646
+    countries: [us, gb]
+    sources: [powhatan, jamestown]
+    sides:
+      - {id: p, name: "Powhatan paramount chiefdom", ink: teal}
+      - {id: e, name: "Virginia colony", ink: blue}
+    events:
+      - {date: "1644-04-18", kind: battle, name: "Attacks on Virginia settlements, York River region", lonlat: [-76.82, 37.41], side: p}
+      - {date: "1646", kind: treaty, name: "Treaty with Necotowance, Jamestown", lonlat: [-76.78, 37.21], side: e}
+  - id: haudenosaunee-wars
+    name: "Haudenosaunee wars in the Great Lakes and St. Lawrence"
+    start: 1640
+    end: 1701
+    countries: [ca, us, fr]
+    sources: [newfrance, hudson]
+    sides:
+      - {id: h, name: "Haudenosaunee", ink: teal}
+      - {id: f, name: "French and Indigenous allies", ink: purple}
+    events:
+      - {date: "1648", kind: battle, name: "Teanaostaiaë, Wendat country", lonlat: [-79.9, 44.65], side: h}
+      - {date: "1649", kind: battle, name: "St. Ignace II and Sainte-Marie region", lonlat: [-79.86, 44.73], side: h}
+      - {date: "1689-08-05", kind: battle, name: "Lachine raid", lonlat: [-73.67, 45.438], side: h}
+      - {date: "1701-08-04", kind: treaty, name: "Great Peace of Montréal", lonlat: [-73.553, 45.505], side: f}
+  - id: battle-of-the-severn
+    name: "Battle of the Severn"
+    start: 1655
+    end: 1655
+    countries: [us, gb]
+    sources: [maryland]
+    sides:
+      - {id: p, name: "Providence Puritans", ink: blue}
+      - {id: m, name: "Maryland proprietary forces", ink: purple}
+    events:
+      - {date: "1655-03", kind: battle, name: "Severn River near Providence", lonlat: [-76.494, 39.007], side: p}
+  - id: conquest-of-new-sweden
+    name: "Dutch conquest of New Sweden"
+    start: 1655
+    end: 1655
+    countries: [us, nl, se]
+    sources: [newcastle, nn]
+    sides:
+      - {id: d, name: "New Netherland", ink: orange}
+      - {id: s, name: "New Sweden", ink: slate}
+    events:
+      - {date: "1655-09", kind: siege, name: "Fort Trinity / Fort Casimir", lonlat: [-75.565, 39.66], side: d}
+      - {date: "1655-09", kind: taken, name: "Fort Christina", lonlat: [-75.542, 39.736], side: d}
+  - id: peach-tree-war
+    name: "Peach Tree War"
+    start: 1655
+    end: 1655
+    countries: [us, nl]
+    sources: [dutch, nn]
+    sides:
+      - {id: d, name: "New Netherland", ink: orange}
+      - {id: i, name: "Indigenous coalition", ink: teal}
+    events:
+      - {date: "1655-09", kind: battle, name: "Attack on New Amsterdam and nearby settlements", lonlat: [-74.011, 40.71], side: i}
+      - {date: "1655-09", kind: battle, name: "Pavonia and Staten Island raids", lonlat: [-74.09, 40.62], side: i}
+  - id: esopus-wars
+    name: "Esopus Wars"
+    start: 1659
+    end: 1664
+    countries: [us, nl]
+    sources: [dutch, nn]
+    sides:
+      - {id: d, name: "New Netherland", ink: orange}
+      - {id: e, name: "Esopus Lenape", ink: teal}
+    events:
+      - {date: "1659", kind: siege, name: "Wiltwyck, first war", lonlat: [-74.02, 41.93], side: e}
+      - {date: "1663-06", kind: battle, name: "Attack on Wiltwyck, second war", lonlat: [-74.02, 41.93], side: e}
+      - {date: "1664", kind: treaty, name: "Peace at Fort Amsterdam", lonlat: [-74.014, 40.705], side: d}
+  - id: english-dutch-new-netherland
+    name: "Anglo-Dutch struggle for New Netherland"
+    start: 1664
+    end: 1674
+    countries: [us, nl, gb]
+    sources: [transfer, dutch, newyork]
+    sides:
+      - {id: d, name: "Netherlands", ink: orange}
+      - {id: e, name: "England", ink: blue}
+    events:
+      - {date: "1664-09", kind: taken, name: "English seizure of New Amsterdam", lonlat: [-74.014, 40.705], side: e}
+      - {date: "1673-08", kind: taken, name: "Dutch recapture, New Orange", lonlat: [-74.014, 40.705], side: d}
+      - {date: "1674", kind: treaty, name: "New York returned to England", lonlat: [-74.014, 40.705], side: e}
+  - id: morgan-panama
+    name: "Morgan’s attack on Panamá"
+    start: 1670
+    end: 1671
+    countries: [pa, gb, es]
+    sources: [panama]
+    sides:
+      - {id: pr, name: "English privateers", ink: blue}
+      - {id: es, name: "Spain", ink: gold}
+    events:
+      - {date: "1671-01", kind: battle, name: "Panamá Viejo", lonlat: [-79.49, 9.006], side: pr}
+  - id: king-philips-war
+    name: "King Philip’s War"
+    start: 1675
+    end: 1676
+    countries: [us, gb]
+    sources: [kingphilip, greatswamp]
+    sides:
+      - {id: w, name: "Wampanoag and allies", ink: teal}
+      - {id: e, name: "New England colonies and allies", ink: blue}
+    events:
+      - {date: "1675-06", kind: battle, name: "Fighting at Swansea", lonlat: [-71.19, 41.75], side: w}
+      - {date: "1675-09", kind: battle, name: "Bloody Brook", lonlat: [-72.61, 42.48], side: w}
+      - {date: "1675-12-19", kind: siege, name: "Great Swamp, Narragansett fort vicinity", lonlat: [-71.58, 41.49], side: e}
+      - {date: "1676-08", kind: battle, name: "Mount Hope, Pokanoket", lonlat: [-71.23, 41.68], side: e}
+  - id: bacons-rebellion
+    name: "Bacon’s Rebellion"
+    start: 1676
+    end: 1677
+    countries: [us, gb]
+    sources: [bacon]
+    sides:
+      - {id: b, name: "Bacon’s forces", ink: brown}
+      - {id: g, name: "Virginia government", ink: blue}
+    events:
+      - {date: "1676", kind: battle, name: "Attack on Occaneechi Island, Roanoke River region", lonlat: [-78.55, 36.66], side: b}
+      - {date: "1676-09", kind: taken, name: "Burning of Jamestown", lonlat: [-76.78, 37.21], side: b}
+      - {date: "1677", kind: event, name: "Restoration of colonial authority at Jamestown", lonlat: [-76.78, 37.21], side: g}
+  - id: culpepers-rebellion
+    name: "Culpeper’s Rebellion"
+    start: 1677
+    end: 1678
+    countries: [us, gb]
+    sources: [culpeper]
+    sides:
+      - {id: r, name: "Albemarle rebels", ink: brown}
+      - {id: c, name: "Proprietary government", ink: blue}
+    events:
+      - {date: "1677", kind: taken, name: "Albemarle uprising, Pasquotank River vicinity", lonlat: [-76.22, 36.29], side: r}
+  - id: pueblo-revolt
+    name: "Pueblo Revolt"
+    start: 1680
+    end: 1680
+    countries: [us, mx, es]
+    sources: [camino, revolt]
+    sides:
+      - {id: p, name: "Pueblo communities", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1680-08-10", kind: event, name: "Coordinated Pueblo uprising, northern Rio Grande", lonlat: [-106.1, 36.055], side: p}
+      - {date: "1680-08", kind: siege, name: "Siege and capture of Santa Fe", lonlat: [-105.938, 35.686], side: p}
+      - {date: "1680-09", kind: held, name: "Spanish retreat to El Paso del Norte", lonlat: [-106.489, 31.735], side: s}
+  - id: king-williams-war
+    name: "King William’s War"
+    start: 1689
+    end: 1697
+    countries: [ca, us, gb, fr]
+    sources: [acadia, quebec, pemaquid, hudson, newfoundland, imperial]
+    sides:
+      - {id: e, name: "English colonies and allies", ink: blue}
+      - {id: f, name: "New France and allies", ink: purple}
+    events:
+      - {date: "1690-02", kind: battle, name: "Raid on Schenectady", lonlat: [-73.939, 42.816], side: f}
+      - {date: "1690", kind: taken, name: "First English capture of Port-Royal", lonlat: [-65.52, 44.74], side: e}
+      - {date: "1690-10", kind: siege, name: "Phips’s expedition against Québec", lonlat: [-71.205, 46.813], side: e}
+      - {date: "1696", kind: taken, name: "French capture of Fort William Henry, Pemaquid", lonlat: [-69.52, 43.88], side: f}
+      - {date: "1696", kind: siege, name: "French capture of St. John’s", lonlat: [-52.71, 47.56], side: f}
+      - {date: "1697", kind: naval, name: "Battle of Hudson Bay, York Factory waters", lonlat: [-92.06, 57.14], side: f}
+  - id: leisler-rebellion
+    name: "Leisler’s Rebellion"
+    start: 1689
+    end: 1691
+    countries: [us, gb]
+    sources: [newyork, nn]
+    sides:
+      - {id: l, name: "Leisler’s faction", ink: brown}
+      - {id: e, name: "English royal government", ink: blue}
+    events:
+      - {date: "1689", kind: taken, name: "Leisler’s militia takes Fort James", lonlat: [-74.014, 40.705], side: l}
+      - {date: "1691", kind: siege, name: "Royal forces take the fort in New York", lonlat: [-74.014, 40.705], side: e}
+  - id: spanish-reconquest-new-mexico
+    name: "Spanish reconquest of New Mexico"
+    start: 1692
+    end: 1696
+    countries: [us, mx, es]
+    sources: [camino, missions]
+    sides:
+      - {id: p, name: "Pueblo communities", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1692", kind: taken, name: "De Vargas enters Santa Fe", lonlat: [-105.938, 35.686], side: s}
+      - {date: "1693", kind: battle, name: "Fighting for Santa Fe", lonlat: [-105.938, 35.686], side: s}
+      - {date: "1696", kind: event, name: "Renewed Pueblo revolt, Rio Grande pueblos", lonlat: [-106.1, 36.06], side: p}
+  - id: queen-annes-war
+    name: "Queen Anne’s War"
+    start: 1702
+    end: 1713
+    countries: [ca, us, gb, fr, es]
+    sources: [deerfield, acadia, newfoundland, appalachee]
+    sides:
+      - {id: e, name: "Britain and colonial allies", ink: blue}
+      - {id: f, name: "French, Spanish and Indigenous opponents", ink: purple}
+    events:
+      - {date: "1702", kind: siege, name: "Carolina siege of St. Augustine", lonlat: [-81.313, 29.898], side: e}
+      - {date: "1704-02", kind: battle, name: "Raid on Deerfield", lonlat: [-72.61, 42.545], side: f}
+      - {date: "1704", kind: event, name: "Attacks on the Apalachee missions", lonlat: [-84.326, 30.451], side: e}
+      - {date: "1708", kind: taken, name: "Capture of St. John’s", lonlat: [-52.71, 47.56], side: f}
+      - {date: "1710", kind: siege, name: "British capture of Port-Royal", lonlat: [-65.52, 44.74], side: e}
+  - id: apalachee-1704
+    name: "Carolina raids on the Apalachee missions"
+    start: 1704
+    end: 1704
+    countries: [us, gb, es]
+    sources: [appalachee, missions]
+    sides:
+      - {id: e, name: "Carolina and Indigenous allies", ink: blue}
+      - {id: a, name: "Apalachee and Spanish defenders", ink: teal}
+    events:
+      - {date: "1704-01", kind: battle, name: "Ayubale, Apalachee Province vicinity", lonlat: [-84.19, 30.32], side: e}
+      - {date: "1704", kind: event, name: "Evacuation and destruction of Mission San Luis", lonlat: [-84.326, 30.451], side: a}
+  - id: carys-rebellion
+    name: "Cary’s Rebellion"
+    start: 1711
+    end: 1711
+    countries: [us, gb]
+    sources: [cary]
+    sides:
+      - {id: c, name: "Cary’s faction", ink: brown}
+      - {id: g, name: "North Carolina government", ink: blue}
+    events:
+      - {date: "1711", kind: event, name: "Fighting around the Albemarle and Pamlico sounds", lonlat: [-76.73, 35.9], side: c}
+  - id: tuscarora-war
+    name: "Tuscarora War"
+    start: 1711
+    end: 1713
+    countries: [us, gb]
+    sources: [tuscarora, tuscarora-map]
+    sides:
+      - {id: t, name: "Tuscarora", ink: teal}
+      - {id: e, name: "Carolina and Indigenous allies", ink: blue}
+    events:
+      - {date: "1711-09", kind: battle, name: "Attacks near New Bern", lonlat: [-77.045, 35.109], side: t}
+      - {date: "1712", kind: siege, name: "Fort Narhantes, near New Bern", lonlat: [-77.11, 35.15], side: e}
+      - {date: "1713-03", kind: siege, name: "Fort Neoheroka vicinity", lonlat: [-77.59, 35.49], side: e}
+  - id: yamasee-war
+    name: "Yamasee War"
+    start: 1715
+    end: 1717
+    countries: [us, gb]
+    sources: [yamasee, south]
+    sides:
+      - {id: y, name: "Yamasee and allies", ink: teal}
+      - {id: c, name: "South Carolina and allies", ink: blue}
+    events:
+      - {date: "1715-04-15", kind: battle, name: "Pocotaligo", lonlat: [-80.87, 32.63], side: y}
+      - {date: "1715", kind: battle, name: "Port Royal and the southern frontier", lonlat: [-80.69, 32.38], side: c}
+      - {date: "1715", kind: battle, name: "Salkehatchie River vicinity", lonlat: [-80.89, 32.81], side: c}
+  - id: villasur-expedition
+    name: "Attack on the Villasur expedition"
+    start: 1720
+    end: 1720
+    countries: [us, mx, es]
+    sources: [villasur]
+    sides:
+      - {id: p, name: "Pawnee and Otoe", ink: teal}
+      - {id: s, name: "Spanish expedition", ink: gold}
+    events:
+      - {date: "1720-08-14", kind: battle, name: "Loup–Platte confluence vicinity", lonlat: [-97.32, 41.41], side: p}
+  - id: dummers-war
+    name: "Wabanaki–New England War"
+    start: 1722
+    end: 1725
+    countries: [us, ca, gb]
+    sources: [wabanaki, pemaquid]
+    sides:
+      - {id: w, name: "Wabanaki", ink: teal}
+      - {id: e, name: "New England", ink: blue}
+    events:
+      - {date: "1722", kind: battle, name: "New England frontier, Penobscot Bay region", lonlat: [-68.76, 44.39], side: w}
+      - {date: "1724-08", kind: battle, name: "Norridgewock raid", lonlat: [-69.91, 44.76], side: e}
+      - {date: "1725", kind: treaty, name: "Peace negotiations at Boston", lonlat: [-71.058, 42.358], side: e}
+  - id: first-maroon-war
+    name: "First Maroon War"
+    start: 1728
+    end: 1739
+    countries: [jm, gb]
+    sources: [jamaica, jamaica-resistance]
+    sides:
+      - {id: m, name: "Jamaican Maroons", ink: teal}
+      - {id: e, name: "British Jamaica", ink: blue}
+    events:
+      - {date: "1728", kind: event, name: "Leeward Maroon country, Cockpit Country", lonlat: [-77.7, 18.26], side: m}
+      - {date: "1739", kind: treaty, name: "Leeward treaty, Cudjoe’s Town area", lonlat: [-77.75, 18.24], side: m}
+  - id: natchez-war
+    name: "Natchez War"
+    start: 1729
+    end: 1731
+    countries: [us, fr]
+    sources: [natchez, natchezmap]
+    sides:
+      - {id: n, name: "Natchez", ink: teal}
+      - {id: f, name: "French and Indigenous allies", ink: purple}
+    events:
+      - {date: "1729-11-28", kind: battle, name: "Attack on Fort Rosalie", lonlat: [-91.404, 31.555], side: n}
+      - {date: "1730-02", kind: siege, name: "Sieges of the Natchez forts near the Mississippi", lonlat: [-91.37, 31.56], side: f}
+  - id: chickasaw-wars
+    name: "French–Chickasaw wars"
+    start: 1736
+    end: 1740
+    countries: [us, fr]
+    sources: [chickasaw, natchez]
+    sides:
+      - {id: c, name: "Chickasaw", ink: teal}
+      - {id: f, name: "French and Indigenous allies", ink: purple}
+    events:
+      - {date: "1736-03", kind: battle, name: "Ogoula Tchetoka, Chickasaw country", lonlat: [-88.74, 34.24], side: c}
+      - {date: "1736-05", kind: battle, name: "Ackia, Tupelo vicinity", lonlat: [-88.72, 34.22], side: c}
+      - {date: "1739", kind: held, name: "Fort Assumption camp, Mississippi bluffs", lonlat: [-90.06, 35.1], side: f}
+  - id: stono-rebellion
+    name: "Stono Rebellion"
+    start: 1739
+    end: 1739
+    countries: [us, gb]
+    sources: [south]
+    sides:
+      - {id: r, name: "Enslaved rebels", ink: teal}
+      - {id: c, name: "South Carolina militia", ink: blue}
+    events:
+      - {date: "1739-09-09", kind: battle, name: "Stono River, general area", lonlat: [-80.24, 32.72], side: r}
+  - id: jenkins-ear
+    name: "War of Jenkins’ Ear in Florida and Georgia"
+    start: 1739
+    end: 1748
+    countries: [us, es, gb]
+    sources: [mose, bloodymarsh]
+    sides:
+      - {id: e, name: "Britain and Georgia", ink: blue}
+      - {id: s, name: "Spain and Fort Mose militia", ink: gold}
+    events:
+      - {date: "1740", kind: siege, name: "British siege of St. Augustine", lonlat: [-81.313, 29.898], side: e}
+      - {date: "1740-06", kind: battle, name: "Fort Mose", lonlat: [-81.326, 29.927], side: s}
+      - {date: "1742-07", kind: battle, name: "Gully Hole Creek", lonlat: [-81.384, 31.224], side: e}
+      - {date: "1742-07", kind: battle, name: "Bloody Marsh", lonlat: [-81.385, 31.162], side: e}
+  - id: king-georges-war
+    name: "King George’s War"
+    start: 1744
+    end: 1748
+    countries: [ca, us, gb, fr]
+    sources: [louisbourg, acadia, grandpre]
+    sides:
+      - {id: e, name: "Britain and New England", ink: blue}
+      - {id: f, name: "New France and allies", ink: purple}
+    events:
+      - {date: "1744", kind: siege, name: "French attack on Annapolis Royal", lonlat: [-65.52, 44.74], side: f}
+      - {date: "1745", kind: siege, name: "First siege of Louisbourg", lonlat: [-59.96, 45.891], side: e}
+      - {date: "1747", kind: battle, name: "Battle of Grand-Pré", lonlat: [-64.307, 45.109], side: f}
+      - {date: "1748", kind: event, name: "Louisbourg restored to France by treaty", lonlat: [-59.96, 45.891], side: f}
+  - id: chignecto-war
+    name: "Mi’kmaq, Acadian and British conflict in Nova Scotia"
+    start: 1749
+    end: 1755
+    countries: [ca, gb, fr]
+    sources: [acadianforts, acadia]
+    sides:
+      - {id: b, name: "British forces", ink: blue}
+      - {id: a, name: "Mi’kmaq, Acadian and French resistance", ink: teal}
+    events:
+      - {date: "1750", kind: event, name: "Beaubassin and Fort Lawrence", lonlat: [-64.266, 45.837], side: a}
+      - {date: "1751", kind: held, name: "Fort Beauséjour", lonlat: [-64.291, 45.865], side: a}
+      - {date: "1755-06", kind: siege, name: "Fall of Fort Beauséjour", lonlat: [-64.291, 45.865], side: b}
+  - id: pima-revolt
+    name: "Pima Revolt"
+    start: 1751
+    end: 1752
+    countries: [us, mx, es]
+    sources: [missions]
+    sides:
+      - {id: o, name: "O’odham rebels", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1751-11", kind: battle, name: "Sáric, Pimería Alta", lonlat: [-111.38, 31.11], side: o}
+      - {date: "1751", kind: event, name: "Tumacácori mission vicinity", lonlat: [-111.051, 31.568], side: o}
+      - {date: "1752", kind: held, name: "Spanish presidio established at Tubac", lonlat: [-111.046, 31.613], side: s}
+  - id: anglo-cherokee-war
+    name: "Anglo-Cherokee War"
+    start: 1759
+    end: 1761
+    countries: [us, gb]
+    sources: [cherokee, south]
+    sides:
+      - {id: c, name: "Cherokee", ink: teal}
+      - {id: b, name: "British colonial forces", ink: blue}
+    events:
+      - {date: "1759", kind: held, name: "Fort Prince George vicinity", lonlat: [-82.86, 34.83], side: b}
+      - {date: "1760", kind: siege, name: "Fort Loudoun", lonlat: [-84.205, 35.594], side: c}
+      - {date: "1761", kind: battle, name: "Grant campaign through the Middle Towns", lonlat: [-83.38, 35.3], side: b}
+  - id: tackys-revolt
+    name: "Tacky’s Revolt"
+    start: 1760
+    end: 1761
+    countries: [jm, gb]
+    sources: [jamaica-resistance]
+    sides:
+      - {id: r, name: "Enslaved rebels", ink: teal}
+      - {id: b, name: "British Jamaica", ink: blue}
+    events:
+      - {date: "1760-04", kind: taken, name: "Fort Haldane and Port Maria", lonlat: [-76.889, 18.374], side: r}
+      - {date: "1760", kind: battle, name: "Westmoreland uprising, general area", lonlat: [-78.12, 18.24], side: r}
+  - id: pontiacs-war
+    name: "Pontiac’s War"
+    start: 1763
+    end: 1766
+    countries: [us, ca, gb]
+    sources: [pontiac, bushy, wabanaki]
+    sides:
+      - {id: o, name: "Odawa and allied nations", ink: teal}
+      - {id: b, name: "British posts and relief forces", ink: blue}
+    events:
+      - {date: "1763-05", kind: siege, name: "Fort Detroit", lonlat: [-83.049, 42.33], side: o}
+      - {date: "1763-06", kind: taken, name: "Capture of Fort Michilimackinac", lonlat: [-84.731, 45.786], side: o}
+      - {date: "1763-06", kind: siege, name: "Siege of Fort Pitt", lonlat: [-80.009, 40.441], side: o}
+      - {date: "1763-08-05", kind: battle, name: "Bushy Run", lonlat: [-79.624, 40.357], side: b}
+      - {date: "1766", kind: treaty, name: "Peace at Fort Ontario, Oswego", lonlat: [-76.509, 43.463], side: b}
+  - id: unangax-resistance
+    name: "Unangax̂ resistance in the Fox Islands"
+    start: 1763
+    end: 1766
+    countries: [us, ru]
+    sources: [unangax]
+    sides:
+      - {id: u, name: "Unangax̂", ink: teal}
+      - {id: r, name: "Russian trading parties", ink: purple}
+    events:
+      - {date: "1763", kind: event, name: "Unalaska and the Fox Islands", lonlat: [-166.53, 53.88], side: u}
+  - id: pennamite-yankee-war
+    name: "Pennamite–Yankee conflict"
+    start: 1769
+    end: 1775
+    countries: [us, gb]
+    sources: [pennamite]
+    sides:
+      - {id: y, name: "Connecticut settlers", ink: blue}
+      - {id: p, name: "Pennsylvania proprietors", ink: purple}
+    events:
+      - {date: "1769", kind: siege, name: "Fort Durkee, Wyoming Valley", lonlat: [-75.88, 41.253], side: p}
+      - {date: "1775", kind: battle, name: "Fighting around the Wyoming Valley", lonlat: [-75.88, 41.29], side: y}
+  - id: war-of-regulation
+    name: "War of the Regulation"
+    start: 1768
+    end: 1771
+    countries: [us, gb]
+    sources: [alamance]
+    sides:
+      - {id: r, name: "Regulators", ink: brown}
+      - {id: g, name: "North Carolina government", ink: blue}
+    events:
+      - {date: "1770", kind: event, name: "Hillsborough courthouse disruption", lonlat: [-79.101, 36.076], side: r}
+      - {date: "1771-05-16", kind: battle, name: "Battle of Alamance", lonlat: [-79.521, 36.011], side: g}
+  - id: kumeyaay-uprising
+    name: "Kumeyaay uprising at San Diego"
+    start: 1775
+    end: 1775
+    countries: [us, mx, es]
+    sources: [sandiego, missions]
+    sides:
+      - {id: k, name: "Kumeyaay", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1775-11", kind: battle, name: "Attack on Mission San Diego de Alcalá", lonlat: [-117.107, 32.784], side: k}
+  - id: cherokee-war-revolution
+    name: "Cherokee War of 1776"
+    start: 1776
+    end: 1776
+    countries: [us, gb]
+    sources: [cherokee, revolution]
+    sides:
+      - {id: c, name: "Cherokee", ink: teal}
+      - {id: p, name: "Revolutionary militias", ink: green}
+    events:
+      - {date: "1776-07", kind: siege, name: "Attack on Fort Watauga", lonlat: [-82.394, 36.342], side: c}
+      - {date: "1776", kind: taken, name: "Militia campaigns against the Lower Towns", lonlat: [-83.02, 34.71], side: p}
+  - id: gulf-coast-campaign
+    name: "Spanish Gulf Coast campaign"
+    start: 1779
+    end: 1781
+    countries: [us, es, gb]
+    sources: [pensacola, caribbean]
+    sides:
+      - {id: s, name: "Spain", ink: gold}
+      - {id: b, name: "Britain", ink: blue}
+    events:
+      - {date: "1779-09", kind: taken, name: "Capture of Baton Rouge", lonlat: [-91.191, 30.449], side: s}
+      - {date: "1780-03", kind: siege, name: "Fort Charlotte, Mobile", lonlat: [-88.043, 30.691], side: s}
+      - {date: "1781-05-08", kind: siege, name: "Siege of Pensacola", lonlat: [-87.215, 30.415], side: s}
+  - id: quechan-uprising
+    name: "Quechan uprising at the Yuma Crossing"
+    start: 1781
+    end: 1781
+    countries: [us, mx, es]
+    sources: [yuma]
+    sides:
+      - {id: q, name: "Quechan", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1781-07", kind: battle, name: "Attack at the Yuma Crossing", lonlat: [-114.614, 32.731], side: q}
+  - id: drake-san-juan
+    name: "Drake’s attack on San Juan"
+    start: 1595
+    end: 1595
+    countries: [pr, gb, es]
+    sources: [san-juan]
+    sides:
+      - {id: e, name: "English fleet", ink: blue}
+      - {id: s, name: "Spain", ink: gold}
+    events:
+      - {date: "1595-11", kind: naval, name: "San Juan harbour and El Morro", lonlat: [-66.124, 18.47], side: s}
+  - id: cumberland-san-juan
+    name: "English capture of San Juan"
+    start: 1598
+    end: 1598
+    countries: [pr, gb, es]
+    sources: [san-juan]
+    sides:
+      - {id: e, name: "England", ink: blue}
+      - {id: s, name: "Spain", ink: gold}
+    events:
+      - {date: "1598", kind: siege, name: "San Juan and El Morro", lonlat: [-66.124, 18.47], side: e}
+  - id: tepehuan-revolt
+    name: "Tepehuán Revolt"
+    start: 1616
+    end: 1620
+    countries: [mx, es]
+    sources: [tepehuan]
+    sides:
+      - {id: t, name: "Tepehuán communities", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1616", kind: event, name: "Uprising around Santiago Papasquiaro", lonlat: [-105.42, 25.05], side: t}
+  - id: dutch-san-juan
+    name: "Dutch siege of San Juan"
+    start: 1625
+    end: 1625
+    countries: [pr, nl, es]
+    sources: [san-juan]
+    sides:
+      - {id: d, name: "Dutch expedition", ink: orange}
+      - {id: s, name: "Spain", ink: gold}
+    events:
+      - {date: "1625-09", kind: siege, name: "Siege of El Morro", lonlat: [-66.124, 18.47], side: d}
+  - id: western-design-caribbean
+    name: "English invasion of Hispaniola and Jamaica"
+    start: 1655
+    end: 1655
+    countries: [do, jm, gb, es]
+    sources: [jamaica]
+    sides:
+      - {id: e, name: "English expedition", ink: blue}
+      - {id: s, name: "Spanish defenders", ink: gold}
+    events:
+      - {date: "1655", kind: battle, name: "Attack on Santo Domingo", lonlat: [-69.89, 18.48], side: s}
+      - {date: "1655", kind: taken, name: "English capture of Jamaica, Santiago de la Vega", lonlat: [-76.96, 17.996], side: e}
+  - id: conquest-of-itza
+    name: "Spanish conquest of the Itzá kingdom"
+    start: 1697
+    end: 1697
+    countries: [gt, mx, es]
+    sources: [maya, itza]
+    sides:
+      - {id: i, name: "Itzá kingdom", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1697-03", kind: taken, name: "Capture of Nojpetén, Lake Petén Itzá", lonlat: [-89.89, 16.93], side: s}
+  - id: yaqui-uprising
+    name: "Yaqui and Mayo uprising"
+    start: 1740
+    end: 1741
+    countries: [mx, es]
+    sources: [yaqui]
+    sides:
+      - {id: y, name: "Yaqui and Mayo resistance", ink: teal}
+      - {id: s, name: "New Spain", ink: gold}
+    events:
+      - {date: "1740", kind: event, name: "Lower Yaqui River, Sonora", lonlat: [-110.25, 27.45], side: y}
+      - {date: "1740", kind: event, name: "Mayo River valley", lonlat: [-109.51, 26.96], side: y}
+  - id: siege-of-havana
+    name: "British siege of Havana"
+    start: 1762
+    end: 1762
+    countries: [cu, es, gb]
+    sources: [havana, caribbean]
+    sides:
+      - {id: b, name: "British expedition", ink: blue}
+      - {id: s, name: "Spain", ink: gold}
+    events:
+      - {date: "1762-06", kind: naval, name: "British fleet off Havana", lonlat: [-82.36, 23.2], side: b}
+      - {date: "1762-07-30", kind: siege, name: "Storming of Morro Castle", lonlat: [-82.357, 23.151], side: b}
+      - {date: "1762-08-12", kind: taken, name: "Surrender of Havana", lonlat: [-82.351, 23.139], side: b}
+  - id: battle-of-the-saintes
+    name: "Battle of the Saintes"
+    start: 1782
+    end: 1782
+    countries: [dm, gp, gb, fr]
+    sources: [saintes, caribbean]
+    sides:
+      - {id: b, name: "Royal Navy", ink: blue}
+      - {id: f, name: "French fleet", ink: purple}
+    events:
+      - {date: "1782-04-12", kind: naval, name: "The Saintes Passage", lonlat: [-61.564, 15.789], side: b}
+  - id: bloody-point
+    name: "Massacre of the Kalinago at Bloody Point"
+    start: 1626
+    end: 1626
+    countries: [kn, gb, fr]
+    sources: [bloody-point, st-kitts]
+    sides:
+      - {id: k, name: "Kalinago of Liamuiga", ink: teal}
+      - {id: e, name: "English and French settlers", ink: blue}
+    events:
+      - {date: "1626", kind: event, name: "Bloody Point, Pelham River mouth", lonlat: [-62.789, 17.303], side: e}
+  - id: spanish-attack-on-st-kitts
+    name: "Spanish attack on St. Kitts"
+    start: 1629
+    end: 1630
+    countries: [kn, es, gb, fr]
+    sources: [st-kitts]
+    sides:
+      - {id: s, name: "Spanish fleet", ink: gold}
+      - {id: e, name: "English and French settlers", ink: blue}
+    events:
+      - {date: "1629", kind: taken, name: "English settlement at Old Road Bay", lonlat: [-62.805, 17.313], side: s}
+      - {date: "1630", kind: event, name: "French settlers return to St. Kitts", lonlat: [-62.722, 17.296], side: e}
+  - id: french-capture-of-st-kitts-1666
+    name: "Anglo-French war on St. Kitts"
+    start: 1666
+    end: 1667
+    countries: [kn, gb, fr]
+    sources: [st-kitts-papers, st-kitts]
+    sides:
+      - {id: e, name: "English settlers and militia", ink: blue}
+      - {id: f, name: "French settlers and militia", ink: purple}
+    events:
+      - {date: "1666-04-11", kind: taken, name: "English surrender on St. Christopher", lonlat: [-62.736, 17.355], side: f}
+      - {date: "1667-07-31", kind: treaty, name: "Treaty of Breda provides for return of English quarters", lonlat: [-62.805, 17.313], side: e}
+  - id: dutch-attack-on-martinique
+    name: "Dutch attack on Fort Royal, Martinique"
+    start: 1674
+    end: 1674
+    countries: [mq, fr, nl]
+    sources: [fort-royal]
+    sides:
+      - {id: d, name: "Dutch fleet", ink: orange}
+      - {id: f, name: "French garrison", ink: purple}
+    events:
+      - {date: "1674", kind: held, name: "Fort Royal, Martinique", lonlat: [-61.061, 14.598], side: f}
+  - id: first-carib-war
+    name: "First Carib War"
+    start: 1772
+    end: 1773
+    countries: [vc, gb]
+    sources: [st-vincent, st-vincent-treaty]
+    sides:
+      - {id: g, name: "Garifuna and Kalinago", ink: teal}
+      - {id: b, name: "British colonial forces", ink: blue}
+    events:
+      - {date: "1772", kind: event, name: "War over the windward lands of St. Vincent", lonlat: [-61.127, 13.255], side: g}
+      - {date: "1773-02-17", kind: treaty, name: "Treaty boundary at the Byera River", lonlat: [-61.1184, 13.25625], side: b}
+  - id: capture-of-sint-eustatius
+    name: "British and French captures of Sint Eustatius"
+    start: 1781
+    end: 1784
+    countries: [bq, nl, gb, fr]
+    sources: [statia]
+    sides:
+      - {id: d, name: "Dutch West India Company", ink: orange}
+      - {id: b, name: "Great Britain", ink: blue}
+      - {id: f, name: "France", ink: purple}
+    events:
+      - {date: "1781-02-03", kind: taken, name: "British capture of Oranjestad", lonlat: [-62.986, 17.481], side: b}
+      - {date: "1781-11-26", kind: taken, name: "French capture of Sint Eustatius", lonlat: [-62.973, 17.49], side: f}
+      - {date: "1784-02-07", kind: treaty, name: "Sint Eustatius returned to the Dutch", lonlat: [-62.986, 17.481], side: d}
+  - id: siege-of-brimstone-hill
+    name: "French capture of St. Kitts and Nevis"
+    start: 1782
+    end: 1783
+    countries: [kn, gb, fr]
+    sources: [st-kitts, brimstone]
+    sides:
+      - {id: b, name: "British garrisons", ink: blue}
+      - {id: f, name: "French fleet and expedition", ink: purple}
+    events:
+      - {date: "1782-01-11", kind: taken, name: "French fleet arrives at Basseterre", lonlat: [-62.722, 17.296], side: f}
+      - {date: "1782-01", kind: taken, name: "Nevis surrenders to France", lonlat: [-62.624, 17.137], side: f}
+      - {date: "1782-02-12", kind: siege, name: "Brimstone Hill surrenders", lonlat: [-62.837, 17.347], side: f}
+      - {date: "1783-09-03", kind: treaty, name: "St. Kitts and Nevis restored to Britain", lonlat: [-62.722, 17.296], side: b}

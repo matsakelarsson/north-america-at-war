@@ -1,5 +1,5 @@
 // The one projection used everywhere: spherical Lambert azimuthal equal-area
-// centred on 10°E 52°N (the spherical twin of EPSG:3035). Output units are
+// centred on 100°W 45°N. Output units are
 // kilometres, x to the east and y to the SOUTH, so they are SVG user units.
 import { geoAzimuthalEqualArea, geoGraticule, geoPath } from 'd3-geo';
 
@@ -29,12 +29,11 @@ export function mapCoords(geom, fn) {
   return { ...geom, coordinates: walk(geom.coordinates) };
 }
 
-// Map frame in projected km: Iceland and Portugal to the Urals and Caspian,
-// North Africa and the Levant to the North Cape.
-export const FRAME = { x0: -4300, y0: -3650, x1: 4200, y1: 3400 };
+// Map frame in projected km, including the Central American isthmus.
+export const FRAME = { x0: -4300, y0: -3650, x1: 4650, y1: 4000 };
 // Geometry is kept a good way beyond FRAME so that no clip edge shows when
 // the view is wider than the frame or panned to its edge.
-export const DATA_CLIP = { x0: FRAME.x0 - 1100, y0: FRAME.y0 - 650, x1: FRAME.x1 + 1100, y1: FRAME.y1 + 900 };
+export const DATA_CLIP = { x0: -5400, y0: -4300, x1: 5300, y1: 4300 };
 
 // A ten-degree grid for the atlas overview, simplified in projected kilometres.
 export function overviewGrid() {

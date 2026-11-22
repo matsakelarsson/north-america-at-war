@@ -1,0 +1,30 @@
+id: mayapan-conflict
+name: Civil conflict at Mayapán
+start: 1441
+end: 1460
+date_label: 1441–1460 dating window
+early_map: true
+tier: B
+countries: [mx]
+summary: A political conflict ended Mayapán’s role as a major Maya capital. Radiocarbon dating and Yucatec historical accounts place the destruction within a mid-fifteenth-century window.
+sources:
+  - title: Kennett and colleagues · Drought-Induced Civil Conflict Among the Ancient Maya
+    url: https://doi.org/10.1038/s41467-022-31522-x
+  - title: Masson and Peraza Lope · Militarism, Misery, and Collapse
+    url: https://read.upcolorado.com/read/kukulcan-s-realm-urban-life-at-ancient-mayapan/section/5b5b4fe4-817c-4de2-804f-3137058af966
+steps:
+  - title: The destruction of Mayapán
+    date: 1441–1460 dating window
+    when: 1450
+    borders: 1450
+    body:
+      - Local accounts written down after European arrival remembered a revolt against Mayapán’s rulers. Excavated burials and radiocarbon dates independently place the violence near the time given in these accounts.
+      - Researchers link the instability to political rivalry during prolonged drought. Maya communities and political life continued elsewhere in the Yucatán after the capital fell.
+    facts:
+      - [Evidence, Excavation, radiocarbon dates and Yucatec accounts]
+      - [Chronology, Dating window for the destruction]
+    markers:
+      - kind: battle
+        name: Mayapán
+        lonlat: [-89.46, 20.63]
+        text: The centre of the Late Postclassic city where researchers excavated evidence of conflict.

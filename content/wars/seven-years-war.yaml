@@ -15,68 +15,566 @@
     {
       "title": "French and Indian War — Encyclopaedia Britannica",
       "url": "https://www.britannica.com/event/French-and-Indian-War"
+    },
+    {
+      "title": "National Park Service · French and Indian War campaign chronology",
+      "url": "https://www.nps.gov/fone/learn/education/upload/F-I-unit4-lesson-plan-508.pdf"
+    },
+    {
+      "title": "Government of Canada · Seven Years’ War in Canada",
+      "url": "https://www.canada.ca/en/services/defence/caf/militaryhistory/wars-operations/seven-years.html"
+    },
+    {
+      "title": "National Battlefields Commission · Battles of 1759–1760",
+      "url": "https://www.plainsofabraham.ca/history-and-heritage/history-of-the-park/1759-1760-the-battles"
+    },
+    {
+      "title": "Parks Canada · Signal Hill",
+      "url": "https://parks.canada.ca/lhn-nhs/nl/signalhill/culture/histoire-history/def"
+    },
+    {
+      "title": "Office of the Historian · Treaty of Paris (1763)",
+      "url": "https://history.state.gov/milestones/1750-1775/treaty-of-paris"
     }
   ],
   "steps": [
     {
+      "title": "Jumonville Glen",
+      "date": "1754-05-28",
+      "when": "1754-05-28",
+      "borders": "1754-05-28",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Jumonville Glen",
+          "lonlat": [
+            -79.638,
+            39.877
+          ],
+          "side": "british"
+        }
+      ]
+    },
+    {
       "title": "Opening clashes",
-      "date": "1754",
-      "when": "1754",
-      "borders": "1754",
+      "date": "1754-07-03",
+      "when": "1754-07-03",
+      "borders": "1754-07-03",
       "body": [
         "Fighting began in the Ohio country as British and French claims collided. Indigenous nations pursued their own alliances and interests."
       ],
       "markers": [
         {
-          "kind": "event",
+          "kind": "siege",
           "name": "Fort Necessity",
           "lonlat": [
             -79.59,
             39.81
           ],
-          "text": "Fighting began in the Ohio country as British and French claims collided. Indigenous nations pursued their own alliances and interests."
+          "text": "Fighting began in the Ohio country as British and French claims collided. Indigenous nations pursued their own alliances and interests.",
+          "side": "french"
+        },
+        {
+          "kind": "held",
+          "name": "Fort Duquesne",
+          "lonlat": [
+            -80.01,
+            40.441
+          ],
+          "side": "french"
+        }
+      ]
+    },
+    {
+      "title": "Braddock’s defeat",
+      "date": "1755-07-09",
+      "when": "1755-07-09",
+      "borders": "1755-07-09",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Battle of the Monongahela",
+          "lonlat": [
+            -79.868,
+            40.406
+          ],
+          "side": "french"
+        },
+        {
+          "kind": "held",
+          "name": "Fort Duquesne",
+          "lonlat": [
+            -80.01,
+            40.441
+          ],
+          "side": "french"
+        }
+      ],
+      "view": {
+        "center": [
+          -79.9,
+          40.37
+        ],
+        "size": [
+          74,
+          58
+        ]
+      },
+      "arrows": [
+        {
+          "side": "british",
+          "label": "Braddock’s advance",
+          "via": [
+            [
+              -79.83,
+              40.29
+            ],
+            [
+              -79.88,
+              40.35
+            ],
+            [
+              -79.87,
+              40.405
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Fall of Fort Oswego",
+      "date": "1756-08",
+      "when": "1756-08",
+      "borders": "1756-08",
+      "markers": [
+        {
+          "kind": "siege",
+          "name": "Fort Oswego",
+          "lonlat": [
+            -76.511,
+            43.462
+          ],
+          "side": "french"
+        }
+      ]
+    },
+    {
+      "title": "Siege of Fort William Henry",
+      "date": "1757-08",
+      "when": "1757-08",
+      "borders": "1757-08",
+      "markers": [
+        {
+          "kind": "siege",
+          "name": "Fort William Henry",
+          "lonlat": [
+            -73.714,
+            43.42
+          ],
+          "side": "french"
+        },
+        {
+          "kind": "held",
+          "name": "Fort Edward",
+          "lonlat": [
+            -73.582,
+            43.268
+          ],
+          "side": "british"
+        }
+      ]
+    },
+    {
+      "title": "Second siege of Louisbourg",
+      "date": "1758-07",
+      "when": "1758-07",
+      "borders": "1758-07",
+      "markers": [
+        {
+          "kind": "siege",
+          "name": "Fortress of Louisbourg",
+          "lonlat": [
+            -59.956,
+            45.893
+          ],
+          "side": "british"
+        },
+        {
+          "kind": "naval",
+          "name": "Gabarus Bay",
+          "lonlat": [
+            -60.066,
+            45.89
+          ],
+          "side": "british",
+          "lp": "l"
+        }
+      ]
+    },
+    {
+      "title": "Battle of Carillon",
+      "date": "1758-07-08",
+      "when": "1758-07-08",
+      "borders": "1758-07-08",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Fort Carillon",
+          "lonlat": [
+            -73.387,
+            43.842
+          ],
+          "side": "french"
+        },
+        {
+          "kind": "taken",
+          "name": "Landing at the north end of Lake George",
+          "lonlat": [
+            -73.411,
+            43.805
+          ],
+          "side": "british",
+          "lp": "b"
+        }
+      ],
+      "view": {
+        "center": [
+          -73.402,
+          43.817
+        ],
+        "size": [
+          41,
+          31
+        ]
+      },
+      "arrows": [
+        {
+          "side": "british",
+          "label": "Advance on Carillon",
+          "via": [
+            [
+              -73.411,
+              43.805
+            ],
+            [
+              -73.402,
+              43.825
+            ],
+            [
+              -73.401,
+              43.854
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Capture of Fort Frontenac",
+      "date": "1758-08",
+      "when": "1758-08",
+      "borders": "1758-08",
+      "markers": [
+        {
+          "kind": "siege",
+          "name": "Fort Frontenac",
+          "lonlat": [
+            -76.482,
+            44.233
+          ],
+          "side": "british"
+        }
+      ]
+    },
+    {
+      "title": "Forbes campaign takes Fort Duquesne",
+      "date": "1758-11",
+      "when": "1758-11",
+      "borders": "1758-11",
+      "markers": [
+        {
+          "kind": "taken",
+          "name": "Fort Duquesne",
+          "lonlat": [
+            -80.01,
+            40.441
+          ],
+          "side": "british"
+        },
+        {
+          "kind": "held",
+          "name": "Fort Ligonier",
+          "lonlat": [
+            -79.233,
+            40.24
+          ],
+          "side": "british"
+        },
+        {
+          "kind": "held",
+          "name": "Fort Bedford",
+          "lonlat": [
+            -78.503,
+            40.021
+          ],
+          "side": "british"
+        }
+      ],
+      "arrows": [
+        {
+          "side": "british",
+          "label": "Forbes Road",
+          "via": [
+            [
+              -78.503,
+              40.021
+            ],
+            [
+              -79.233,
+              40.24
+            ],
+            [
+              -79.548,
+              40.307
+            ],
+            [
+              -80.01,
+              40.441
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Capture of Fort Niagara",
+      "date": "1759-07",
+      "when": "1759-07",
+      "borders": "1759-07",
+      "markers": [
+        {
+          "kind": "siege",
+          "name": "Fort Niagara",
+          "lonlat": [
+            -79.064,
+            43.263
+          ],
+          "side": "british"
         }
       ]
     },
     {
       "title": "Quebec falls",
-      "date": "1759",
-      "when": "1759",
-      "borders": "1759",
+      "date": "1759-09-13",
+      "when": "1759-09-13",
+      "borders": "1759-09-13",
       "body": [
         "British forces defeated the French outside Quebec; Montreal surrendered the following year."
       ],
       "markers": [
         {
-          "kind": "event",
+          "kind": "battle",
           "name": "Battle of the Plains of Abraham",
           "lonlat": [
             -71.23,
             46.8
           ],
-          "text": "British forces defeated the French outside Quebec; Montreal surrendered the following year."
+          "text": "British forces defeated the French outside Quebec; Montreal surrendered the following year.",
+          "side": "british"
+        },
+        {
+          "kind": "held",
+          "name": "Québec",
+          "lonlat": [
+            -71.205,
+            46.813
+          ],
+          "side": "french",
+          "lp": "r"
+        },
+        {
+          "kind": "taken",
+          "name": "Anse au Foulon",
+          "lonlat": [
+            -71.245,
+            46.787
+          ],
+          "side": "british",
+          "lp": "b"
+        }
+      ],
+      "view": {
+        "center": [
+          -71.229,
+          46.801
+        ],
+        "size": [
+          21,
+          16
+        ]
+      },
+      "arrows": [
+        {
+          "side": "british",
+          "label": "Landing at Anse au Foulon",
+          "via": [
+            [
+              -71.277,
+              46.77
+            ],
+            [
+              -71.258,
+              46.78
+            ],
+            [
+              -71.244,
+              46.787
+            ]
+          ],
+          "phase": 1
+        },
+        {
+          "side": "british",
+          "label": "Advance to the Plains",
+          "via": [
+            [
+              -71.244,
+              46.787
+            ],
+            [
+              -71.242,
+              46.794
+            ],
+            [
+              -71.228,
+              46.8
+            ]
+          ],
+          "phase": 2
+        }
+      ]
+    },
+    {
+      "title": "Battle of Sainte-Foy",
+      "date": "1760-04-28",
+      "when": "1760-04-28",
+      "borders": "1760-04-28",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Sainte-Foy battlefield",
+          "lonlat": [
+            -71.256,
+            46.807
+          ],
+          "side": "french"
+        },
+        {
+          "kind": "held",
+          "name": "Québec",
+          "lonlat": [
+            -71.205,
+            46.813
+          ],
+          "side": "british"
+        }
+      ]
+    },
+    {
+      "title": "Surrender of Montréal",
+      "date": "1760-09-08",
+      "when": "1760-09-08",
+      "borders": "1760-09-08",
+      "markers": [
+        {
+          "kind": "taken",
+          "name": "Montréal",
+          "lonlat": [
+            -73.554,
+            45.502
+          ],
+          "side": "british"
+        }
+      ]
+    },
+    {
+      "title": "Battle of Signal Hill",
+      "date": "1762-09-15",
+      "when": "1762-09-15",
+      "borders": "1762-09-15",
+      "markers": [
+        {
+          "kind": "battle",
+          "name": "Signal Hill",
+          "lonlat": [
+            -52.682,
+            47.571
+          ],
+          "side": "british"
+        },
+        {
+          "kind": "held",
+          "name": "St. John’s",
+          "lonlat": [
+            -52.708,
+            47.561
+          ],
+          "side": "french"
         }
       ]
     },
     {
       "title": "Treaty of Paris",
-      "date": "1763",
-      "when": "1763",
-      "borders": "1763",
+      "date": "1763-02-10",
+      "when": "1763-02-10",
+      "borders": "1763-02-10",
       "body": [
         "France ceded Canada and other territories to Britain and Spain in the peace settlement."
       ],
       "markers": [
         {
-          "kind": "event",
+          "kind": "taken",
           "name": "Quebec",
           "lonlat": [
             -71.21,
             46.81
           ],
-          "text": "France ceded Canada and other territories to Britain and Spain in the peace settlement."
+          "text": "France ceded Canada and other territories to Britain and Spain in the peace settlement.",
+          "side": "british"
+        },
+        {
+          "kind": "held",
+          "name": "New Orleans",
+          "lonlat": [
+            -90.065,
+            29.958
+          ],
+          "side": "french"
         }
-      ]
+      ],
+      "view": {
+        "center": [
+          -83,
+          40
+        ],
+        "size": [
+          2850,
+          2300
+        ]
+      }
     }
-  ]
+  ],
+  "sides": [
+    {
+      "id": "british",
+      "name": "British and colonial forces",
+      "ink": "blue",
+      "success": "British and colonial forces"
+    },
+    {
+      "id": "french",
+      "name": "French forces and allies",
+      "ink": "purple",
+      "success": "French forces and allies"
+    }
+  ],
+  "map_only": true
 }

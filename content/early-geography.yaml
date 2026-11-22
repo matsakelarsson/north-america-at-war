@@ -1,0 +1,442 @@
+# The ranges are inclusive display years for the interpretation in each entry.
+# A range may be clipped to the atlas period. Explain the historical precision in period/text.
+until: 1530
+methods: [native-land, canada-atlas, cartography, warfare, aztec-map]
+sources:
+  native-land: {title: Native Land Digital · How to use their map, url: "https://native-land.ca/about/faq"}
+  canada-atlas: {title: Indigenous Peoples Atlas of Canada · Forewords, url: "https://indigenouspeoplesatlasofcanada.ca/forewords/"}
+  cartography: {title: Cole and Hart · Indigenous cartography and place names, url: "https://doi.org/10.3390/ijgi10060397"}
+  warfare: {title: Lambert · Pre-Columbian and Early Historic Native American Warfare, url: "https://doi.org/10.1017/9781108788090.018"}
+  inuit: {title: Indigenous Peoples Atlas of Canada · Early Inuit history, url: "https://indigenouspeoplesatlasofcanada.ca/article/early-history/"}
+  thule: {title: Friesen and Arnold · Dating the Thule migration, url: "https://www.cambridge.org/core/journals/american-antiquity/article/abs/timing-of-the-thule-migration-new-dates-from-the-western-canadian-arctic/AD69885C6BA4CC797B5B25ED9F81FE12"}
+  dorset: {title: Friesen and colleagues · Fourteenth-century Dorset occupation, url: "https://doi.org/10.1017/aaq.2019.88"}
+  esp: {title: Alix and colleagues · Cape Espenberg dating, url: "https://www.cambridge.org/core/journals/american-antiquity/article/birnirk-to-thule-transition-as-viewed-from-radiocarbon-and-treering-dating-within-two-adjacent-houses-at-cape-espenberg-northwest-alaska/8E252A02A20CAA357E08D0295C36847A"}
+  esp-settlement: {title: Darwent and colleagues · Cape Espenberg house chronology, url: "https://www.cambridge.org/core/journals/american-antiquity/article/abs/1000-years-of-house-change-at-cape-espenberg-alaska-a-case-study-in-horizontal-stratigraphy/15C8DC0D68042AA86BD4283787FA4886"}
+  port: {title: Parks Canada · Dorset at Port au Choix, url: "https://parks.canada.ca/lhn-nhs/nl/portauchoix/culture/dorset"}
+  norse: {title: Kuitems and colleagues · European presence in 1021, url: "https://doi.org/10.1038/s41586-021-03972-8"}
+  meadows: {title: Parks Canada · Indigenous sites at L’Anse aux Meadows, url: "https://parks.canada.ca/lhn-nhs/nl/meadows/culture/sites"}
+  haida: {title: Parks Canada and Haida Nation · Living Landscapes of SG̱ang Gwaay, url: "https://www.parks.canada.ca/pn-np/bc/gwaiihaanas/nature/conservation/restauration-restoration/vivants-living"}
+  haida-constitution: {title: Council of the Haida Nation · Haida Constitution, url: "https://www.haidanation.ca/about/haida-constitution"}
+  keatley: {title: Jesse Morin · Keatley Creek community, url: "https://www.cambridge.org/core/journals/american-antiquity/article/abs/ritual-architecture-in-prehistoric-complex-huntergatherer-communities-a-potential-example-from-keatley-creek-on-the-canadian-plateau/74B50F2B49280F82852DFCDD89CD10CB"}
+  makah: {title: Makah Cultural and Research Center · Ozette, url: "https://makah.com/attractions/museum/"}
+  buffalo: {title: Head-Smashed-In Buffalo Jump · Site history, url: "https://www.headsmashedin.ca/about-jump"}
+  chaco: {title: National Park Service · Chaco Culture, url: "https://www.nps.gov/chcu/home.htm"}
+  pueblo: {title: UNESCO · Mesa Verde National Park, url: "https://whc.unesco.org/en/list/27/"}
+  taos: {title: UNESCO · Taos Pueblo, url: "https://whc.unesco.org/en/list/492/"}
+  paquime: {title: UNESCO · Paquimé, Casas Grandes, url: "https://whc.unesco.org/en/list/560/"}
+  caddo: {title: Texas Archeological Research Laboratory · Caddo villages of the lower Red River, url: "https://www.texasbeyondhistory.net/tejas/map/c7.htm"}
+  caddo-late: {title: Texas Archeological Research Laboratory · Late Caddo communities, url: "https://www.texasbeyondhistory.net/tejas/ancestors/late.html"}
+  wendat: {title: Huron-Wendat Nation · Account of Nionwentsïo and the St. Lawrence River, url: "https://www.ourcommons.ca/Content/Committee/421/TRAN/Brief/BR8708093/br-external/HuronWendatFirstNationCouncil-9505010-e.pdf"}
+  droulers: {title: Parks Canada · Droulers-Tsiionhiakwatha, url: "https://www.pc.gc.ca/apps/dfhd/page_nhs_eng.aspx?i=76882&id=11811"}
+  cahokia: {title: UNESCO · Cahokia Mounds, url: "https://whc.unesco.org/en/list/198/"}
+  spiro: {title: Oklahoma Historical Society · Spiro Mounds archaeology, url: "https://www.okhistory.org/sites/spiro-faq"}
+  plum: {title: Arkansas State Parks · Plum Bayou Mounds, url: "https://www.arkansasstateparks.com/parks/plum-bayou-mounds-archeological-state-park"}
+  moundville: {title: University of Alabama Museums · Moundville, url: "https://moundville.museums.ua.edu/ancient-site/"}
+  calusa: {title: Florida Museum · Excavations at Mound Key, url: "https://www.floridamuseum.ufl.edu/rrc/blog/archaeological-investigations-at-mound-key-2013-and-2014/"}
+  five-nations: {title: Haudenosaunee Confederacy · Who We Are, url: "https://www.haudenosauneeconfederacy.com/who-we-are/"}
+  onondaga: {title: Onondaga Nation · Historical timeline, url: "https://www.onondaganation.org/history/timeline/"}
+  tula: {title: Instituto Nacional de Antropología e Historia · Tula, url: "https://www.inah.gob.mx/zonas/zona-arqueologica-y-museo-de-sitio-de-tula"}
+  xochicalco: {title: UNESCO · Archaeological Monuments Zone of Xochicalco, url: "https://whc.unesco.org/en/list/939/"}
+  chichen: {title: UNESCO · Chichén Itzá, url: "https://whc.unesco.org/en/list/483/"}
+  chichen-research: {title: Bíró and Pérez de Heredia · Chichén Itzá political geography, url: "https://www.cambridge.org/core/journals/latin-american-antiquity/article/la-organizacion-politica-y-el-paisaje-de-chichen-itza-yucatan-mexico-en-el-periodo-clasico-terminal-830930-dc/ABA1E94644F6E9262DD11CD04E153A41"}
+  caracol: {title: Caracol Archaeological Project · Timeline, url: "https://caracol.org/about/timeline/"}
+  copan: {title: UNESCO · Maya Site of Copán, url: "https://whc.unesco.org/en/list/129/"}
+  ucanal: {title: Halperin and colleagues · Political change at K’anwitznal, url: "https://www.cambridge.org/core/journals/antiquity/article/pivot-point-in-maya-history-fireburning-event-at-kanwitznal-ucanal-and-the-making-of-a-new-era-of-political-rule/564F837E84443D408CD844424B7F6952"}
+  mayapan: {title: Kennett and colleagues · Mayapán archaeology and chronology, url: "https://doi.org/10.1038/s41467-022-31522-x"}
+  q: {title: Ministerio de Cultura y Deportes de Guatemala · Archaeological sites, url: "https://culturaguate.gob.gt/2022/01/20/sitios-arqueologicos-para-visitar-en-guatemala/"}
+  iximche: {title: Robinson and colleagues · Late Postclassic settlement around Iximché, url: "https://www.asociaciontikal.com/simposio-26-ano-2012-2/065-el-postclasico-tardio-asentamientos-alrededor-de-iximche-en-el-altiplano-de-guatemala-eugenia-robinson-marlen-garnica-y-juan-pablo-herrera-simposio-26-2012/"}
+  aztec-map: {title: Nichols and Evans · Imperial provinces map, figure 1, url: "https://doi.org/10.1017/S0956536109990101"}
+  aztec-hicks: {title: Hicks · Subject states and tribute provinces, url: "https://doi.org/10.1017/S095653610000225X"}
+  matricula: {title: Matrícula de Tributos · Cuetlaxtlan folio 14r (UNAM), url: "https://tlachia.iib.unam.mx/matricula-de-tributo/MT_14r"}
+  gulf: {title: Emmanuel Márquez Lorenzo · Triple Alliance rule in the southern Huasteca, url: "https://www.cambridge.org/core/journals/latin-american-antiquity/article/el-regimen-politico-prehispanico-de-la-triple-alianza-en-la-huaxteca-meridional/D7CE89F002DF78644A09D950CB5AED99"}
+  tlax: {title: Gentil and colleagues · Archaeology of Aztec and Tlaxcalan exchange, url: "https://www.cambridge.org/core/journals/latin-american-antiquity/article/aztec-and-tlaxcalan-economic-interaction-blockade-or-interregional-exchange/CBE14EE68216FC6CA5BC5C8F2A1BD3C3"}
+  tzintz: {title: Instituto Nacional de Antropología e Historia · Tzintzuntzan, url: "https://www.inah.gob.mx/zonas/zona-arqueologica-de-tzintzuntzan"}
+  frontier: {title: Silverstein · Archaeology of the Aztec–Purépecha frontier, url: "https://doi.org/10.5744/florida/9780813054346.003.0011"}
+  project: {title: Silverstein · Oztuma–Cutzamala project, map 2.1 and chapters 3–4, url: "https://etda.libraries.psu.edu/files/final_submissions/2657"}
+  taino: {title: Florida Museum · En Bas Saline excavations, url: "https://www.floridamuseum.ufl.edu/histarch/research/haiti/en-bas-saline/taino-archaeology/"}
+  antilles: {title: University of Arizona Press · Indigenous persistence in Hispaniola, url: "https://open.uapress.arizona.edu/read/e86c411b-cde5-4e11-8514-28f79205f642/section/2aee5324-2ead-47ec-b65e-58a8c036ce72"}
+  lucayan: {title: Florida Museum · Native peoples of Turks and Caicos, url: "https://www.floridamuseum.ufl.edu/caribarch/education/tc-peoples/"}
+  conte: {title: Penn Museum · Sitio Conte archaeology, url: "https://collections.penn.museum/collections/highlights/american/location/sitioconte.php"}
+features:
+  - id: cape-espenberg
+    kind: site
+    name: Cape Espenberg
+    from: 800
+    to: 1400
+    period: First millennium to early second millennium CE
+    lonlat: [-163.7, 66.55]
+    text: Archaeologists dated houses and wood at this headland on the Seward Peninsula. The finds document lifeways in northwest Alaska through the Birnirk-to-Thule transition.
+    refs: [esp, esp-settlement]
+  - id: sivullirmiut
+    kind: region
+    name: Sivullirmiut
+    from: 800
+    to: 1350
+    period: Eastern Arctic, through the early second millennium
+    lonlat: [-79, 69.4]
+    text: Inuit accounts refer to Arctic predecessors as Sivullirmiut. Archaeologists use Dorset for a material tradition within that longer history. Dorset sites document long habitation in the region. Dated sites farther west record Dorset communities into the fourteenth century.
+    refs: [inuit, dorset]
+  - id: iqaluktuuq
+    kind: site
+    name: Iqaluktuuq
+    from: 1300
+    to: 1350
+    period: Late Dorset presence after 1300
+    lonlat: [-105, 69.1]
+    text: Radiocarbon samples from southeastern Victoria Island place Late Dorset settlements here after 1300, overlapping with Thule settlement in adjacent regions. The marker locates the general vicinity of the study.
+    refs: [dorset, inuit]
+  - id: port-au-choix
+    kind: site
+    name: Port au Choix
+    from: 800
+    to: 1170
+    period: Dorset occupation into the early second millennium
+    lonlat: [-57.35, 50.7]
+    text: Coastal Dorset sites at Port au Choix preserve evidence of seasonal seal hunting. The marker identifies the peninsula and its archaeological record.
+    refs: [port]
+  - id: ancestral-inuit-west
+    kind: region
+    name: Ancestral Inuit
+    from: 1200
+    to: 1529
+    period: Western Canadian Arctic, from about the 1200s
+    lonlat: [-126, 70]
+    text: Radiocarbon dates in the western Canadian Arctic place eastward Thule expansion in about the thirteenth century. The archaeological term Thule refers to ancestors of Inuit.
+    refs: [inuit, thule]
+  - id: ancestral-inuit-east
+    kind: region
+    name: Ancestral Inuit
+    from: 1300
+    to: 1529
+    period: Eastern Arctic, early to middle second millennium
+    lonlat: [-63, 72.1]
+    text: Inuit ancestors spread eastward across the Arctic and into Greenland. Thule and late Dorset dates overlap in parts of the Arctic. The available dates leave their interactions uncertain.
+    refs: [inuit, thule, dorset]
+  - id: haida-gwaii
+    kind: region
+    name: Haida Gwaii
+    from: 800
+    to: 1529
+    period: Haida homeland throughout the displayed period
+    lonlat: [-132.25, 53.55]
+    text: The Haida Nation describes a history of living with the lands and marine waters of Haida Gwaii since time immemorial. The label locates this homeland by the islands.
+    refs: [haida-constitution, haida]
+  - id: keatley-creek
+    kind: site
+    name: Keatley Creek
+    from: 800
+    to: 950
+    period: Selected centuries of occupation, Fraser Canyon
+    lonlat: [-121.85, 50.7]
+    text: Large house depressions in the mid-Fraser Canyon document a community of substantial winter dwellings. The age and function of particular structures vary within the site.
+    refs: [keatley]
+  - id: ozette
+    kind: site
+    name: Ozette
+    from: 1500
+    to: 1529
+    period: Around the sixteenth century
+    lonlat: [-124.73, 48.17]
+    text: A mudslide preserved part of this Makah village on the Olympic Peninsula. The Makah Cultural and Research Center cares for and interprets the recovered objects.
+    refs: [makah]
+  - id: buffalo-jump
+    kind: site
+    name: Head-Smashed-In
+    from: 800
+    to: 1529
+    period: Used for millennia through the displayed period
+    lonlat: [-113.65, 49.71]
+    text: This buffalo jump in the Rocky Mountain foothills is a place of longstanding significance in Blackfoot history. The site records collective hunts and knowledge of the landscape.
+    refs: [buffalo]
+  - id: chaco
+    kind: site
+    name: Chaco Canyon
+    from: 850
+    to: 1150
+    period: About 850–1150, the great-house era
+    lonlat: [-107.96, 36.06]
+    text: Ancestral Pueblo communities built monumental great houses at Chaco. Connections through roads, ceremonies and exchange reached other communities in the San Juan Basin and beyond.
+    refs: [chaco]
+  - id: mesa-verde
+    kind: region
+    name: Mesa Verde communities
+    from: 800
+    to: 1280
+    period: Ancestral Pueblo communities to the late 1200s
+    lonlat: [-108.48, 37.25]
+    text: The Mesa Verde region held many Ancestral Pueblo communities. Site clusters, cliff dwellings and archaeological surveys document changes in settlement and community organisation over time.
+    refs: [pueblo]
+  - id: taos-pueblo
+    kind: site
+    name: Taos Pueblo
+    from: 1400
+    to: 1529
+    period: From at least the fifteenth century in this view
+    lonlat: [-105.55, 36.44]
+    text: A Tiwa-speaking Pueblo community in the upper Rio Grande valley. Its adobe buildings and continued occupation are documented in the World Heritage listing.
+    refs: [taos]
+  - id: paquime
+    kind: site
+    name: Paquimé
+    from: 1200
+    to: 1450
+    period: Approximate period of the major centre
+    lonlat: [-107.95, 30.37]
+    text: This centre in the Casas Grandes valley linked communities in the Southwest and northern Mexico through extensive exchange.
+    refs: [paquime]
+  - id: cahokia
+    kind: site
+    name: Cahokia
+    from: 1050
+    to: 1350
+    period: About 1050–1350, the major urban centre
+    lonlat: [-90.06, 38.66]
+    text: Cahokia was a major Mississippian centre near the confluence of the Mississippi and Missouri rivers. Its mounds and plazas anchor the map at the city, with the wider connections left open.
+    refs: [cahokia]
+  - id: plum-bayou
+    kind: site
+    name: Plum Bayou Mounds
+    from: 800
+    to: 1050
+    period: About 650–1050
+    lonlat: [-92.06, 34.65]
+    text: Earthworks around a plaza mark a ceremonial centre of the Plum Bayou culture in the Arkansas River lowlands.
+    refs: [plum]
+  - id: spiro
+    kind: site
+    name: Spiro
+    from: 850
+    to: 1450
+    period: About 850–1450
+    lonlat: [-94.57, 35.31]
+    text: Spiro was a Caddoan Mississippian centre in the Arkansas River valley. Objects recovered here show links with communities across a wide area.
+    refs: [spiro]
+  - id: moundville
+    kind: site
+    name: Moundville
+    from: 1050
+    to: 1450
+    period: Selected centuries of Mississippian activity
+    lonlat: [-87.63, 33]
+    text: Mounds, a plaza and settlement remains give evidence of a Mississippian political and ceremonial centre along the Black Warrior River. Its function changed over time.
+    refs: [moundville]
+  - id: caddo-red-river
+    kind: region
+    name: Caddo communities
+    from: 1000
+    to: 1529
+    period: From about 1000 in the lower Red River valley
+    lonlat: [-93.75, 32.1]
+    text: Mound centres such as Belcher and Gahagan locate part of the Caddo homeland along the Red River. The archaeology documents many settlements and distinct communities over time.
+    refs: [caddo, caddo-late]
+  - id: mound-key
+    kind: site
+    name: Mound Key
+    from: 1400
+    to: 1529
+    period: Late precolonial and early contact period
+    lonlat: [-81.87, 26.4]
+    text: Excavations and early accounts locate a Calusa political centre at Mound Key in Estero Bay. Shell mounds and water courts show how people reshaped the estuary.
+    refs: [calusa]
+  - id: haudenosaunee
+    kind: region
+    name: Haudenosaunee
+    from: 1400
+    to: 1529
+    period: Late precolonial context; founding chronology varies by account
+    lonlat: [-76.25, 43]
+    text: The Confederacy recounts the union of the Mohawk, Oneida, Onondaga, Cayuga and Seneca under the Great Law of Peace, with the council in Onondaga territory. The time window locates this context on the late map and leaves the founding date open.
+    refs: [five-nations, onondaga]
+  - id: st-lawrence-iroquoians
+    kind: site
+    name: Droulers-Tsiionhiakwatha
+    from: 1430
+    to: 1490
+    period: Around the mid-fifteenth century
+    lonlat: [-74.34, 45.07]
+    text: The remains of longhouses, plants and a palisade locate a St. Lawrence Iroquoian farming village near Lake Saint-François. Archaeology documents a settled community and wider exchanges.
+    refs: [droulers]
+  - id: wendat-st-lawrence
+    kind: region
+    name: Huron-Wendat
+    from: 1400
+    to: 1529
+    period: Late precolonial context
+    lonlat: [-71.7, 47.1]
+    text: In Huron-Wendat oral tradition, the St. Lawrence is the Great River, central to travel, hunting, fishing and trade since time immemorial. The label locates the river context described by the Nation.
+    refs: [wendat]
+  - id: lanse-aux-meadows
+    kind: site
+    name: L’Anse aux Meadows
+    from: 1021
+    to: 1021
+    period: Norse activity independently dated to 1021
+    lonlat: [-55.53, 51.6]
+    text: Tree-ring evidence dates Norse woodworking to 1021 at this site in northern Newfoundland. Parks Canada also documents Indigenous occupations of the area at other times. The date establishes a local European presence.
+    refs: [norse, meadows]
+  - id: xochicalco
+    kind: site
+    name: Xochicalco
+    from: 800
+    to: 900
+    period: About 650–900
+    lonlat: [-99.3, 18.8]
+    text: A fortified hilltop centre flourished in the centuries after Teotihuacan’s decline. Public architecture and carvings locate a political centre in this part of central Mexico.
+    refs: [xochicalco]
+  - id: tula
+    kind: site
+    name: Tollan (Tula)
+    from: 900
+    to: 1150
+    period: About 900–1150, the major Toltec centre
+    lonlat: [-99.34, 20.06]
+    text: Monumental architecture identifies Tollan as a major Toltec centre. The relationship between the city and other places with Toltec-linked material culture remains a subject of research.
+    refs: [tula]
+  - id: chichen-itza
+    kind: site
+    name: Chichén Itzá
+    from: 830
+    to: 1050
+    period: Late ninth to early eleventh centuries, approximate
+    lonlat: [-88.57, 20.68]
+    text: Archaeology, inscriptions and nearby settlements document a major Maya centre in the northern Yucatán and its changing political landscape.
+    refs: [chichen-research, chichen]
+  - id: caracol
+    kind: site
+    name: Caracol
+    from: 800
+    to: 900
+    period: Late and Terminal Classic, about 800–900 in this view
+    lonlat: [-89.12, 16.76]
+    text: Inscriptions, causeways and settlement archaeology document a Maya polity centred on Caracol. The marker locates its urban core.
+    refs: [caracol]
+  - id: copan
+    kind: site
+    name: Copán
+    from: 800
+    to: 822
+    period: The closing decades of dynastic rule
+    lonlat: [-89.14, 14.84]
+    text: Copán was a dynastic Maya centre in the southeast of the Maya region. Its final dated royal monument is unfinished. Communities remained after the end of the dynasty.
+    refs: [copan]
+  - id: ucanal
+    kind: site
+    name: K’anwitznal (Ucanal)
+    from: 800
+    to: 900
+    period: Ninth-century political change
+    lonlat: [-89.47, 16.68]
+    detail: true
+    text: Researchers interpret the burning and redeposition of earlier elite burials in a temple as part of a public break with an earlier ruling line. This is evidence of political change at Ucanal.
+    refs: [ucanal]
+  - id: mayapan
+    kind: site
+    name: Mayapán
+    from: 1150
+    to: 1440
+    period: About 1150 to the mid-fifteenth century
+    lonlat: [-89.46, 20.63]
+    text: Mayapán was a political centre of northern Yucatán during the Postclassic period. Its remaining years appear in the conflict entry, which marks the archaeological and historical date range for its destruction.
+    refs: [mayapan]
+  - id: qumarkaj
+    kind: site
+    name: Q’umarkaj
+    from: 1400
+    to: 1523
+    period: About 1400–1523 in this view
+    lonlat: [-91.17, 15.02]
+    text: A K’iche’ capital in the Guatemalan highlands. Its archaeological traces and the historical record locate a political centre distinct from neighbouring Maya polities.
+    refs: [q, iximche]
+  - id: iximche
+    kind: site
+    name: Iximché
+    from: 1470
+    to: 1524
+    period: Late fifteenth to early sixteenth century
+    lonlat: [-90.99, 14.74]
+    detail: true
+    text: The Kaqchikel founded their fortified capital at Iximché after breaking with the K’iche’. Archaeological surveys identify associated settlements around it.
+    refs: [q, iximche]
+  - id: tenochtitlan
+    kind: site
+    name: Tenochtitlan
+    from: 1428
+    to: 1521
+    period: Triple Alliance era, 1428–1521
+    lonlat: [-99.13, 19.435]
+    text: Tenochtitlan, on Lake Texcoco, led the Triple Alliance with Texcoco and Tlacopan. Scholars distinguish obligations to pay tribute from political relationships with the rulers of individual cities.
+    refs: [aztec-hicks, aztec-map]
+  - id: tlaxcallan
+    kind: site
+    name: Tlaxcallan
+    from: 1428
+    to: 1529
+    period: Independent during the Triple Alliance era
+    lonlat: [-98.25, 19.31]
+    detail: true
+    text: Tlaxcallan remained outside the Triple Alliance’s control. Excavated obsidian shows that economic exchange continued despite military rivalry.
+    refs: [tlax, aztec-map]
+  - id: tzintzuntzan
+    kind: site
+    name: Tzintzuntzan
+    from: 1450
+    to: 1521
+    period: Late precolonial Purépecha capital
+    lonlat: [-101.58, 19.62]
+    text: The Purépecha state maintained its capital on Lake Pátzcuaro and defended a frontier with the Triple Alliance to the east.
+    refs: [tzintz, frontier]
+  - id: taximaroa-cutzamala
+    kind: frontier
+    name: Purépecha–Triple Alliance frontier
+    from: 1480
+    to: 1519
+    period: Late 1400s to early 1500s
+    lonlat: [-100.56, 19.21]
+    anchors: [[-100.55, 19.69], [-100.58, 18.47]]
+    text: Study of Taximaroa in the north and the Oztuma–Cutzamala sector in the south places conflict in a belt of fortified communities, resettlement and shifting allegiances. The shading locates those documented sectors schematically.
+    refs: [project, frontier]
+  - id: tochpan
+    kind: tribute
+    name: Tochpan
+    from: 1480
+    to: 1519
+    period: Late fifteenth century to 1519
+    lonlat: [-97.4, 20.96]
+    text: Tochpan, around present-day Tuxpan, appears in reconstructions of Triple Alliance tribute in the southern Huasteca. The diamond marks the provincial centre. Local communities could have different obligations and ties.
+    refs: [gulf, aztec-hicks, aztec-map]
+  - id: cuetlaxtlan
+    kind: tribute
+    name: Cuetlaxtlan
+    from: 1480
+    to: 1519
+    period: Late fifteenth century to 1519
+    lonlat: [-96.4, 18.84]
+    text: Tribute records identify Cuetlaxtlan, now Cotaxtla, as the centre of a tribute province. The province included multiple communities and had a history of resistance to tribute demands.
+    refs: [matricula, aztec-map]
+  - id: en-bas-saline
+    kind: site
+    name: En Bas Saline
+    from: 1250
+    to: 1529
+    period: About 1250 into the early colonial period
+    lonlat: [-72.11, 19.69]
+    text: Archaeologists excavated a large Taíno settlement on the north coast of Hispaniola. En Bas Saline is a possible location of Guacanagarí’s community, where Columbus’s crew left a garrison in 1492. Early colonial accounts describe several chiefdoms on Hispaniola, with their number and extent still debated.
+    refs: [taino, antilles]
+  - id: lucayan
+    kind: region
+    name: Lucayan communities
+    from: 800
+    to: 1492
+    period: Approximate centuries of precolonial settlement
+    lonlat: [-75.05, 23.65]
+    text: Archaeology documents Lucayan communities across the Bahamas and Turks and Caicos. Voyaging and exchange connected island communities, so the label refers to an archipelago-wide history.
+    refs: [lucayan]
+  - id: sitio-conte
+    kind: site
+    name: Sitio Conte
+    from: 800
+    to: 1000
+    period: About 750–1000
+    lonlat: [-80.48, 8.42]
+    text: Excavations in the Río Grande valley of central Panama uncovered elaborate burials that document status and political organisation in the Gran Coclé region. The point marks the public archaeological locality.
+    refs: [conte]
